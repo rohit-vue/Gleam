@@ -9,7 +9,7 @@ export function ServicesPreventionSection() {
     >
       <p
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[45%] w-full max-w-[100vw] -translate-x-1/2 -translate-y-1/2 select-none px-2 text-center font-alliance font-bold uppercase leading-[0.9] text-neutral-500/[0.26] text-[clamp(2.75rem,16vw,5.75rem)] tracking-[0.12em] sm:top-[48%] sm:px-3 sm:text-[clamp(3.5rem,13vw,6.75rem)] sm:tracking-[0.18em] md:top-1/2 md:text-[clamp(4.5rem,11vw,7.75rem)] md:tracking-[0.25em] lg:text-[130px] lg:tracking-[1.5rem]"
+        className="pointer-events-none absolute left-1/2 top-[45%] w-full max-w-[100vw] -translate-x-1/2 -translate-y-1/2 select-none px-2 text-center font-alliance font-bold uppercase leading-[0.9] text-neutral-500/[0.26] text-[clamp(2.2rem,13vw,4.8rem)] tracking-[0.09em] sm:top-[48%] sm:px-3 sm:text-[clamp(2.8rem,10.5vw,5.8rem)] sm:tracking-[0.14em] md:top-1/2 md:text-[clamp(3.5rem,8.5vw,6.6rem)] md:tracking-[0.2em] lg:text-[130px] lg:tracking-[1.5rem]"
       >
         ALL COVERED
       </p>

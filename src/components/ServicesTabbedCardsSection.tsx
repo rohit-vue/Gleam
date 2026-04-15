@@ -7,7 +7,7 @@ import { SERVICE_TABS, SERVICE_TABS_PREVENT, type ServiceTabEntry } from "@/data
 
 const ACCENT = "#FFF168";
 /** CTA pill — matches hero / screenshot yellow */
-const CTA_PILL_YELLOW = "#FFF574";
+const CTA_PILL_YELLOW = "#FFF86B";
 const TOGGLE_ACTIVE_BG = "#FFF86B";
 /** Figma: light beige section background */
 const SECTION_BG = "#F7F5F0";
@@ -16,23 +16,25 @@ type ServiceTrack = "restore" | "prevent";
 const TAB_BORDER = "border-neutral-200";
 
 /** Blurred price rows stacked behind the CTA (reference: dense bokeh behind pill). */
-const PRICE_BLUR_STACK_COUNT = 8;
+const PRICE_BLUR_STACK_COUNT = 2;
 
 function SpecsTable({ specs }: { specs: ServiceTabEntry["specs"] }) {
   return (
-    <div className="mt-8">
-      <p className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-neutral-900">
+    <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-20">
+      <p className="text-[16px] font-bold font-alliance uppercase tracking-[0.1em] text-neutral-900 sm:text-[18px] sm:tracking-[0.11em] md:text-[20px] md:tracking-[0.12em]">
         Specs table
       </p>
       <div className="mt-3 border-t border-neutral-300">
         {specs.map((row) => (
           <div
             key={row.label}
-            className="grid grid-cols-1 gap-1 border-b border-neutral-300 py-3 text-[11px] uppercase leading-snug tracking-wide sm:grid-cols-3 sm:items-center sm:gap-4 sm:text-xs"
+            className="grid grid-cols-1 gap-1 border-b border-neutral-300 py-3 text-[11px] uppercase leading-snug tracking-wide  sm:grid-cols-3 sm:items-center sm:gap-4 sm:text-xs"
           >
-            <span className="font-bold text-neutral-900">{row.label}</span>
-            <span className="font-semibold text-neutral-900 sm:text-center">{row.mid}</span>
-            <span className="font-semibold text-neutral-900 sm:text-right">{row.right}</span>
+            <span className="font-normal" style={{ fontWeight: "400" }}>
+              {row.label}
+            </span>
+            <span className=" text-black sm:text-center">{row.mid}</span>
+            <span className=" text-black sm:text-right">{row.right}</span>
           </div>
         ))}
       </div>
@@ -44,30 +46,30 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
   const showPricingStrip = !entry.hideUnlockPricing;
 
   return (
-    <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
-      <div className="relative min-h-0 min-w-0 w-full lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.6)]">
+    <div className="flex flex-col gap-7 sm:gap-8 md:gap-9 lg:flex-row lg:items-start lg:gap-12">
+      <div className="relative min-h-0 min-w-0 w-full lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.6)] font-britanica-black">
         {entry.watermark ? (
           <p
             aria-hidden
-            className="pointer-events-none absolute bottom-0 left-2/3 z-0 w-[200%] max-w-none -translate-x-1/2 select-none text-center font-alliance text-[100px] font-bold uppercase leading-none tracking-tight text-neutral-400/[0.22] sm:w-[180%]"
+            className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-[130%] max-w-none -translate-x-1/2 select-none text-center font-alliance text-[clamp(3.25rem,16vw,4.75rem)] font-bold uppercase leading-none tracking-tight text-neutral-400/[0.22] sm:w-[150%] sm:text-[clamp(3.75rem,13vw,5.5rem)] md:left-2/3 md:w-[180%] md:text-[100px]"
           >
             {entry.watermark}
           </p>
         ) : null}
         <div className="relative z-10">
-          <h3 className="font-alliance text-[clamp(1.75rem,4vw,2.35rem)] font-bold uppercase leading-tight tracking-tight text-neutral-900">
+          <h3 style={{ fontWeight: '400' }} className="text-[clamp(1.2rem,5.4vw,1.8rem)] uppercase leading-tight tracking-[0.1em] text-neutral-900 sm:text-[clamp(1.3rem,4.3vw,1.95rem)] md:text-[clamp(1.5rem,3.4vw,2.1rem)]">
             {entry.title}
           </h3>
-          <p className="mt-4 max-w-xl font-alliance text-base font-semibold leading-relaxed text-neutral-800 md:text-[1.05rem]">
+          <p className="mt-3 max-w-xl font-alliance text-[0.95rem] font-semibold leading-relaxed text-neutral-800 tracking-[0.09em] sm:mt-4 sm:text-base md:text-[1.05rem]">
             {entry.description}
           </p>
           <SpecsTable specs={entry.specs} />
         </div>
       </div>
 
-      <div className="flex w-full min-w-0 flex-col items-stretch lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.4)]">
+      <div className="flex w-full min-w-0 flex-col items-stretch gap-8 sm:gap-10 md:gap-12 lg:gap-20 lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.4)]">
         <div
-          className="relative mx-auto w-full max-w-[18rem] overflow-hidden rounded-2xl sm:max-w-[20rem]"
+          className="relative mx-auto w-full max-w-[17rem] overflow-hidden rounded-2xl sm:max-w-[18.5rem] md:max-w-[20rem]"
           style={{ backgroundColor: ACCENT }}
         >
           <div className="relative aspect-[4/3] w-full">
@@ -82,10 +84,10 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
         </div>
 
         {showPricingStrip ? (
-          <div className="relative -mt-2 w-full">
+          <div className="relative w-full">
             <div
               className={[
-                "relative flex w-full items-center justify-center overflow-hidden bg-white px-4 py-6 sm:px-6 sm:py-8",
+                "relative flex w-full items-center justify-center bg-white px-3 py-4 sm:px-5 sm:py-6 md:px-6 md:py-8",
                 entry.priceBlur
                   ? "min-h-[4rem] py-3 sm:min-h-[4rem] sm:py-5"
                   : "mt-2 py-3 sm:py-5",
@@ -99,7 +101,7 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
                   {Array.from({ length: PRICE_BLUR_STACK_COUNT }, (_, i) => (
                     <p
                       key={i}
-                      className="shrink-0 select-none font-alliance text-[clamp(1.85rem,9.5vw,3.4rem)] font-bold tabular-nums leading-[0.72] text-neutral-600 blur-[8px] sm:text-[clamp(2.1rem,8vw,3.85rem)] sm:leading-[0.68] sm:blur-[8px]"
+                      className="shrink-0 select-none font-alliance text-[clamp(0.85rem,4.5vw,1.4rem)] font-bold tabular-nums leading-[0.72] text-neutral-600 blur-[8px] sm:text-[clamp(2.1rem,8vw,3.85rem)] sm:leading-[0.68] sm:blur-[8px]"
                       style={{
                         transform: `translateX(${((i % 3) - 1) * 18}px)`,
                         opacity: 0.2 + (i % 5) * 0.035,
@@ -113,7 +115,7 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
               <div className="relative z-10 flex justify-center px-2 py-1">
                 <button
                   type="button"
-                  className="rounded-full px-8 py-3.5 font-alliance text-base font-bold leading-none text-neutral-900 shadow-[0_28px_90px_-8px_rgba(0,0,0,0.38),0_12px_36px_-12px_rgba(0,0,0,0.22)] transition-[transform,opacity] hover:opacity-95 active:scale-[0.99] sm:px-10 sm:py-4 sm:text-lg"
+                  className="rounded-full px-6 py-3 text-[14px] font-bold leading-none text-neutral-900 shadow-[0_28px_90px_-8px_rgba(0,0,0,0.38),0_12px_36px_-12px_rgba(0,0,0,0.22)] transition-[transform,opacity] hover:opacity-95 active:scale-[0.99] sm:px-8 sm:py-3.5  md:px-10 md:py-4 tracking-[0.09em]"
                   style={{ backgroundColor: CTA_PILL_YELLOW }}
                 >
                   Unlock Member Pricing
@@ -140,12 +142,12 @@ export function ServicesTabbedCardsSection() {
 
   return (
     <section
-      className="border-b border-neutral-200/80 py-14 md:py-20 lg:py-24"
+      className="border-b border-neutral-200/80 py-10 sm:py-12 md:py-16 lg:py-24"
       style={{ backgroundColor: SECTION_BG }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10">
         <div
-          className="mb-8 flex flex-wrap gap-3 sm:mb-10 sm:gap-4"
+          className="mb-6 flex flex-wrap gap-2.5 sm:mb-8 sm:gap-3 md:mb-10 md:gap-4"
           role="group"
           aria-label="Service category"
         >
@@ -153,7 +155,7 @@ export function ServicesTabbedCardsSection() {
             type="button"
             aria-pressed={track === "restore"}
             onClick={() => setTrack("restore")}
-            className="rounded-[77px] border-[2px] border-black px-9 py-2.5 font-britanica-black text-[14px] font-bold text-neutral-900 transition-colors sm:px-6 sm:py-1.5"
+            className="rounded-[77px] border-[2px] border-black px-7 py-2 font-britanica-black text-[13px] font-bold text-neutral-900 transition-colors sm:px-8 sm:py-2.5 sm:text-[14px] md:px-6 md:py-1.5"
             style={{
               backgroundColor: track === "restore" ? TOGGLE_ACTIVE_BG : SECTION_BG,
             }}
@@ -164,7 +166,7 @@ export function ServicesTabbedCardsSection() {
             type="button"
             aria-pressed={track === "prevent"}
             onClick={() => setTrack("prevent")}
-            className="rounded-[77px] border-[2px] border-black px-9 py-2.5 font-britanica-black text-[14px] font-bold text-neutral-900 transition-colors sm:px-6 sm:py-1.5 "
+            className="rounded-[77px] border-[2px] border-black px-7 py-2 font-britanica-black text-[13px] font-bold text-neutral-900 transition-colors sm:px-8 sm:py-2.5 sm:text-[14px] md:px-6 md:py-1.5 "
             style={{
               backgroundColor: track === "prevent" ? TOGGLE_ACTIVE_BG : SECTION_BG,
             }}
@@ -174,14 +176,14 @@ export function ServicesTabbedCardsSection() {
         </div>
 
         <div
-          className="relative mr-auto flex w-full max-w-[62rem] flex-col items-stretch pb-8 pt-4 sm:pb-12 sm:pt-6"
+          className="relative mr-auto flex w-full max-w-[62rem] flex-col items-stretch pb-6 pt-2 sm:pb-10 sm:pt-4 md:pb-12 md:pt-6"
           role="region"
           aria-label="Dental services"
         >
           {tabs.map((item, index) => {
             const isExpanded = expandedIndex === index;
             // Slightly adjusted overlap so the white folder tops show nicely
-            const stackOffset = index > 0 ? "-mt-13 sm:-mt-14 md:-mt-[68px]" : "";
+            const stackOffset = index > 0 ? "-mt-12 sm:-mt-12 md:-mt-[68px]" : "";
 
             return (
               <div
@@ -200,18 +202,18 @@ export function ServicesTabbedCardsSection() {
                     aria-controls={`service-panel-${item.id}`}
                     onClick={() => setExpandedIndex(index)}
                     className={[
-                      "relative z-20 flex w-max min-w-[15rem] shrink-0 items-center gap-3 bg-white pl-5 pr-6 text-left font-mono text-[12px] font-bold uppercase tracking-[0.08em] text-neutral-900 transition-colors duration-200 sm:min-w-[18rem] sm:gap-4 sm:pl-7 sm:pr-8 sm:text-[13px] md:text-sm left-[40px]",
+                      "relative z-20 flex w-max min-w-[11.75rem] shrink-0 items-center gap-2 bg-white pl-3 pr-4 text-left  text-[11px] font-bold uppercase tracking-[0.08em] text-neutral-900 transition-colors duration-200 sm:min-w-[14rem] sm:gap-3 sm:pl-5 sm:pr-6 sm:text-[12px] md:min-w-[18rem] md:gap-4 md:pl-7 md:pr-8 md:text-sm left-[10px] sm:left-[20px] md:left-[40px]",
                       TAB_BORDER,
                       "border border-b-0", // No bottom border so it merges with the body
-                      "rounded-t-[14px] py-3 sm:rounded-t-[18px] sm:py-3.5",
+                      "rounded-t-[12px] py-2.5 sm:rounded-t-[14px] sm:py-3 md:rounded-t-[18px] md:py-3.5",
                       "-mb-[1px]", // Pulls the tab down 1px to physically cover the body's top border
                       !isExpanded && "hover:bg-neutral-50"
                     ].join(" ")}
                   >
-                    <span className="shrink-0 text-[12px] font-bold tabular-nums text-neutral-900 sm:text-[13px] md:text-sm">
+                    <span className="shrink-0 text-[12px] font-bold tabular-nums text-black sm:text-[13px] md:text-sm">
                       {item.number}
                     </span>
-                    <span className="min-w-0 flex-1 leading-snug">{item.tabLabel}</span>
+                    <span className="min-w-0 flex-1 leading-snug text-black  font-bold tracking-[0.08em]">{item.tabLabel}</span>
                   </button>
 
                   {/* --- THE FULL WIDTH FOLDER BODY --- */}
@@ -231,7 +233,7 @@ export function ServicesTabbedCardsSection() {
                     ].join(" ")}
                   >
                     {/* Fixed Top Spacer: Ensures the folder's top edge is visible even when content is collapsed to 0 height. */}
-                    <div className="h-15 w-full sm:h-16 md:h-17 rounded-t-[20px] sm:rounded-t-[26px]"></div>
+                    <div className="h-12 w-full rounded-t-[16px] sm:h-14 sm:rounded-t-[20px] md:h-16 md:rounded-t-[26px]"></div>
 
                     {/* --- THE COLLAPSIBLE CONTENT --- */}
                     <div
@@ -242,7 +244,7 @@ export function ServicesTabbedCardsSection() {
                     >
                       <div className="min-h-0">
                         {/* Notice: padding top is reduced here since we added the Spacer above */}
-                        <div className="px-5 pb-10 sm:px-8 sm:pb-9 md:px-10 md:pb-10">
+                        <div className="px-4 pb-8 sm:px-6 sm:pb-9 md:px-10 md:pb-10">
                           <ServiceCardPanel entry={item} />
                         </div>
                       </div>
