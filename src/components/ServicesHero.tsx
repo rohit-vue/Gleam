@@ -5,7 +5,7 @@ const HERO_YELLOW = "#FFF86B";
 export function ServicesHero() {
   const headline = "ALL OF IT";
   const headlineClass =
-    "block whitespace-nowrap pb-5 pl-4 font-alliance text-[130px] font-bold leading-[0.92] tracking-[0.3em] md:pl-8 lg:pl-10 [word-spacing:0.3em]";
+    "block whitespace-nowrap pb-4 font-alliance text-[58px] font-bold leading-[0.92] tracking-[0.08em] [word-spacing:0.1em] sm:pb-5 sm:text-[78px] sm:tracking-[0.12em] sm:[word-spacing:0.14em] md:pb-6 md:pl-8 md:text-[118px] md:tracking-[0.24em] md:[word-spacing:0.24em] lg:pb-5 lg:pl-10 lg:text-[130px] lg:tracking-[0.3em] lg:[word-spacing:0.3em]";
 
   return (
     <section className="flex flex-col">
@@ -30,12 +30,12 @@ export function ServicesHero() {
           />
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 z-10 grid w-full grid-cols-2">
+        <div className="absolute inset-x-0 bottom-0 z-10 grid w-full grid-cols-1 md:grid-cols-2">
           <div
-            className="relative min-h-[clamp(3.5rem,12vw,8rem)] overflow-hidden"
+            className="relative min-h-[5.25rem] overflow-hidden sm:min-h-[6.25rem] md:min-h-[clamp(4.75rem,12vw,8rem)]"
             style={{ backgroundColor: HERO_YELLOW }}
           >
-            <div className="absolute bottom-0 left-[calc(50vw-2rem)] -translate-x-1/2">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-[calc(50vw-1.6rem)] lg:left-[calc(50vw-2rem)]">
               <span
                 className={`${headlineClass} text-white motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:450ms]`}
               >
@@ -43,8 +43,8 @@ export function ServicesHero() {
               </span>
             </div>
           </div>
-          <div className="relative min-h-[clamp(3.5rem,12vw,8rem)] overflow-hidden">
-            <div className="absolute bottom-0 left-[-2rem] -translate-x-1/2">
+          <div className="relative hidden min-h-[clamp(4.75rem,12vw,8rem)] overflow-hidden md:block">
+            <div className="absolute bottom-0 left-[-1.2rem] -translate-x-1/2 sm:left-[-1.6rem] lg:left-[-2rem]">
               <span
                 className={`${headlineClass} motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:450ms]`}
                 style={{ color: HERO_YELLOW }}
@@ -67,7 +67,7 @@ export function ServicesHero() {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 ">
           <div className="relative mx-auto flex min-h-[min(42vw,13.5rem)] max-w-6xl items-center justify-center sm:min-h-[min(36vw,15rem)] md:min-h-[min(28vw,18rem)] lg:min-h-[20rem]">
-            <div className="relative z-0 flex w-full justify-center px-4 sm:px-10 md:px-14">
+            <div className="relative z-10 flex w-full justify-center px-4 sm:px-10 md:px-14">
               <Image
                 src="/assets/phone.png"
                 alt="Hand holding smartphone showing a map"
@@ -77,12 +77,25 @@ export function ServicesHero() {
               />
             </div>
 
-            <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 px-3 text-center sm:gap-1.5 sm:px-4 md:px-6 lg:gap-0 lg:px-1">
-              <p className="max-w-[min(100%,20rem)] text-[clamp(0.9375rem,3.8vw,1.5rem)] font-alliance font-semibold uppercase leading-[1.15] tracking-[0.06em] text-neutral-900 [text-shadow:0_0_1px_rgba(255,255,255,0.95),0_0_12px_rgba(255,255,255,0.55)] sm:max-w-[90vw] sm:text-[clamp(1.0625rem,3.2vw,1.75rem)] sm:tracking-[0.1em] md:max-w-[min(100%,34rem)] md:text-[clamp(1.25rem,2.4vw,2.25rem)] md:tracking-[0.16em] lg:max-w-[95vw] lg:text-[40px] lg:leading-[1.02] lg:tracking-[0.3em]">
+            {/* Base text layer sits behind the centered phone */}
+            <div className="pointer-events-none absolute inset-0 z-0 flex flex-col items-center justify-center gap-1 px-3 text-center sm:gap-1.5 sm:px-4 md:px-6 lg:gap-0 lg:px-1">
+              <p className="max-w-[min(100%,20rem)] text-[clamp(1.3rem,5.5vw,2.2rem)] font-alliance font-semibold uppercase leading-[1.15] tracking-[0.09em] text-neutral-900 [text-shadow:0_0_1px_rgba(255,255,255,0.95),0_0_12px_rgba(255,255,255,0.55)] sm:max-w-[90vw] sm:text-[clamp(1.45rem,4.8vw,2.45rem)] sm:tracking-[0.13em] md:max-w-[min(100%,34rem)] md:text-[clamp(1.8rem,3.7vw,3rem)] md:tracking-[0.2em] lg:max-w-[95vw] lg:text-[40px] lg:leading-[1.02] lg:tracking-[0.3em]">
                 We price match any
               </p>
-              <p className="mt-1 max-w-[min(100%,20rem)] font-alliance text-[clamp(0.9375rem,3.8vw,1.5rem)] font-semibold uppercase leading-[1.15] tracking-[0.06em] text-neutral-900 [text-shadow:0_0_1px_rgba(255,255,255,0.95),0_0_12px_rgba(255,255,255,0.55)] sm:mt-1.5 sm:max-w-[90vw] sm:text-[clamp(1.0625rem,3.2vw,1.75rem)] sm:tracking-[0.1em] md:max-w-[min(100%,34rem)] md:text-[clamp(1.25rem,2.4vw,2.25rem)] md:tracking-[0.16em] lg:mt-1 lg:max-w-[95vw] lg:text-[40px] lg:leading-[1.02] lg:tracking-[0.3em]">
+              <p className="mt-1 max-w-[min(100%,20rem)] font-alliance text-[clamp(1.3rem,5.5vw,2.2rem)] font-semibold uppercase leading-[1.15] tracking-[0.09em] text-neutral-900 [text-shadow:0_0_1px_rgba(255,255,255,0.95),0_0_12px_rgba(255,255,255,0.55)] sm:mt-1.5 sm:max-w-[90vw] sm:text-[clamp(1.45rem,4.8vw,2.45rem)] sm:tracking-[0.13em] md:max-w-[min(100%,34rem)] md:text-[clamp(1.8rem,3.7vw,3rem)] md:tracking-[0.2em] lg:mt-1 lg:max-w-[95vw] lg:text-[40px] lg:leading-[1.02] lg:tracking-[0.3em]">
                 practice within 15 miles
+              </p>
+            </div>
+
+            {/* Foreground text layer: only right-side phrase appears above the phone */}
+            <div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center gap-1 px-3 text-center sm:gap-1.5 sm:px-4 md:px-6 lg:gap-0 lg:px-1">
+              <p className="max-w-[min(100%,20rem)] text-[clamp(1.3rem,5.5vw,2.2rem)] font-alliance font-semibold uppercase leading-[1.15] tracking-[0.09em] text-neutral-900 sm:max-w-[90vw] sm:text-[clamp(1.45rem,4.8vw,2.45rem)] sm:tracking-[0.13em] md:max-w-[min(100%,34rem)] md:text-[clamp(1.8rem,3.7vw,3rem)] md:tracking-[0.2em] lg:max-w-[95vw] lg:text-[40px] lg:leading-[1.02] lg:tracking-[0.3em]">
+                <span className="text-transparent">WE PRICE </span>
+                <span>MATCH ANY</span>
+              </p>
+              <p className="mt-1 max-w-[min(100%,20rem)] font-alliance text-[clamp(1.3rem,5.5vw,2.2rem)] font-semibold uppercase leading-[1.15] tracking-[0.09em] text-neutral-900 sm:mt-1.5 sm:max-w-[90vw] sm:text-[clamp(1.45rem,4.8vw,2.45rem)] sm:tracking-[0.13em] md:max-w-[min(100%,34rem)] md:text-[clamp(1.8rem,3.7vw,3rem)] md:tracking-[0.2em] lg:mt-1 lg:max-w-[95vw] lg:text-[40px] lg:leading-[1.02] lg:tracking-[0.3em]">
+                <span className="text-transparent">PRACTICE </span>
+                <span>WITHIN 15 MILES</span>
               </p>
             </div>
           </div>

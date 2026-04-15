@@ -17,10 +17,7 @@ function BeforeAfterFigure({
   alt: string;
   stack: "top" | "bottom";
 }) {
-  const radius =
-    stack === "top"
-      ? "rounded-t-lg rounded-b-none"
-      : "rounded-b-lg rounded-t-none";
+  const radius = stack === "top" ? "rounded-t-none rounded-b-none" : "rounded-b-none rounded-t-none";
   return (
     <figure
       className={`relative aspect-[4/3] w-full overflow-hidden bg-black/5 ${radius}`}
@@ -85,22 +82,33 @@ export function CatchEarlyResultsSection() {
       <div className="h-12 w-full bg-white" aria-hidden />
 
       <section
-        className="relative overflow-x-hidden bg-[#FFF159] px-4 py-8 sm:px-5 sm:py-10 md:px-10 md:py-16 lg:px-10 lg:py-12"
+        className="relative overflow-x-hidden bg-[#FFF159] px-4 pb-8 pt-6 sm:px-5 sm:pb-10 sm:pt-8 md:px-10 md:pb-12 md:pt-10 lg:px-10 lg:pb-12 lg:pt-8"
         aria-labelledby="results-heading"
       >
         <h2
           id="results-heading"
-          className="relative z-10 mx-auto w-full max-w-[100vw] select-none px-1 text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:px-3 sm:leading-[0.84] sm:tracking-[0.05em] md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.08em]"
+          className="pointer-events-none absolute left-1/2 top-2 z-0 w-full max-w-[100vw] -translate-x-1/2 select-none px-1 text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:top-1 sm:px-3 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.08em]"
         >
           Results
         </h2>
+        <h2
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-2 z-20 w-full max-w-[100vw] -translate-x-1/2 select-none px-1 text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:top-1 sm:px-3 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.08em]"
+        >
+          <span className="text-transparent">R</span>
+          <span>E</span>
+          <span className="text-transparent">SU</span>
+          <span>L</span>
+          <span>T</span>
+          <span className="text-transparent">S</span>
+        </h2>
 
-        <div className="relative mx-auto mt-6 flex max-w-5xl justify-center sm:mt-8 md:mt-10 md:max-w-6xl lg:mt-8 lg:max-w-[64rem]">
-          <div className="flex w-full max-w-full flex-col items-center gap-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10 lg:gap-14 xl:gap-24 2xl:gap-32">
+        <div className="relative z-10 mx-auto mt-12 flex max-w-5xl justify-center sm:mt-14 md:mt-16 md:max-w-6xl lg:mt-[5.5rem] lg:max-w-[64rem]">
+          <div className="flex w-full max-w-full flex-col items-center gap-8 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10 lg:gap-14 xl:gap-24 2xl:gap-32">
             {beforeAfterColumns.map((pair, i) => (
               <div
                 key={pair.before}
-                className="flex w-full max-w-[min(100%,18.5rem)] flex-col gap-0 overflow-hidden rounded-lg shadow-md ring-1 ring-black/15 sm:max-w-[13rem] md:max-w-[13.5rem] lg:max-w-[14.5rem]"
+                className="flex w-full max-w-[min(100%,18.5rem)] flex-col gap-0 overflow-hidden rounded-none shadow-none ring-0 sm:max-w-[13rem] md:max-w-[13.5rem] lg:max-w-[14.5rem]"
               >
                 <BeforeAfterFigure
                   src={pair.before}
