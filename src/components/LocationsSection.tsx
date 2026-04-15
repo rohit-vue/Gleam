@@ -33,14 +33,14 @@ export function LocationsSection() {
   return (
     <section
       id="locations"
-      className="scroll-mt-24 bg-[#FFF86B] px-4 py-14 md:scroll-mt-28 md:px-8 md:py-20 lg:py-24"
+      className="scroll-mt-24 bg-[#FFF86B] px-4 py-10 sm:px-5 sm:py-12 md:scroll-mt-28 md:px-8 md:py-16 lg:py-24"
       aria-labelledby="locations-heading"
     >
       <div className="mx-auto max-w-7xl">
         <HeroSlideInOnView
           as="p"
           wrapperClassName="w-full"
-          className="text-[32px] font-normal uppercase tracking-[0.2em] text-black font-britanica-black"
+          className="text-xl font-normal uppercase tracking-[0.12em] text-black sm:text-2xl sm:tracking-[0.15em] md:text-[26px] md:tracking-[0.17em] lg:text-[28px] lg:tracking-[0.18em] xl:text-[32px] xl:tracking-[0.2em] font-britanica-black"
         >
           Location
         </HeroSlideInOnView>
@@ -48,12 +48,12 @@ export function LocationsSection() {
           as="h2"
           wrapperClassName="w-full"
           innerProps={{ id: "locations-heading" }}
-          className="mt-2 max-w-4xl text-[64px] font-normal uppercase leading-[1.05] tracking-[0.08em] text-black font-britanica-black"
+          className="mt-2 max-w-[min(100%,56rem)] text-[1.75rem] font-normal uppercase leading-[1.08] tracking-[0.05em] text-black sm:text-[2rem] sm:leading-[1.06] sm:tracking-[0.06em] md:text-[2.5rem] md:leading-[1.05] md:tracking-[0.065em] lg:text-[3rem] lg:tracking-[0.07em] xl:max-w-4xl xl:text-[64px] xl:leading-[1.05] xl:tracking-[0.08em] font-britanica-black"
         >
           Greater Los Angeles
         </HeroSlideInOnView>
 
-        <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-[minmax(14rem,30%)_1fr] lg:items-stretch lg:gap-8 xl:grid-cols-[minmax(16rem,28%)_1fr] xl:gap-10">
+        <div className="mt-8 grid gap-6 sm:mt-10 sm:gap-7 lg:mt-14 lg:grid-cols-[minmax(14rem,30%)_1fr] lg:items-stretch lg:gap-8 xl:grid-cols-[minmax(16rem,28%)_1fr] xl:gap-10">
           <div className="flex flex-col overflow-hidden rounded-[20px] bg-white shadow-xl ring-1 ring-black/5">
             {locations.map((loc, i) => (
               <div
@@ -62,10 +62,10 @@ export function LocationsSection() {
                   i === 0 ? "pt-5 md:pt-6" : ""
                 }`}
               >
-                <p className="text-[24px] font-semibold uppercase tracking-[0.03em] text-black font-britanica-black">
+                <p className="text-lg font-semibold uppercase tracking-[0.03em] text-black sm:text-xl md:text-[22px] xl:text-[24px] font-britanica-black">
                   {loc.city}
                 </p>
-                <p className="mt-1.5 w-[180px] text-[12px] text-black font-normal font-britanica-black leading-relaxed">
+                <p className="mt-1.5 w-full max-w-[min(100%,22rem)] text-[11px] leading-relaxed text-black sm:text-xs xl:w-[180px] xl:max-w-none xl:text-[12px] font-normal font-britanica-black">
                   {loc.address}
                 </p>
                 {i < locations.length - 1 ? (
@@ -80,13 +80,13 @@ export function LocationsSection() {
             ))}
           </div>
 
-          <div className="relative h-full min-h-[280px] w-full overflow-hidden rounded-[20px] shadow-xl ring-1 ring-black/10">
+          <div className="relative h-full min-h-[220px] w-full overflow-hidden rounded-[20px] shadow-xl ring-1 ring-black/10 sm:min-h-[240px] md:min-h-[260px] lg:min-h-[280px]">
             <Image
               src="/assets/maps.png"
               alt="Map of Greater Los Angeles showing Gleam office locations"
               fill
               className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 72vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 72vw"
             />
           </div>
         </div>

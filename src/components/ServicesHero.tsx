@@ -5,7 +5,7 @@ const HERO_YELLOW = "#FFF86B";
 export function ServicesHero() {
   const headline = "ALL OF IT";
   const headlineClass =
-    "block whitespace-nowrap pb-7 pl-4 font-alliance text-[130px] font-bold leading-[0.92] tracking-[0.3em] md:pl-8 lg:pl-10 [word-spacing:0.3em]";
+    "block whitespace-nowrap pb-5 pl-4 font-alliance text-[130px] font-bold leading-[0.92] tracking-[0.3em] md:pl-8 lg:pl-10 [word-spacing:0.3em]";
 
   return (
     <section className="flex flex-col">
@@ -35,7 +35,7 @@ export function ServicesHero() {
             className="relative min-h-[clamp(3.5rem,12vw,8rem)] overflow-hidden"
             style={{ backgroundColor: HERO_YELLOW }}
           >
-            <div className="absolute bottom-0 left-[calc(50vw-1.6rem)] -translate-x-1/2">
+            <div className="absolute bottom-0 left-[calc(50vw-2rem)] -translate-x-1/2">
               <span
                 className={`${headlineClass} text-white motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:450ms]`}
               >
@@ -44,8 +44,8 @@ export function ServicesHero() {
             </div>
           </div>
           <div className="relative min-h-[clamp(3.5rem,12vw,8rem)] overflow-hidden">
-            <div className="absolute bottom-0 left-[-1.6rem] -translate-x-1/2">
-x              <span
+            <div className="absolute bottom-0 left-[-2rem] -translate-x-1/2">
+              <span
                 className={`${headlineClass} motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:450ms]`}
                 style={{ color: HERO_YELLOW }}
               >
@@ -66,22 +66,22 @@ x              <span
         />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 ">
-          <div className="relative mx-auto flex min-h-[min(38vw,15rem)] max-w-6xl items-center justify-center sm:min-h-[min(32vw,17rem)] md:min-h-[min(28vw,18rem)] lg:min-h-[20rem]">
-            <div className="relative z-0 flex w-full justify-center px-6 sm:px-10 md:px-14">
+          <div className="relative mx-auto flex min-h-[min(42vw,13.5rem)] max-w-6xl items-center justify-center sm:min-h-[min(36vw,15rem)] md:min-h-[min(28vw,18rem)] lg:min-h-[20rem]">
+            <div className="relative z-0 flex w-full justify-center px-4 sm:px-10 md:px-14">
               <Image
                 src="/assets/phone.png"
                 alt="Hand holding smartphone showing a map"
                 width={520}
                 height={640}
-                className="h-auto w-[min(70%,14rem)] max-w-none object-contain drop-shadow-sm sm:w-[min(66%,15rem)] md:w-[min(50%,17rem)] lg:w-[min(42%,19rem)]"
+                className="h-auto w-[min(78%,11.5rem)] max-w-none object-contain drop-shadow-sm sm:w-[min(66%,15rem)] md:w-[min(50%,17rem)] lg:w-[min(42%,19rem)]"
               />
             </div>
 
-            <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center px-1 text-center sm:px-4">
-              <p className="max-w-[95vw] text-[40px] tracking-[0.3em] font-alliance font-semibold uppercase leading-[1.02] text-neutral-900 [text-shadow:0_0_1px_rgba(255,255,255,0.95),0_0_12px_rgba(255,255,255,0.55)] sm:max-w-[90vw]">
+            <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 px-3 text-center sm:gap-1.5 sm:px-4 md:px-6 lg:gap-0 lg:px-1">
+              <p className="max-w-[min(100%,20rem)] text-[clamp(0.9375rem,3.8vw,1.5rem)] font-alliance font-semibold uppercase leading-[1.15] tracking-[0.06em] text-neutral-900 [text-shadow:0_0_1px_rgba(255,255,255,0.95),0_0_12px_rgba(255,255,255,0.55)] sm:max-w-[90vw] sm:text-[clamp(1.0625rem,3.2vw,1.75rem)] sm:tracking-[0.1em] md:max-w-[min(100%,34rem)] md:text-[clamp(1.25rem,2.4vw,2.25rem)] md:tracking-[0.16em] lg:max-w-[95vw] lg:text-[40px] lg:leading-[1.02] lg:tracking-[0.3em]">
                 We price match any
               </p>
-              <p className="mt-1 max-w-[95vw] font-alliance text-[40px] tracking-[0.3em] font-semibold uppercase leading-[1.02] text-neutral-900 [text-shadow:0_0_1px_rgba(255,255,255,0.95),0_0_12px_rgba(255,255,255,0.55)] sm:mt-1.5 sm:max-w-[90vw] ">
+              <p className="mt-1 max-w-[min(100%,20rem)] font-alliance text-[clamp(0.9375rem,3.8vw,1.5rem)] font-semibold uppercase leading-[1.15] tracking-[0.06em] text-neutral-900 [text-shadow:0_0_1px_rgba(255,255,255,0.95),0_0_12px_rgba(255,255,255,0.55)] sm:mt-1.5 sm:max-w-[90vw] sm:text-[clamp(1.0625rem,3.2vw,1.75rem)] sm:tracking-[0.1em] md:max-w-[min(100%,34rem)] md:text-[clamp(1.25rem,2.4vw,2.25rem)] md:tracking-[0.16em] lg:mt-1 lg:max-w-[95vw] lg:text-[40px] lg:leading-[1.02] lg:tracking-[0.3em]">
                 practice within 15 miles
               </p>
             </div>

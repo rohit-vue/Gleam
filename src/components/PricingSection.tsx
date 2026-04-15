@@ -22,11 +22,11 @@ const annualFeatures = [
 
 function CheckItem({ children }: { children: string }) {
   return (
-    <li className="flex gap-3 text-sm leading-snug text-white md:text-base">
-      <span className="mt-0.5 shrink-0 text-[#FFF86B] text-[12px] font-bold" aria-hidden>
+    <li className="flex gap-2.5 text-xs leading-snug text-white sm:gap-3 sm:text-sm md:text-base lg:gap-3">
+      <span className="mt-0.5 shrink-0 text-[11px] font-bold text-[#FFF86B] sm:text-[12px]" aria-hidden>
         ✓
       </span>
-      <span className="text-[13px] font-bold tracking-[0.02em] text-white">{children}</span>
+      <span className="text-[12px] font-bold tracking-[0.02em] text-white sm:text-[13px]">{children}</span>
     </li>
   );
 }
@@ -36,7 +36,7 @@ type CompareCell = string | "check";
 function GreenCheck() {
   return (
     <div
-      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#22C55E] shadow-sm ring-2 ring-white/20"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#22C55E] shadow-sm ring-2 ring-white/20 lg:h-7 lg:w-7"
       aria-label="Included"
       role="img"
     >
@@ -45,7 +45,7 @@ function GreenCheck() {
         alt=""
         width={16}
         height={16}
-        className="h-4 w-4 object-contain"
+        className="h-3.5 w-3.5 object-contain lg:h-4 lg:w-4"
         aria-hidden
       />
     </div>
@@ -54,7 +54,7 @@ function GreenCheck() {
 
 function CompareCellContent({ value }: { value: CompareCell }) {
   if (value === "check") return <GreenCheck />;
-  return <div className="leading-snug">{value}</div>;
+  return <div className="break-words leading-snug lg:break-normal">{value}</div>;
 }
 
 const comparisonRows: {
@@ -117,21 +117,21 @@ export function PricingSection() {
   return (
     <section
       id="become-a-member"
-      className="relative scroll-mt-24 overflow-x-hidden bg-[#1A1A1A] px-4 md:scroll-mt-28 md:px-8 lg:py-8 py-10"
+      className="relative scroll-mt-24 overflow-x-hidden bg-[#1A1A1A] px-4 py-8 md:scroll-mt-28 md:px-8 md:py-9 lg:py-8"
       aria-labelledby="pricing-tagline"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="relative isolate mx-auto w-full max-w-6xl px-2 md:px-4">
-          <div className="relative grid w-full  place-items-center   ">
+          <div className="relative mt-6 grid w-full place-items-center sm:mt-7 md:mt-9 lg:mt-0">
             <p
-              className="pointer-events-none col-start-1 row-start-1 -translate-y-2 select-none whitespace-nowrap font-black uppercase leading-[0.78] tracking-[2.5rem] text-[#454545]  sm:-translate-y-2.5 md:-translate-y-3 md:leading-[0.75] text-[200px] font-britanica-black"
+              className="pointer-events-none col-start-1 row-start-1 -translate-y-6 select-none font-black uppercase leading-[0.82] text-[#454545] text-[clamp(3.45rem,14vw,9.25rem)] tracking-[0.085em] sm:-translate-y-7 sm:text-[clamp(3.75rem,13.5vw,10.25rem)] sm:leading-[0.8] sm:tracking-[0.1em] md:-translate-y-6 md:text-[clamp(4.1rem,14vw,11.5rem)] md:leading-[0.76] md:tracking-[0.12em] lg:-translate-y-3 lg:text-[200px] lg:leading-[0.75] lg:tracking-[2.5rem] whitespace-nowrap font-britanica-black"
               aria-hidden
             >
               PRICING
             </p>
             <h2
               id="pricing-tagline"
-              className="col-start-1 text-[2.2rem] row-start-1 z-10 min-w-full translate-y-[2.25rem] px-3 text-center  font-bold uppercase leading-snug tracking-[0.09em] text-white [word-spacing:1.5em] sm:translate-y-[2.75rem]  sm:[word-spacing:0.26em] md:translate-y-12  md:[word-spacing:0.3em] lg:translate-y-14  lg:leading-snug lg:[word-spacing:0.34em]"
+              className="col-start-1 row-start-1 z-10 min-w-full translate-y-[1.1rem] px-2 text-center text-[1.3rem] font-bold uppercase leading-snug tracking-[0.05em] text-white [word-spacing:0.16em] sm:translate-y-[1.35rem] sm:px-3 sm:text-[1.4rem] sm:tracking-[0.055em] sm:[word-spacing:0.18em] md:translate-y-8 md:text-[1.55rem] md:tracking-[0.065em] md:[word-spacing:0.22em] lg:translate-y-14 lg:text-[2.2rem] lg:leading-snug lg:tracking-[0.09em] lg:[word-spacing:0.34em]"
             >
               The last dental plan you&apos;ll ever need.
             </h2>
@@ -140,17 +140,17 @@ export function PricingSection() {
 
         <div className="mt-6 grid gap-6 md:mt-8 lg:mt-10 lg:grid-cols-2 lg:gap-8 font-britanica-black">
           {/* Essential */}
-          <article className="flex flex-col rounded-[38px] bg-[#3D3D3A] p-6 shadow-xl ring-1 ring-white/5 md:p-8 lg:p-10">
+          <article className="flex flex-col rounded-[38px] bg-[#3D3D3A] p-4 shadow-xl ring-1 ring-white/5 sm:p-6 md:p-8 lg:p-10">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <span className="text-[20px] font-bold uppercase tracking-[0.09em] text-[#999999]">
+              <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
                 Essential
               </span>
-              <span className="w-[150px] flex items-center justify-center rounded-[10px] bg-[#F5F5C9] px-3 py-1 text-[12px] font-bold uppercase tracking-wide text-[#7C7C14] font-britanica-black">
+              <span className="flex w-full max-w-[150px] items-center justify-center rounded-[10px] bg-[#F5F5C9] px-3 py-1 text-[12px] font-bold uppercase tracking-wide text-[#7C7C14] sm:w-[150px] sm:max-w-none lg:w-[150px] font-britanica-black">
                 Most Popular
               </span>
             </div>
 
-            <h3 className="mt-6 text-[28px] tracking-[0.02em] font-bold text-white">
+            <h3 className="mt-5 text-[1.25rem] font-bold tracking-[0.02em] text-white sm:mt-6 sm:text-[1.5rem] md:text-[1.625rem] lg:mt-6 lg:text-[28px]">
               Unlimited preventive care.
             </h3>
             <p className="text-[15px] font-semibold tracking-[0.02em] text-[#C2C0B6]">
@@ -158,9 +158,9 @@ export function PricingSection() {
             </p>
 
             <div className="mt-8">
-              <p className="text-[28px] font-bold tracking-[0.02em] text-white">
+              <p className="text-[1.375rem] font-bold tracking-[0.02em] text-white md:text-[1.5rem] lg:text-[28px]">
                 $160{" "}
-                <span className="text-[18px] font-semibold text-[#C2C0B6]">
+                <span className="text-[15px] font-semibold text-[#C2C0B6] sm:text-[16px] lg:text-[18px]">
                   /6 months
                 </span>
               </p>
@@ -169,7 +169,7 @@ export function PricingSection() {
 
             <Link
               href="/#become-a-member"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3.5 text-center text-[18px] font-bold text-black] transition-opacity hover:opacity-90 "
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold text-black transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
             >
               Get Started <span aria-hidden>→</span>
             </Link>
@@ -188,17 +188,17 @@ export function PricingSection() {
           </article>
 
           {/* Annual */}
-          <article className="flex flex-col rounded-[38px] border-2 border-[#FDFD66] bg-[#1A1A1A] p-6 shadow-xl md:p-8 lg:p-10">
-            <div className="flex flex-wrap items-center  justify-between gap-3">
-              <span className="text-[20px] font-bold uppercase tracking-[0.09em] text-[#999999]">
+          <article className="flex flex-col rounded-[38px] border-2 border-[#FDFD66] bg-[#1A1A1A] p-4 shadow-xl sm:p-6 md:p-8 lg:p-10">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
                 Annual
               </span>
-              <span className="w-[150px] flex items-center justify-center rounded-[10px] bg-[#FFF86B] px-3 py-1 text-[12px] font-bold uppercase tracking-wide text-[#3A3A00] font-britanica-black">
+              <span className="flex w-full max-w-[150px] items-center justify-center rounded-[10px] bg-[#FFF86B] px-3 py-1 text-[12px] font-bold uppercase tracking-wide text-[#3A3A00] sm:w-[150px] sm:max-w-none lg:w-[150px] font-britanica-black">
                 Best Value
               </span>
             </div>
 
-            <h3 className="mt-6 text-[28px] tracking-[0.02em] font-bold text-white">
+            <h3 className="mt-5 text-[1.25rem] font-bold tracking-[0.02em] text-white sm:mt-6 sm:text-[1.5rem] md:text-[1.625rem] lg:mt-6 lg:text-[28px]">
               Everything, all year. Plus a free whitening
             </h3>
             <p className="text-[15px] font-semibold tracking-[0.02em] text-[#C2C0B6]">
@@ -206,9 +206,9 @@ export function PricingSection() {
             </p>
 
             <div className="mt-8">
-              <p className="text-3xl font-bold tracking-[0.02em] text-white md:text-4xl">
+              <p className="text-[1.625rem] font-bold tracking-[0.02em] text-white sm:text-[1.75rem] md:text-4xl lg:text-4xl">
                 $297{" "}
-                <span className="text-[18px] font-semibold text-[#C2C0B6]">
+                <span className="text-[15px] font-semibold text-[#C2C0B6] sm:text-[16px] lg:text-[18px]">
                   /year
                 </span>
               </p>
@@ -219,7 +219,7 @@ export function PricingSection() {
 
             <Link
               href="/#become-a-member"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3.5 text-center text-[18px] font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 font-britanica-black"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px] font-britanica-black"
             >
               Get Started <span aria-hidden>→</span>
             </Link>
@@ -254,7 +254,7 @@ export function PricingSection() {
                 {comparisonRows.map((row) => (
                   <div
                     key={row.label}
-                    className="flex items-center border-b border-white/20 py-3 pr-3 text-left text-[15px] font-bold tracking-[0.08em] text-white md:py-4"
+                    className="flex items-center border-b border-white/20 py-3 pr-2 text-left text-[13px] font-bold tracking-[0.08em] text-white sm:pr-3 md:py-4 md:text-[14px] lg:pr-3 lg:text-[15px]"
                     role="rowheader"
                   >
                     {row.label}
@@ -264,18 +264,18 @@ export function PricingSection() {
 
               <div className="flex h-full min-h-0 flex-col">
                 <div
-                  className="overflow-hidden rounded-t-[30px] bg-black px-4 py-4 text-left text-[15px] font-bold uppercase leading-tight tracking-[0.03em] text-white md:px-5 md:py-5"
+                  className="overflow-hidden rounded-t-[30px] bg-black px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-white sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
                   role="columnheader"
                 >
                   Traditional 
-                  <div className="mt-0.5  text-[#CFCFCF] text-[15px]">
+                  <div className="mt-0.5 text-[12px] text-[#CFCFCF] sm:text-[13px] md:text-[15px]">
                     Insurance
                   </div>
                 </div>
                 {comparisonRows.map((row) => (
                   <div
                     key={row.label}
-                    className="flex items-center bg-black px-4 py-[14px] text-left text-[15px] font-semibold tracking-[0.03em] text-white md:px-5 md:py-5.5"
+                    className="flex items-center bg-black px-3 py-3 text-left text-[13px] font-semibold tracking-[0.03em] text-white sm:px-4 sm:py-[14px] sm:text-[14px] md:px-5 md:py-5.5 md:text-[15px]"
                     role="cell"
                   >
                     <CompareCellContent value={row.traditional} />
@@ -289,18 +289,18 @@ export function PricingSection() {
 
               <div className="flex h-full min-h-0 flex-col">
                 <div
-                  className="overflow-hidden rounded-t-[30px] bg-[#2A2A2A] px-4 py-4 text-left text-[15px] font-bold uppercase leading-tight tracking-[0.03em]  text-white md:px-5 md:py-5"
+                  className="overflow-hidden rounded-t-[30px] bg-[#2A2A2A] px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-white sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
                   role="columnheader"
                 >
                   Other Subscriptions{" "}
-                  <div className="mt-0.5 normal-case tracking-normal text-[#CFCFCF] text-[15px] ">
+                  <div className="mt-0.5 text-[12px] normal-case tracking-normal text-[#CFCFCF] sm:text-[13px] md:text-[15px]">
                     i.e. Wally
                   </div>
                 </div>
                 {comparisonRows.map((row) => (
                   <div
                     key={row.label}
-                    className="flex items-center bg-[#2A2A2A] px-4 py-3 text-left text-[15px] tracking-[0.03em]  font-semibold text-white md:px-5 md:py-3.5"
+                    className="flex items-center bg-[#2A2A2A] px-3 py-2.5 text-left text-[13px] font-semibold tracking-[0.03em] text-white sm:px-4 sm:py-3 sm:text-[14px] md:px-5 md:py-3.5 md:text-[15px]"
                     role="cell"
                   >
                     <CompareCellContent value={row.wally} />
@@ -314,7 +314,7 @@ export function PricingSection() {
 
               <div className="flex h-full min-h-0 flex-col">
                 <div
-                  className="overflow-hidden rounded-t-[30px] bg-[#FFF86B] px-4 py-4 text-left text-[15px] font-bold uppercase leading-tight tracking-[0.03em] text-[#1A1A1A] md:px-5 md:py-5"
+                  className="overflow-hidden rounded-t-[30px] bg-[#FFF86B] px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-[#1A1A1A] sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
                   role="columnheader"
                 >
                   Gleam
@@ -322,7 +322,7 @@ export function PricingSection() {
                 {comparisonRows.map((row) => (
                   <div
                     key={row.label}
-                    className="flex items-center bg-[#FFF86B] px-4 py-3 text-left text-[15px] tracking-[0.03em] font-semibold text-black md:px-5 md:py-3.5 md:text-sm"
+                    className="flex items-center bg-[#FFF86B] px-3 py-2.5 text-left text-[13px] font-semibold tracking-[0.03em] text-black sm:px-4 sm:py-3 sm:text-[14px] md:px-5 md:py-3.5 md:text-sm lg:text-[15px]"
                     role="cell"
                   >
                     <CompareCellContent value={row.gleam} />
