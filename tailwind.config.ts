@@ -13,9 +13,11 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        alliance: ['"Alliance No.2"', "ui-sans-serif", "system-ui", "sans-serif"],
+        
+        alliance: ["var(--font-alliance)", "ui-sans-serif", "system-ui", "sans-serif"],
+        
         "britanica-black": [
-          "Britanica Black",
+          "var(--font-britanica-black)",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",

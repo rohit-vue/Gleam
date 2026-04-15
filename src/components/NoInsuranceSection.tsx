@@ -36,7 +36,6 @@ export function NoInsuranceSection() {
             <HeroSlideInOnView
               as="h2"
               wrapperClassName="w-full max-w-4xl"
-              id="no-insurance-heading"
               className="text-center text-[74px] font-semibold uppercase leading-[1.1] tracking-tight text-white"
             >
               <span className="block">No insurance.</span>
