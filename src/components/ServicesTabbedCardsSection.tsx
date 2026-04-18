@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { SERVICE_TABS, SERVICE_TABS_PREVENT, type ServiceTabEntry } from "@/data/serviceTabs";
@@ -46,17 +45,17 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
   const showPricingStrip = !entry.hideUnlockPricing;
 
   return (
-    <div className="flex flex-col gap-7 sm:gap-8 md:gap-9 lg:flex-row lg:items-start lg:gap-12">
-      <div className="relative min-h-0 min-w-0 w-full lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.6)] font-britanica-black">
-        {entry.watermark ? (
-          <p
-            aria-hidden
-            className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-[130%] max-w-none -translate-x-1/2 select-none text-center font-alliance text-[clamp(3.25rem,16vw,4.75rem)] font-bold uppercase leading-none tracking-tight text-neutral-400/[0.22] sm:w-[150%] sm:text-[clamp(3.75rem,13vw,5.5rem)] md:left-2/3 md:w-[180%] md:text-[100px]"
-          >
-            {entry.watermark}
-          </p>
-        ) : null}
-        <div className="relative z-10">
+    <div className="relative flex flex-col gap-7 sm:gap-8 md:gap-9 lg:flex-row lg:items-start lg:gap-12">
+      {entry.watermark ? (
+        <p
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full max-w-full select-none overflow-hidden text-center font-alliance text-[clamp(2.75rem,15.5vw,6.5rem)] font-bold uppercase leading-[0.82] tracking-[0.08em] text-neutral-400/[0.22] sm:tracking-[0.14em] sm:text-[clamp(3.25rem,13vw,7rem)] md:tracking-[0.22em] md:text-[clamp(3.5rem,11vw,7.5rem)] whitespace-nowrap"
+        >
+          {entry.watermark}
+        </p>
+      ) : null}
+      <div className="relative z-10 min-h-0 min-w-0 w-full lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.6)] font-britanica-black">
+        <div className="relative">
           <h3 style={{ fontWeight: '400' }} className="text-[clamp(1.2rem,5.4vw,1.8rem)] uppercase leading-tight tracking-[0.1em] text-neutral-900 sm:text-[clamp(1.3rem,4.3vw,1.95rem)] md:text-[clamp(1.5rem,3.4vw,2.1rem)]">
             {entry.title}
           </h3>
@@ -67,20 +66,18 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
         </div>
       </div>
 
-      <div className="flex w-full min-w-0 flex-col items-stretch gap-8 sm:gap-10 md:gap-12 lg:gap-20 lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.4)]">
+      <div className="relative z-10 flex w-full min-w-0 flex-col items-stretch gap-8 sm:gap-10 md:gap-12 lg:gap-20 lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.4)]">
         <div
           className="relative mx-auto w-full max-w-[17rem] overflow-hidden rounded-2xl sm:max-w-[18.5rem] md:max-w-[20rem]"
           style={{ backgroundColor: ACCENT }}
         >
-          <div className="relative aspect-[4/3] w-full">
-            <Image
-              src={entry.imageSrc}
-              alt={entry.imageAlt}
-              fill
-              className="object-cover object-center"
-              sizes="(min-width: 1024px) 20rem, 80vw"
-            />
-          </div>
+          <img
+            src={entry.imageSrc}
+            alt={entry.imageAlt}
+            className="relative z-10 block h-auto w-full rounded-2xl align-middle"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         {showPricingStrip ? (
@@ -182,8 +179,14 @@ export function ServicesTabbedCardsSection() {
         >
           {tabs.map((item, index) => {
             const isExpanded = expandedIndex === index;
-            // Slightly adjusted overlap so the white folder tops show nicely
-            const stackOffset = index > 0 ? "-mt-12 sm:-mt-12 md:-mt-[68px]" : "";
+            const isNextAfterExpanded = index === expandedIndex + 1;
+           
+            const stackOffset =
+              index === 0
+                ? ""
+                : isNextAfterExpanded
+                  ? "-mt-[calc(-3rem+25px)] sm:-mt-[calc(-3rem+25px)] md:-mt-[calc(-68px+25px)]"
+                  : "-mt-12 sm:-mt-12 md:-mt-[68px]";
 
             return (
               <div

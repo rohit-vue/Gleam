@@ -241,98 +241,79 @@ export function PricingSection() {
         <div className="mt-20 lg:mt-28">
           <p className="sr-only">Compare traditional insurance, other subscriptions, and Gleam</p>
           <div className="-mx-4 overflow-x-auto px-4 pb-2 md:mx-0 md:overflow-visible md:px-0 font-britanica-black">
+            
             <div
-              className="grid min-w-[44rem] grid-cols-[minmax(8.5rem,1fr)_repeat(3,minmax(0,1fr))] items-stretch gap-x-0 md:min-w-0"
+              className="grid min-w-[44rem] grid-cols-[minmax(8.5rem,1fr)_repeat(3,minmax(0,1fr))] gap-x-0 md:min-w-0 [&>*]:"
               role="table"
               aria-label="Plan comparison"
             >
-              <div className="flex h-full min-h-0 flex-col">
-                <div
-                  className="flex min-h-[4.75rem] items-end border-b border-white/20 py-3 pr-3 text-left text-xs font-bold uppercase tracking-wide text-[#A0A0A0] md:min-h-[5.25rem] md:py-4 md:text-sm"
-                  role="columnheader"
-                />
-                {comparisonRows.map((row) => (
-                  <div
-                    key={row.label}
-                    className="flex items-center border-b border-white/20 py-3 pr-2 text-left text-[13px] font-bold tracking-[0.08em] text-white sm:pr-3 md:py-4 md:text-[14px] lg:pr-3 lg:text-[15px]"
-                    role="rowheader"
-                  >
-                    {row.label}
-                  </div>
-                ))}
+              <div
+                className="flex items-end border-b border-white/20 px-3 py-3 pr-2 text-left sm:px-4 sm:py-4 sm:pr-3 md:px-5 md:py-5 md:pr-4"
+                role="columnheader"
+              />
+              <div
+                className="overflow-hidden rounded-t-[30px] bg-black px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-white sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
+                role="columnheader"
+              >
+                Traditional
+                <div className="mt-0.5 text-[12px] text-[#CFCFCF] sm:text-[13px] md:text-[15px]">
+                  Insurance
+                </div>
+              </div>
+              <div
+                className="overflow-hidden rounded-t-[30px] bg-[#2A2A2A] px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-white sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
+                role="columnheader"
+              >
+                Other Subscriptions{" "}
+                <div className="mt-0.5 text-[12px] normal-case tracking-normal text-[#CFCFCF] sm:text-[13px] md:text-[15px]">
+                  i.e. Wally
+                </div>
+              </div>
+              <div
+                className="overflow-hidden rounded-t-[30px] bg-[#FFF86B] px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-[#1A1A1A] sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
+                role="columnheader"
+              >
+                Gleam
               </div>
 
-              <div className="flex h-full min-h-0 flex-col">
+              {comparisonRows.flatMap((row) => [
                 <div
-                  className="overflow-hidden rounded-t-[30px] bg-black px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-white sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
-                  role="columnheader"
+                  key={`${row.label}-label`}
+                  className="flex items-start border-b border-white/20 px-3 py-3 pr-2 text-left text-[13px] font-bold tracking-[0.08em] text-white sm:px-4 sm:py-3.5 sm:pr-3 sm:text-[14px] md:px-5 md:py-4 md:pr-4 md:text-[15px]"
+                  role="rowheader"
                 >
-                  Traditional 
-                  <div className="mt-0.5 text-[12px] text-[#CFCFCF] sm:text-[13px] md:text-[15px]">
-                    Insurance
-                  </div>
-                </div>
-                {comparisonRows.map((row) => (
-                  <div
-                    key={row.label}
-                    className="flex items-center bg-black px-3 py-3 text-left text-[13px] font-semibold tracking-[0.03em] text-white sm:px-4 sm:py-[14px] sm:text-[14px] md:px-5 md:py-5.5 md:text-[15px]"
-                    role="cell"
-                  >
-                    <CompareCellContent value={row.traditional} />
-                  </div>
-                ))}
+                  {row.label}
+                </div>,
                 <div
-                  className="min-h-6 flex-1 bg-black md:min-h-8"
-                  aria-hidden
-                />
-              </div>
+                  key={`${row.label}-traditional`}
+                  className="flex items-start  bg-black px-3 py-3 text-left text-[13px] font-semibold tracking-[0.03em] text-white sm:px-4 sm:py-3.5 sm:text-[14px] md:px-5 md:py-4 md:text-[15px] min-h-[24px]"
+                  role="cell"
+                >
+                  <CompareCellContent value={row.traditional} />
+                </div>,
+                <div
+                  key={`${row.label}-wally`}
+                  className="flex items-start  bg-[#2A2A2A] px-3 py-3 text-left text-[13px] font-semibold tracking-[0.03em] text-white sm:px-4 sm:py-3.5 sm:text-[14px] md:px-5 md:py-4 md:text-[15px]"
+                  role="cell"
+                >
+                  <CompareCellContent value={row.wally} />
+                </div>,
+                <div
+                  key={`${row.label}-gleam`}
+                  className="flex items-start  bg-[#FFF86B] px-3 py-3 text-left text-[13px] font-semibold tracking-[0.03em] text-black sm:px-4 sm:py-3.5 sm:text-[14px] md:px-5 md:py-4 md:text-[15px]"
+                  role="cell"
+                >
+                  <CompareCellContent value={row.gleam} />
+                </div>,
+              ])}
 
-              <div className="flex h-full min-h-0 flex-col">
-                <div
-                  className="overflow-hidden rounded-t-[30px] bg-[#2A2A2A] px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-white sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
-                  role="columnheader"
-                >
-                  Other Subscriptions{" "}
-                  <div className="mt-0.5 text-[12px] normal-case tracking-normal text-[#CFCFCF] sm:text-[13px] md:text-[15px]">
-                    i.e. Wally
-                  </div>
-                </div>
-                {comparisonRows.map((row) => (
-                  <div
-                    key={row.label}
-                    className="flex items-center bg-[#2A2A2A] px-3 py-2.5 text-left text-[13px] font-semibold tracking-[0.03em] text-white sm:px-4 sm:py-3 sm:text-[14px] md:px-5 md:py-3.5 md:text-[15px]"
-                    role="cell"
-                  >
-                    <CompareCellContent value={row.wally} />
-                  </div>
-                ))}
-                <div
-                  className="min-h-6 flex-1 bg-[#2A2A2A] md:min-h-8"
-                  aria-hidden
-                />
-              </div>
-
-              <div className="flex h-full min-h-0 flex-col">
-                <div
-                  className="overflow-hidden rounded-t-[30px] bg-[#FFF86B] px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-[#1A1A1A] sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
-                  role="columnheader"
-                >
-                  Gleam
-                </div>
-                {comparisonRows.map((row) => (
-                  <div
-                    key={row.label}
-                    className="flex items-center bg-[#FFF86B] px-3 py-2.5 text-left text-[13px] font-semibold tracking-[0.03em] text-black sm:px-4 sm:py-3 sm:text-[14px] md:px-5 md:py-3.5 md:text-sm lg:text-[15px]"
-                    role="cell"
-                  >
-                    <CompareCellContent value={row.gleam} />
-                  </div>
-                ))}
-                <div
-                  className="min-h-6 flex-1 bg-[#FFF86B] md:min-h-8"
-                  aria-hidden
-                />
-              </div>
+              <div className="min-h-6 md:min-h-8" aria-hidden />
+              <div className="min-h-6 bg-black md:min-h-8" aria-hidden />
+              <div className="min-h-6 bg-[#2A2A2A] md:min-h-8" aria-hidden />
+              <div
+                className="min-h-6 bg-[#FFF86B] md:min-h-8"
+                aria-hidden
+              />
             </div>
           </div>
         </div>

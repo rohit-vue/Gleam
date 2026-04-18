@@ -199,7 +199,6 @@ export const SERVICE_TABS_PREVENT: ServiceTabEntry[] = [
     imageSrc: "/assets/preventd.png",
     imageAlt: "In-office teeth whitening with blue light",
     priceBlur: "",
-    watermark: "UNLIMITED",
     hideUnlockPricing: true,
   },
   {
@@ -218,7 +217,6 @@ export const SERVICE_TABS_PREVENT: ServiceTabEntry[] = [
     imageSrc: "/assets/prevente.png",
     imageAlt: "Periodontal cleaning illustration",
     priceBlur: "",
-    watermark: "UNLIMITED",
     hideUnlockPricing: true,
   },
   {
@@ -237,7 +235,6 @@ export const SERVICE_TABS_PREVENT: ServiceTabEntry[] = [
     imageSrc: "/assets/preventf.png",
     imageAlt: "Patient placing a custom night guard",
     priceBlur: "",
-    watermark: "UNLIMITED",
     hideUnlockPricing: true,
   },
 ];
