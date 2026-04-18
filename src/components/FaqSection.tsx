@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const faqItems: { question: string; answer: string }[] = [
   {
     question: "What happens if I need major work — am I covered?",
@@ -73,6 +77,8 @@ const faqItems: { question: string; answer: string }[] = [
 ];
 
 export function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <div className="w-full">
       <div className="h-1 w-full bg-[#FFF159]" aria-hidden />
@@ -82,10 +88,10 @@ export function FaqSection() {
       />
 
       <section className="w-full" aria-labelledby="faq-heading">
-        <div className="bg-[#3D3D3A] text-center h-[110px] flex items-center justify-center">
+        <div className="flex h-[88px] items-center justify-center bg-[#3D3D3A] text-center md:h-[110px]">
           <h2
             id="faq-heading"
-            className="font-britanica-black text-[56px] font-bold uppercase text-white"
+            className="font-britanica-black text-[34px] font-bold uppercase text-white sm:text-[44px] md:text-[56px]"
           >
             FAQ
           </h2>
@@ -93,16 +99,74 @@ export function FaqSection() {
 
         <div className="bg-[#F9F5F1] px-4 py-2 md:px-8 md:py-4">
           <div className="divide-y-2 divide-black/80 mx-[18px]">
-            {faqItems.map((item, index) => (
-              <div key={index} className="py-8 md:py-10">
-                <h3 className="text-[24px] font-semibold leading-snug text-black font-britanica-black">
-                  {item.question}
-                </h3>
-                <p className="mt-3 font-baloo-2 text-[24px] font-normal leading-relaxed text-black md:leading-relaxed">
-                  {item.answer}
-                </p>
-              </div>
-            ))}
+            {faqItems.map((item, index) => {
+              const isOpen = openIndex === index;
+              const panelId = `faq-panel-${index}`;
+              return (
+                <div key={index} className="py-8 md:py-10">
+                  <h3 className="m-0">
+                    <button
+                      type="button"
+                      id={`faq-trigger-${index}`}
+                      aria-expanded={isOpen}
+                      aria-controls={panelId}
+                      className="flex w-full items-start gap-4 text-left"
+                      onClick={() =>
+                        setOpenIndex((prev) =>
+                          prev === index ? null : index
+                        )
+                      }
+                    >
+                      <span className="flex-1 text-[17px] font-semibold leading-snug text-black font-britanica-black md:text-[24px]">
+                        {item.question}
+                      </span>
+                      <span
+                        className="mt-0.5 shrink-0 text-black transition-transform duration-300 ease-out motion-reduce:transition-none motion-reduce:duration-0 md:mt-1"
+                        aria-hidden
+                        style={{
+                          transform: isOpen ? "rotate(180deg)" : undefined,
+                        }}
+                      >
+                        <svg
+                          className="size-5 md:size-6"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 9l6 6 6-6"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </h3>
+                  <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={`faq-trigger-${index}`}
+                    className="grid overflow-hidden transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none motion-reduce:duration-0"
+                    style={{
+                      gridTemplateRows: isOpen ? "1fr" : "0fr",
+                    }}
+                  >
+                    <div className="min-h-0 overflow-hidden">
+                      <div
+                        className="pt-3"
+                        aria-hidden={!isOpen}
+                      >
+                        <p className="font-baloo-2 text-[16px] font-normal leading-relaxed text-black md:text-[24px] md:leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

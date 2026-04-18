@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#FAF9F6] pt-2 pb-1 sm:pt-3 sm:pb-0 md:pt-4 lg:pt-6">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="relative z-10 grid items-stretch gap-6 sm:gap-8 md:gap-10 lg:grid-cols-2 lg:gap-10 xl:gap-12 font-britanica-black">
+        <div className="relative z-10 grid items-stretch gap-3 sm:gap-4 md:gap-5 lg:grid-cols-2 lg:gap-10 xl:gap-12 font-britanica-black">
           <div className="relative z-10 flex min-h-0 w-full max-w-xl flex-col self-stretch lg:max-w-none lg:pt-1">
             <div className="shrink-0">
               <HeroSlideInOnView
@@ -35,12 +35,15 @@ export function Hero() {
                 <span className="whitespace-nowrap">✓ Unlimited Exams</span>
               </p>
             </div>
-            <HeroGleamText />
+            <div className="mt-auto hidden w-full lg:block">
+              <HeroGleamText variant="column" />
+            </div>
           </div>
 
-          <div className="relative z-10 flex min-h-[200px] justify-center sm:min-h-[260px] md:min-h-[300px] lg:min-h-[380px] lg:justify-end">
+          <div className="relative z-10 -mt-5 w-full min-h-[200px] sm:-mt-6 sm:min-h-[260px] md:min-h-[300px] lg:mt-0 lg:min-h-[380px]">
+            <HeroGleamText variant="imageBackdrop" />
             <div
-              className="relative aspect-square w-full max-w-[min(100%,280px)] sm:max-w-[min(100%,360px)] md:max-w-[min(100%,420px)] lg:max-w-[min(100%,580px)] lg:translate-y-4 xl:max-w-[640px] xl:translate-y-10"
+              className="relative z-10 ml-auto aspect-square w-full max-w-[min(100%,280px)] translate-x-12 sm:max-w-[min(100%,360px)] sm:translate-x-14 md:max-w-[min(100%,420px)] md:translate-x-[4.5rem] lg:max-w-[min(100%,580px)] lg:translate-x-10 lg:translate-y-4 xl:max-w-[640px] xl:translate-x-12 xl:translate-y-10"
               role="img"
               aria-label="Dental mirror and explorer tools"
             >

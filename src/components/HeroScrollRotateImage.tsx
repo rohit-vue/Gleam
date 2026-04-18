@@ -3,6 +3,9 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+
+const SCROLL_ROTATE_MEDIA = "(min-width: 1024px)";
+
 export function HeroScrollRotateImage() {
   const [rotation, setRotation] = useState(0);
   const lastScrollYRef = useRef(0);
@@ -11,7 +14,7 @@ export function HeroScrollRotateImage() {
   const rafIdRef = useRef<number | null>(null);
 
   useEffect(() => {
-    lastScrollYRef.current = window.scrollY;
+    const mq = window.matchMedia(SCROLL_ROTATE_MEDIA);
 
     const animate = () => {
       const diff = targetRotationRef.current - currentRotationRef.current;
@@ -40,8 +43,27 @@ export function HeroScrollRotateImage() {
       }
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const syncInteraction = () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafIdRef.current !== null) {
+        window.cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+      }
+      currentRotationRef.current = 0;
+      targetRotationRef.current = 0;
+      setRotation(0);
+
+      if (mq.matches) {
+        lastScrollYRef.current = window.scrollY;
+        window.addEventListener("scroll", onScroll, { passive: true });
+      }
+    };
+
+    syncInteraction();
+    mq.addEventListener("change", syncInteraction);
+
     return () => {
+      mq.removeEventListener("change", syncInteraction);
       window.removeEventListener("scroll", onScroll);
       if (rafIdRef.current !== null) window.cancelAnimationFrame(rafIdRef.current);
     };
@@ -49,7 +71,7 @@ export function HeroScrollRotateImage() {
 
   return (
     <div
-      className="h-full w-full will-change-transform"
+      className="h-full w-full lg:will-change-transform"
       style={{ transform: `perspective(1200px) rotateY(${rotation}deg)` }}
     >
       <Image
