@@ -87,11 +87,11 @@ export function FaqSection() {
         aria-hidden
       />
 
-      <section className="w-full" aria-labelledby="faq-heading">
+      <section className="w-full font-helvetica-neue-regular" aria-labelledby="faq-heading">
         <div className="flex h-[88px] items-center justify-center bg-[#3D3D3A] text-center md:h-[110px]">
           <h2
             id="faq-heading"
-            className="font-britanica-black text-[34px] font-bold uppercase text-white sm:text-[44px] md:text-[56px]"
+            className="text-[34px] font-bold uppercase text-white sm:text-[44px] md:text-[56px]"
           >
             FAQ
           </h2>
@@ -117,7 +117,7 @@ export function FaqSection() {
                         )
                       }
                     >
-                      <span className="flex-1 text-[17px] font-semibold leading-snug text-black font-britanica-black md:text-[24px]">
+                      <span className="flex-1 text-[17px] font-semibold leading-snug text-black md:text-[24px]">
                         {item.question}
                       </span>
                       <span
@@ -158,7 +158,7 @@ export function FaqSection() {
                         className="pt-3"
                         aria-hidden={!isOpen}
                       >
-                        <p className="font-baloo-2 text-[16px] font-normal leading-relaxed text-black md:text-[24px] md:leading-relaxed">
+                        <p className="text-[16px] font-normal leading-relaxed text-black md:text-[24px] md:leading-relaxed">
                           {item.answer}
                         </p>
                       </div>

@@ -21,7 +21,7 @@ function LocationRow({
       {locations.map((name, i) => (
         <span
           key={`${dupIndex}-${name}-${i}`}
-          className="inline-flex shrink-0 items-center font-britanica-black"
+          className="inline-flex shrink-0 items-center"
         >
           {i > 0 || dupIndex > 0 ? (
             <span
@@ -53,7 +53,7 @@ export function LocationMarqueeBar({ locations }: LocationMarqueeBarProps) {
 
   if (reducedMotion) {
     return (
-      <div className="flex min-h-[2.75rem] items-center justify-center bg-[#FFF86B] py-2 text-black md:min-h-12 md:py-2.5 lg:py-3">
+      <div className="flex min-h-[2.75rem] items-center justify-center bg-[#FFF86B] py-2 text-black font-helvetica-neue-regular md:min-h-12 md:py-2.5 lg:py-3">
         <p className="flex flex-wrap items-center justify-center gap-y-1 px-3 text-center text-[25px] font-black lowercase leading-none text-black sm:px-5 md:px-6">
           {locations.map((name, i) => (
             <span key={name} className="inline-flex shrink-0 items-center">
@@ -74,7 +74,7 @@ export function LocationMarqueeBar({ locations }: LocationMarqueeBarProps) {
   }
 
   return (
-    <div className="flex min-h-[2.75rem] items-center bg-[#FFF86B] py-2 text-black md:min-h-12 md:py-2.5 lg:py-3">
+    <div className="flex min-h-[2.75rem] items-center bg-[#FFF86B] py-2 text-black font-helvetica-neue-regular md:min-h-12 md:py-2.5 lg:py-3">
       <span className="sr-only">{listLabel}</span>
       <div className="relative w-full overflow-hidden" aria-hidden>
         <div className="flex w-max animate-marquee items-center whitespace-nowrap text-[25px] font-black lowercase leading-none text-black hover:[animation-play-state:paused]">

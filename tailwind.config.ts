@@ -13,9 +13,14 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        
+        sans: ["Helvetica Neue Regular", "Helvetica Neue", "Arial", "sans-serif"],
+        "helvetica-neue-regular": [
+          "Helvetica Neue Regular",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
         alliance: ["var(--font-alliance)", "ui-sans-serif", "system-ui", "sans-serif"],
-        
         "britanica-black": [
           "var(--font-britanica-black)",
           "ui-sans-serif",
