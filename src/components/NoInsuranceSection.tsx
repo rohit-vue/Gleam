@@ -13,7 +13,7 @@ const locations = [
 
 export function NoInsuranceSection() {
   return (
-    <div className="w-full">
+    <div className="w-full font-helvetica-neue-regular">
       <LocationMarqueeBar locations={locations} />
 
       <section
@@ -39,7 +39,7 @@ export function NoInsuranceSection() {
               className="text-center text-[clamp(1.65rem,6.5vw,4.625rem)] font-semibold uppercase leading-[1.08] tracking-tight text-white sm:leading-[1.1] md:leading-[1.1]"
               innerProps={{ id: "no-insurance-heading" }}
             >
-              <span className="block">No insurance.</span>
+              <span className="block">No ɪnsurance.</span>
               <span className="block">No problem.</span>
             </HeroSlideInOnView>
           </div>
@@ -50,7 +50,7 @@ export function NoInsuranceSection() {
         className="relative overflow-x-hidden bg-[#F9F9F7]"
         aria-labelledby="unlimited-approach-heading"
       >
-        <div className="relative mx-auto flex min-h-[188px] max-w-6xl flex-col justify-end font-britanica-black sm:min-h-[208px] md:min-h-[252px] lg:min-h-[280px] lg:flex-row lg:items-center lg:justify-center">
+        <div className="relative mx-auto flex min-h-[188px] max-w-6xl flex-col justify-end sm:min-h-[208px] md:min-h-[252px] lg:min-h-[280px] lg:flex-row lg:items-center lg:justify-center">
           <p
             className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-full max-w-[100vw] -translate-x-1/2 -translate-y-1/2 select-none px-2 text-center text-[clamp(2.15rem,13vw,4.85rem)] font-bold uppercase leading-none tracking-[0.09em] text-[#C8C8C8] sm:text-[clamp(2.65rem,13.5vw,5.35rem)] sm:tracking-[0.12em] md:text-[clamp(3.25rem,16vw,8.75rem)] md:tracking-[0.24em] lg:text-[140px] lg:tracking-[0.55em] xl:text-[170px] xl:tracking-[1rem]"
             aria-hidden

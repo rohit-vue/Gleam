@@ -5,19 +5,19 @@ const testimonial =
   "Saved over $800 on my veneers — and got a free whitening. — James T. (WeHo)";
 
 const essentialFeatures = [
-  "Unlimited cleanings, exams & X-rays",
+  "Everything in Essential",
+  "Free professional whitening - use anytime",
   "Priority booking at all 6 locations",
   "Free consultation on any service",
-  "Full preventive coverage while you're a member",
   "Cancel anytime",
 ] as const;
 
 const annualFeatures = [
-  "Everything in Essential — plus year-round peace of mind",
-  "Free professional whitening — use anytime",
+  "Everything in Essential",
+  "Free professional whitening - use anytime",
   "Priority booking at all 6 locations",
   "Free consultation on any service",
-  "Best per-month value vs. renewing every 6 months",
+  "Cancel anytime",
 ] as const;
 
 function CheckItem({ children }: { children: string }) {
@@ -117,14 +117,14 @@ export function PricingSection() {
   return (
     <section
       id="become-a-member"
-      className="relative scroll-mt-24 overflow-x-hidden bg-[#1A1A1A] px-4 py-8 md:scroll-mt-28 md:px-8 md:py-9 lg:py-8"
+      className="relative scroll-mt-24 overflow-x-hidden bg-[#1A1A1A] px-4 py-8 font-helvetica-neue-regular md:scroll-mt-28 md:px-8 md:py-9 lg:py-8"
       aria-labelledby="pricing-tagline"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="relative isolate mx-auto w-full max-w-6xl px-2 md:px-4">
           <div className="relative mt-6 grid w-full place-items-center sm:mt-7 md:mt-9 lg:mt-0">
             <p
-              className="pointer-events-none col-start-1 row-start-1 -translate-y-6 select-none font-black uppercase leading-[0.82] text-[#454545] text-[clamp(3.45rem,14vw,9.25rem)] tracking-[0.085em] sm:-translate-y-7 sm:text-[clamp(3.75rem,13.5vw,10.25rem)] sm:leading-[0.8] sm:tracking-[0.1em] md:-translate-y-6 md:text-[clamp(4.1rem,14vw,11.5rem)] md:leading-[0.76] md:tracking-[0.12em] lg:-translate-y-3 lg:text-[200px] lg:leading-[0.75] lg:tracking-[2.5rem] whitespace-nowrap font-britanica-black"
+              className="pointer-events-none col-start-1 row-start-1 -translate-y-6 select-none whitespace-nowrap text-[clamp(3.45rem,14vw,9.25rem)] font-black uppercase leading-[0.82] tracking-[0.085em] text-[#454545] sm:-translate-y-7 sm:text-[clamp(3.75rem,13.5vw,10.25rem)] sm:leading-[0.8] sm:tracking-[0.1em] md:-translate-y-6 md:text-[clamp(4.1rem,14vw,11.5rem)] md:leading-[0.76] md:tracking-[0.12em] lg:-translate-y-3 lg:text-[200px] lg:leading-[0.75] lg:tracking-[2.5rem]"
               aria-hidden
             >
               PRICING
@@ -138,14 +138,14 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-6 md:mt-8 lg:mt-10 lg:grid-cols-2 lg:gap-8 font-britanica-black">
+        <div className="mt-6 grid gap-6 md:mt-8 lg:mt-10 lg:grid-cols-2 lg:gap-8">
           {/* Essential */}
           <article className="flex flex-col rounded-[38px] bg-[#3D3D3A] p-4 shadow-xl ring-1 ring-white/5 sm:p-6 md:p-8 lg:p-10">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
                 Essential
               </span>
-              <span className="flex w-full max-w-[150px] items-center justify-center rounded-[10px] bg-[#F5F5C9] px-3 py-1 text-[12px] font-bold uppercase tracking-wide text-[#7C7C14] sm:w-[150px] sm:max-w-none lg:w-[150px] font-britanica-black">
+              <span className="flex w-full max-w-[150px] items-center justify-center rounded-[10px] bg-[#F5F5C9] px-3 py-1 text-[12px] font-bold  tracking-wide text-[#7C7C14] sm:w-[150px] sm:max-w-none lg:w-[150px]">
                 Most Popular
               </span>
             </div>
@@ -176,7 +176,7 @@ export function PricingSection() {
 
             <div className="mt-6 mb-1 h-px w-full bg-white/10" />
 
-            <p className="font-alliance text-[14px] font-bold italic leading-relaxed text-[#C2C0B6]">
+            <p className="text-[14px] font-bold italic leading-relaxed text-[#C2C0B6]">
               &ldquo;{testimonial}&rdquo;
             </p>
 
@@ -193,7 +193,7 @@ export function PricingSection() {
               <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
                 Annual
               </span>
-              <span className="flex w-full max-w-[150px] items-center justify-center rounded-[10px] bg-[#FFF86B] px-3 py-1 text-[12px] font-bold uppercase tracking-wide text-[#3A3A00] sm:w-[150px] sm:max-w-none lg:w-[150px] font-britanica-black">
+              <span className="flex w-full max-w-[150px] items-center justify-center rounded-[10px] bg-[#FFF86B] px-3 py-1 text-[12px] font-bold uppercase tracking-wide text-[#3A3A00] sm:w-[150px] sm:max-w-none lg:w-[150px]">
                 Best Value
               </span>
             </div>
@@ -219,14 +219,14 @@ export function PricingSection() {
 
             <Link
               href="/#become-a-member"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px] font-britanica-black"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
             >
               Get Started <span aria-hidden>→</span>
             </Link>
 
             <div className="mt-6 mb-1 h-px w-full bg-white/10" />
 
-            <p className="text-[14px] font-alliance font-bold italic leading-relaxed text-[#C2C0B6]">
+            <p className="text-[14px] font-bold italic leading-relaxed text-[#C2C0B6]">
               &ldquo;{testimonial}&rdquo;
             </p>
 
@@ -240,7 +240,7 @@ export function PricingSection() {
 
         <div className="mt-20 lg:mt-28">
           <p className="sr-only">Compare traditional insurance, other subscriptions, and Gleam</p>
-          <div className="-mx-4 overflow-x-auto px-4 pb-2 md:mx-0 md:overflow-visible md:px-0 font-britanica-black">
+          <div className="-mx-4 overflow-x-auto px-4 pb-2 md:mx-0 md:overflow-visible md:px-0">
             
             <div
               className="grid min-w-[44rem] grid-cols-[minmax(8.5rem,1fr)_repeat(3,minmax(0,1fr))] gap-x-0 md:min-w-0 [&>*]:"
@@ -252,12 +252,12 @@ export function PricingSection() {
                 role="columnheader"
               />
               <div
-                className="overflow-hidden rounded-t-[30px] bg-black px-3 py-3 text-left text-[13px] font-bold uppercase leading-tight tracking-[0.03em] text-white sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
+                className="overflow-hidden rounded-t-[30px] bg-black px-3 py-3 text-left text-[13px] font-bold  leading-tight tracking-[0.03em] text-white sm:px-4 sm:py-4 sm:text-[14px] md:px-5 md:py-5 md:text-[15px]"
                 role="columnheader"
               >
                 Traditional
                 <div className="mt-0.5 text-[12px] text-[#CFCFCF] sm:text-[13px] md:text-[15px]">
-                  Insurance
+                ɪnsurance
                 </div>
               </div>
               <div

@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#FAF9F6] pt-2 pb-1 sm:pt-3 sm:pb-0 md:pt-4 lg:pt-6">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="relative z-10 grid items-stretch gap-3 sm:gap-4 md:gap-5 lg:grid-cols-2 lg:gap-10 xl:gap-12 font-britanica-black">
+        <div className="relative z-10 grid items-stretch gap-3 sm:gap-4 md:gap-5 lg:grid-cols-2 lg:gap-10 xl:gap-12 font-helvetica-neue-regular">
           <div className="relative z-10 flex min-h-0 w-full max-w-xl flex-col self-stretch lg:max-w-none lg:pt-1">
             <div className="shrink-0">
               <HeroSlideInOnView
@@ -20,7 +20,7 @@ export function Hero() {
                 <br />
                 Across LA
               </HeroSlideInOnView>
-              <p className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:160ms] mt-3 text-[0.9375rem] font-medium text-black tracking-[0.045em] sm:mt-4 sm:text-base sm:tracking-[0.05em] md:mt-5 md:text-lg md:tracking-[0.06em]">
+              <p className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:160ms] mt-3 text-[0.9375rem] font-bold text-black tracking-[0.045em] sm:mt-4 sm:text-base sm:tracking-[0.05em] md:mt-5 md:text-lg md:tracking-[0.06em]">
                 One Annual Membership
               </p>
               <Link

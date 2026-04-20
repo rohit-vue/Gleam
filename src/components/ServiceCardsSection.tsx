@@ -29,13 +29,13 @@ export function ServiceCardsSection() {
   return (
     <section
       id="our-services"
-      className="relative scroll-mt-24 overflow-hidden bg-[#F9F9F7] px-6  pt-14 md:scroll-mt-28 md:px-10  md:pt-20 lg:pt-24"
+      className="relative scroll-mt-24 overflow-hidden bg-[#F9F9F7] px-6 pt-14 font-helvetica-neue-regular md:scroll-mt-28 md:px-10 md:pt-20 lg:pt-24"
     >
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-12 flex justify-center md:mb-14">
           <Link
             href="/#become-a-member"
-            className="rounded-[44px] bg-[#FFF86B] px-12 py-3.5 text-[20px] font-bold text-black shadow-sm transition-opacity hover:opacity-90 tracking-[0.07em] font-britanica-black md:py-4 md:text-lg"
+            className="rounded-[44px] bg-[#FFF86B] px-12 py-3.5 text-[20px] font-bold tracking-[0.07em] text-black shadow-sm transition-opacity hover:opacity-90 md:py-4 md:text-lg"
           >
             Become a Member
           </Link>

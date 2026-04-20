@@ -20,7 +20,7 @@ const PRICE_BLUR_STACK_COUNT = 2;
 function SpecsTable({ specs }: { specs: ServiceTabEntry["specs"] }) {
   return (
     <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-20">
-      <p className="text-[16px] font-bold font-alliance uppercase tracking-[0.1em] text-neutral-900 sm:text-[18px] sm:tracking-[0.11em] md:text-[20px] md:tracking-[0.12em]">
+      <p className="text-[16px] font-bold uppercase tracking-[0.1em] text-neutral-900 sm:text-[18px] sm:tracking-[0.11em] md:text-[20px] md:tracking-[0.12em]">
         Specs table
       </p>
       <div className="mt-3 border-t border-neutral-300">
@@ -29,11 +29,11 @@ function SpecsTable({ specs }: { specs: ServiceTabEntry["specs"] }) {
             key={row.label}
             className="grid grid-cols-1 gap-1 border-b border-neutral-300 py-3 text-[11px] uppercase leading-snug tracking-wide  sm:grid-cols-3 sm:items-center sm:gap-4 sm:text-xs"
           >
-            <span className="font-normal" style={{ fontWeight: "400" }}>
+            <span className="font-bold " >
               {row.label}
             </span>
-            <span className=" text-black sm:text-center">{row.mid}</span>
-            <span className=" text-black sm:text-right">{row.right}</span>
+            <span className=" text-black sm:text-center font-bold">{row.mid}</span>
+            <span className=" text-black sm:text-right font-bold">{row.right}</span>
           </div>
         ))}
       </div>
@@ -49,17 +49,17 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
       {entry.watermark ? (
         <p
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full max-w-full select-none overflow-hidden text-center font-alliance text-[clamp(2.75rem,15.5vw,6.5rem)] font-bold uppercase leading-[0.82] tracking-[0.08em] text-neutral-400/[0.22] sm:tracking-[0.14em] sm:text-[clamp(3.25rem,13vw,7rem)] md:tracking-[0.22em] md:text-[clamp(3.5rem,11vw,7.5rem)] whitespace-nowrap"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full max-w-full select-none overflow-hidden whitespace-nowrap text-center text-[clamp(2.75rem,15.5vw,6.5rem)] font-bold uppercase leading-[0.82] tracking-[0.08em] text-neutral-400/[0.22] sm:text-[clamp(3.25rem,13vw,7rem)] sm:tracking-[0.14em] md:text-[clamp(3.5rem,11vw,7.5rem)] md:tracking-[0.22em]"
         >
           {entry.watermark}
         </p>
       ) : null}
-      <div className="relative z-10 min-h-0 min-w-0 w-full lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.6)] font-britanica-black">
+      <div className="relative z-10 min-h-0 min-w-0 w-full lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.6)]">
         <div className="relative">
-          <h3 style={{ fontWeight: '400' }} className="text-[clamp(1.2rem,5.4vw,1.8rem)] uppercase leading-tight tracking-[0.1em] text-neutral-900 sm:text-[clamp(1.3rem,4.3vw,1.95rem)] md:text-[clamp(1.5rem,3.4vw,2.1rem)]">
+          <h3 style={{ fontWeight: '600' }} className="text-[clamp(1.2rem,5.4vw,1.8rem)] uppercase leading-tight tracking-[0.1em] text-neutral-900 sm:text-[clamp(1.3rem,4.3vw,1.95rem)] md:text-[clamp(1.5rem,3.4vw,2.1rem)]">
             {entry.title}
           </h3>
-          <p className="mt-3 max-w-xl font-alliance text-[0.95rem] font-semibold leading-relaxed text-neutral-800 tracking-[0.09em] sm:mt-4 sm:text-base md:text-[1.05rem]">
+          <p className="mt-3 max-w-xl text-[0.95rem] font-semibold leading-relaxed tracking-[0.09em] text-neutral-800 sm:mt-4 sm:text-base md:text-[1.05rem]">
             {entry.description}
           </p>
           <SpecsTable specs={entry.specs} />
@@ -98,7 +98,7 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
                   {Array.from({ length: PRICE_BLUR_STACK_COUNT }, (_, i) => (
                     <p
                       key={i}
-                      className="shrink-0 select-none font-alliance text-[clamp(0.85rem,4.5vw,1.4rem)] font-bold tabular-nums leading-[0.72] text-neutral-600 blur-[8px] sm:text-[clamp(2.1rem,8vw,3.85rem)] sm:leading-[0.68] sm:blur-[8px]"
+                      className="shrink-0 select-none text-[clamp(0.85rem,4.5vw,1.4rem)] font-bold tabular-nums leading-[0.72] text-neutral-600 blur-[8px] sm:text-[clamp(2.1rem,8vw,3.85rem)] sm:leading-[0.68] sm:blur-[8px]"
                       style={{
                         transform: `translateX(${((i % 3) - 1) * 18}px)`,
                         opacity: 0.2 + (i % 5) * 0.035,
@@ -139,7 +139,7 @@ export function ServicesTabbedCardsSection() {
 
   return (
     <section
-      className="border-b border-neutral-200/80 py-10 sm:py-12 md:py-16 lg:py-24"
+      className="border-b border-neutral-200/80 py-10 font-helvetica-neue-regular sm:py-12 md:py-16 lg:py-24"
       style={{ backgroundColor: SECTION_BG }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10">
@@ -152,7 +152,7 @@ export function ServicesTabbedCardsSection() {
             type="button"
             aria-pressed={track === "restore"}
             onClick={() => setTrack("restore")}
-            className="rounded-[77px] border-[2px] border-black px-7 py-2 font-britanica-black text-[13px] font-bold text-neutral-900 transition-colors sm:px-8 sm:py-2.5 sm:text-[14px] md:px-6 md:py-1.5"
+            className="rounded-[77px] border-[2px] border-black px-7 py-2 text-[13px] font-bold text-neutral-900 transition-colors sm:px-8 sm:py-2.5 sm:text-[14px] md:px-6 md:py-1.5"
             style={{
               backgroundColor: track === "restore" ? TOGGLE_ACTIVE_BG : SECTION_BG,
             }}
@@ -163,7 +163,7 @@ export function ServicesTabbedCardsSection() {
             type="button"
             aria-pressed={track === "prevent"}
             onClick={() => setTrack("prevent")}
-            className="rounded-[77px] border-[2px] border-black px-7 py-2 font-britanica-black text-[13px] font-bold text-neutral-900 transition-colors sm:px-8 sm:py-2.5 sm:text-[14px] md:px-6 md:py-1.5 "
+            className="rounded-[77px] border-[2px] border-black px-7 py-2 text-[13px] font-bold text-neutral-900 transition-colors sm:px-8 sm:py-2.5 sm:text-[14px] md:px-6 md:py-1.5 "
             style={{
               backgroundColor: track === "prevent" ? TOGGLE_ACTIVE_BG : SECTION_BG,
             }}

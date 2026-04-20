@@ -38,8 +38,8 @@ function BeforeAfterFigure({
 
 export function CatchEarlyResultsSection() {
   return (
-    <div className="w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 font-britanica-black">
+    <div className="w-full font-helvetica-neue-regular">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="relative min-h-[280px] w-full bg-[#FFF159] md:min-h-[320px] lg:min-h-[360px]">
           <Image
             src="/assets/teethhurt.png"
@@ -54,7 +54,7 @@ export function CatchEarlyResultsSection() {
             aria-hidden
           />
           <p className="absolute bottom-3 left-3 right-3 text-center text-[clamp(1.5rem,7vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-[0.12em] [word-spacing:0.15em] text-white sm:tracking-[0.2em] sm:[word-spacing:0.22em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] lg:bottom-6 lg:text-[52px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
-            Catch it early
+            Catch ɪt early
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export function CatchEarlyResultsSection() {
             className="absolute bottom-3 left-3 right-3 text-center text-[clamp(1.5rem,7vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-[0.1em] [word-spacing:0.15em] text-[#FFF159] sm:tracking-[0.18em] sm:[word-spacing:0.2em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] lg:bottom-6 lg:text-[52px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
             aria-label="Forget the drill"
           >
-            F#ck the drill
+            F#ck the drɪll
           </p>
         </div>
       </div>

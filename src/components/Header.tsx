@@ -66,7 +66,7 @@ export function Header() {
           onClick={() => setMenuOpen(false)}
         />
       ) : null}
-      <div className="relative z-40 mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6 md:h-[4.5rem] md:px-10 font-britanica-black">
+      <div className="relative z-40 mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6 md:h-[4.5rem] md:px-10 font-bold font-helvetica-neue-regular">
         <div className="flex min-w-0 flex-1 items-center gap-4 md:gap-10">
           <Link
             href="/"
