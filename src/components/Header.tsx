@@ -1,8 +1,10 @@
 "use client";
 
+import type { User } from "@supabase/supabase-js";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useState } from "react";
+import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 const navLinks = [
   { href: "/services", label: "Our Services" },
@@ -31,8 +33,16 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
+  const isAuthShellPage =
+    pathname === "/login" ||
+    pathname === "/signup" ||
+    pathname === "/forgot-password" ||
+    pathname === "/reset-password";
   const menuId = useId();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [authReady, setAuthReady] = useState(false);
   const isServicesPage = pathname?.startsWith("/services");
   const visibleNavLinks = isServicesPage
     ? navLinks.filter(({ label }) => label !== "Locations")
@@ -40,6 +50,27 @@ export function Header() {
 
   useEffect(() => {
     setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const supabase = createSupabaseBrowserClient();
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+      setAuthReady(true);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
+
+  // Re-read session when the route changes so we pick up cookies after a server-action
+  // login redirect (Header stays mounted across /login → /, so []-only sync stays stale).
+  useEffect(() => {
+    const supabase = createSupabaseBrowserClient();
+    void supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+      setAuthReady(true);
+    });
   }, [pathname]);
 
   useEffect(() => {
@@ -56,6 +87,21 @@ export function Header() {
     };
   }, [menuOpen]);
 
+  const handleSignOut = async () => {
+    try {
+      const supabase = createSupabaseBrowserClient();
+      await supabase.auth.signOut();
+    } catch (error) {
+      console.error("Error signing out:", error);
+    } finally {
+      setMenuOpen(false);
+      router.push("/");
+      router.refresh();
+    }
+  };
+
+  if (isAuthShellPage) return null;
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-200/80 bg-white">
       {menuOpen ? (
@@ -66,7 +112,7 @@ export function Header() {
           onClick={() => setMenuOpen(false)}
         />
       ) : null}
-      <div className="relative z-40 mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6 md:h-[4.5rem] md:px-10 font-bold font-helvetica-neue-regular">
+      <div className="relative z-40 flex h-16 w-full items-center justify-between gap-3 px-4 font-bold font-helvetica-neue-regular sm:gap-4 sm:px-6 md:h-[4.5rem] md:px-10">
         <div className="flex min-w-0 flex-1 items-center gap-4 md:gap-10">
           <Link
             href="/"
@@ -92,13 +138,23 @@ export function Header() {
         </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {!isServicesPage ? (
-            <Link
-              href="/#become-a-member"
-              className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
-            >
-              Become a Member
-            </Link>
+          {authReady ? (
+            user ? (
+              <button
+                type="button"
+                onClick={handleSignOut}
+                className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
+              >
+                Sign Out
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
+              >
+                Sign In
+              </Link>
+            )
           ) : null}
 
           <button
@@ -134,14 +190,24 @@ export function Header() {
                 {label}
               </Link>
             ))}
-            {!isServicesPage ? (
-              <Link
-                href="/#become-a-member"
-                className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3"
-                onClick={() => setMenuOpen(false)}
-              >
-                Become a Member
-              </Link>
+            {authReady ? (
+              user ? (
+                <button
+                  type="button"
+                  onClick={handleSignOut}
+                  className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3"
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <Link
+                  href="/login"
+                  className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Sign In
+                </Link>
+              )
             ) : null}
           </nav>
         </div>

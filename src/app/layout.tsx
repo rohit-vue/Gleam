@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo_Black, Baloo_2, DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { Header } from "@/components/Header";
+import { ToastProvider } from "@/components/toast/ToastProvider";
 import "./globals.css";
 
 const allianceFont = DM_Sans({
@@ -50,8 +51,10 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${baloo2.variable} ${allianceFont.variable} ${britanicaFont.variable} min-h-screen bg-white font-[family-name:var(--font-geist-sans)] antialiased text-neutral-900`}
       >
-        <Header />
-        <main className="pt-16 md:pt-[4.5rem]">{children}</main>
+        <ToastProvider>
+          <Header />
+          <main className="pt-16 md:pt-[4.5rem]">{children}</main>
+        </ToastProvider>
       </body>
     </html>
   );
