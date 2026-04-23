@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react"; // Added Suspense
 import Link from "next/link";
 import { requestPasswordReset, type AuthFormState } from "@/app/auth/actions";
 import { useToast } from "@/components/toast/ToastProvider";
@@ -9,10 +9,12 @@ import { useFormState } from "react-dom";
 
 const initialState: AuthFormState = null;
 
-export default function ForgotPasswordPage() {
+// 1. Move your logic into a sub-component
+function ForgotPasswordForm() {
   const [state, formAction] = useFormState(requestPasswordReset, initialState);
   const searchParams = useSearchParams();
   const toast = useToast();
+  
   const status = searchParams.get("status");
   const statusMessage =
     status === "invalid-link"
@@ -74,8 +76,7 @@ export default function ForgotPasswordPage() {
                       type="email"
                       required
                       autoComplete="email"
-                      placeholder=""
-                      className="mt-2 w-full border-b border-[#B5B5B5] bg-[#E8F0FA] pb-2.5 pl-2 text-base tracking-[0.08em] text-[#242424] placeholder:text-[#BFBFBF] focus:border-[#1f1f1f] focus:outline-none sm:mt-[0.85rem]"
+                      className="mt-2 w-full border-b border-[#B5B5B5] bg-[#E8F0FA] pb-2.5 pl-2 text-base tracking-[0.08em] text-[#242424] focus:border-[#1f1f1f] focus:outline-none sm:mt-[0.85rem]"
                     />
                   </label>
 
@@ -99,5 +100,14 @@ export default function ForgotPasswordPage() {
         </div>
       </div>
     </section>
+  );
+}
+
+// 2. The default export wraps the form in Suspense
+export default function ForgotPasswordPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <ForgotPasswordForm />
+    </Suspense>
   );
 }
