@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   const safeNext =
     nextParam && nextParam.startsWith("/") && !nextParam.startsWith("//")
       ? nextParam
-      : "/login";
+      : "/";
 
   if (code) {
     try {

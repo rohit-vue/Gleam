@@ -5,6 +5,8 @@ import { loginWithUsername, type AuthFormState } from "@/app/auth/actions";
 import { useToast } from "@/components/toast/ToastProvider";
 import Link from "next/link";
 import { useFormState } from "react-dom";
+import { handleGoogleSignIn } from "@/lib/supabase/auth";
+
 
 const initialState: AuthFormState = null;
 
@@ -17,8 +19,10 @@ export function LoginForm() {
     toast.error(state.error);
   }, [state?.error, toast]);
 
+   
+
   return (
-    <form action={formAction} className="mt-5 space-y-6 sm:mt-6 sm:space-y-7 md:space-y-8">
+    <form action={formAction} className="mt-5 space-y-6 sm:mt-6 sm:space-y-7 md:space-y-6">
       <label className="block">
         <span className="block text-[0.78rem] font-bold uppercase tracking-[0.2em] text-[#494949] sm:text-[0.85rem]">
           Username / Email
@@ -60,6 +64,16 @@ export function LoginForm() {
         className="mt-5 w-full rounded-full bg-[#151A20] py-3 text-[0.66rem] font-bold uppercase tracking-[0.2em] text-[#E5CD31] transition-opacity hover:opacity-95 sm:mt-6 md:mt-7"
       >
         Sign In
+      </button>
+
+      <button
+        type="button"
+        onClick={() => void handleGoogleSignIn()}
+        className="mt-5 flex w-full  items-center justify-center   gap-2.5 border border-black rounded-full bg-white py-2 transition-all hover:bg-gray-50 active:scale-[0.99] sm:mt-5">
+        <img src="/assets/google.svg" alt="Google logo" className="w-5 h-5 flex-shrink-0" />
+        <span className="text-[0.85rem] font-medium tracking-tight text-[#151A20]">
+        Continue with Google 
+        </span>
       </button>
     </form>
   );
