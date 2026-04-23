@@ -27,7 +27,7 @@ export default function LoginPage() {
                   Sign In
                 </h1>
                 <p className="mt-1.5 text-center text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#887A2A] sm:text-[0.75rem]">
-                  Clinical Disruption
+                  
                 </p>
 
                 <LoginForm />

@@ -148,12 +148,21 @@ export function Header() {
                 Sign Out
               </button>
             ) : (
+              <>
+              <Link 
+              href ="/signup"
+              className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
+              >
+                Become a Member 
+              </Link>
+
               <Link
                 href="/login"
                 className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
               >
                 Sign In
               </Link>
+              </>
             )
           ) : null}
 
@@ -200,13 +209,21 @@ export function Header() {
                   Sign Out
                 </button>
               ) : (
-                <Link
-                  href="/login"
-                  className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3"
+                <div className="flex flex-col gap-2">
+                  <Link
+                  href="/signup"
                   onClick={() => setMenuOpen(false)}
-                >
-                  Sign In
-                </Link>
+                  className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3">
+                    Become a Member
+                  </Link>
+                  <Link
+                  href="/login"
+                  className="rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90"
+                  onClick={() => setMenuOpen(false)}
+                  >
+                    Sign In
+                  </Link>
+                </div>
               )
             ) : null}
           </nav>

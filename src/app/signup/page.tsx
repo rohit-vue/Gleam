@@ -27,7 +27,6 @@ export default function SignupPage() {
                   Join
                 </h1>
                 <p className="mt-1 text-center text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#887A2A] sm:mt-1.5 sm:text-[0.72rem] md:text-[0.75rem]">
-                  The Disruption
                 </p>
 
                 <SignupForm />
