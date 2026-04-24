@@ -44,9 +44,7 @@ export function Header() {
   const [user, setUser] = useState<User | null>(null);
   const [authReady, setAuthReady] = useState(false);
   const isServicesPage = pathname?.startsWith("/services");
-  const visibleNavLinks = isServicesPage
-    ? navLinks.filter(({ label }) => label !== "Locations")
-    : navLinks;
+  const visibleNavLinks = isServicesPage ? navLinks.filter(({ label }) => label !== "Locations") : navLinks;
 
   useEffect(() => {
     setMenuOpen(false);
@@ -121,10 +119,7 @@ export function Header() {
           >
             Gleam
           </Link>
-          <nav
-            className="hidden min-w-0 flex-1 items-center gap-6 lg:flex lg:gap-8"
-            aria-label="Primary"
-          >
+          <nav className="hidden min-w-0 flex-1 items-center gap-6 lg:flex lg:gap-8" aria-label="Primary">
             {visibleNavLinks.map(({ href, label }) => (
               <Link
                 key={href}
@@ -143,25 +138,25 @@ export function Header() {
               <button
                 type="button"
                 onClick={handleSignOut}
-                className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
+                className="inline-flex rounded-[12px] bg-[#FFF86B] px-3 py-2 text-sm font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:px-5 sm:py-2.5 sm:text-base"
               >
                 Sign Out
               </button>
             ) : (
               <>
-              <Link 
-              href ="/signup"
-              className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
-              >
-                Become a Member 
-              </Link>
+                <Link
+                  href="/signup"
+                  className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
+                >
+                  Become a Member
+                </Link>
 
-              <Link
-                href="/login"
-                className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
-              >
-                Sign In
-              </Link>
+                <Link
+                  href="/login"
+                  className="inline-flex rounded-[10px] bg-[#FFF86B] px-4 py-2 text-sm font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:rounded-[12px] sm:px-5 sm:py-2.5 sm:text-base"
+                >
+                  Sign In
+                </Link>
               </>
             )
           ) : null}
@@ -182,13 +177,14 @@ export function Header() {
         <div
           id={menuId}
           className={`absolute left-0 right-0 top-full border-b border-neutral-200 bg-white shadow-lg transition-[visibility,opacity,transform] duration-200 ease-out lg:hidden ${
-            menuOpen
-              ? "visible translate-y-0 opacity-100"
-              : "invisible -translate-y-2 opacity-0 pointer-events-none"
+            menuOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"
           }`}
           aria-hidden={!menuOpen}
         >
-          <nav className="flex max-h-[min(70vh,calc(100dvh-5rem))] flex-col gap-1 overflow-y-auto px-4 py-4 sm:px-6" aria-label="Primary mobile">
+          <nav
+            className="flex max-h-[min(70vh,calc(100dvh-5rem))] flex-col gap-1 overflow-y-auto px-4 py-4 sm:px-6"
+            aria-label="Primary mobile"
+          >
             {visibleNavLinks.map(({ href, label }) => (
               <Link
                 key={href}
@@ -199,33 +195,17 @@ export function Header() {
                 {label}
               </Link>
             ))}
-            {authReady ? (
-              user ? (
-                <button
-                  type="button"
-                  onClick={handleSignOut}
-                  className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3"
-                >
-                  Sign Out
-                </button>
-              ) : (
-                <div className="flex flex-col gap-2">
-                  <Link
+            {authReady && !user && (
+              <div className="flex flex-col gap-2">
+                <Link
                   href="/signup"
                   onClick={() => setMenuOpen(false)}
-                  className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3">
-                    Become a Member
-                  </Link>
-                  <Link
-                  href="/login"
-                  className="rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90"
-                  onClick={() => setMenuOpen(false)}
-                  >
-                    Sign In
-                  </Link>
-                </div>
-              )
-            ) : null}
+                  className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3"
+                >
+                  Become a Member
+                </Link>
+              </div>
+            )}
           </nav>
         </div>
       </div>
