@@ -127,14 +127,13 @@ export async function requestPasswordReset(
   }
 
   const hdrs = headers();
-  const isProd = process.env.NODE_ENV === "production";
-  const defaultHost = isProd ? "gleam-black.vercel.app" : "localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ;
   const origin =
     hdrs.get("origin") ??
-    `${hdrs.get("x-forwarded-proto") ?? (isProd ? "https" : "http")}://${
+    `${hdrs.get("x-forwarded-proto") ?? "http"}://${
       hdrs.get("x-forwarded-host") ?? 
       hdrs.get("host") ?? 
-      defaultHost
+      siteUrl.replace(/^https?:\/\//, "") // Remove protocol for the host fallback
     }`;
   const recoveryNext = encodeURIComponent("/reset-password?mode=recovery");
   const redirectTo = `${origin}/auth/callback?next=${recoveryNext}`;
