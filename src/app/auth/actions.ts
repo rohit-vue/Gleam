@@ -127,7 +127,7 @@ export async function requestPasswordReset(
   }
 
   const hdrs = headers();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
   const origin =
     hdrs.get("origin") ??
     `${hdrs.get("x-forwarded-proto") ?? "http"}://${
