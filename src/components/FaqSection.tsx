@@ -82,10 +82,7 @@ export function FaqSection() {
   return (
     <div className="w-full">
       <div className="h-1 w-full bg-[#FFF159]" aria-hidden />
-      <div
-        className="min-h-[clamp(10rem,28vh,22rem)] w-full bg-white md:min-h-[clamp(12rem,32vh,26rem)]"
-        aria-hidden
-      />
+     
 
       <section className="w-full font-helvetica-neue-regular" aria-labelledby="faq-heading">
         <div className="flex h-[88px] items-center justify-center bg-[#3D3D3A] text-center md:h-[110px]">

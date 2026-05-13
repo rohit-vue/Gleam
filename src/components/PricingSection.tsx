@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const testimonial =
-  "Saved over $800 on my veneers — and got a free whitening. — James T. (WeHo)";
+
 
 const essentialFeatures = [
   "Everything in Essential",
@@ -123,31 +122,23 @@ export function PricingSection() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="relative isolate mx-auto w-full max-w-6xl px-2 md:px-4">
           <div className="relative mt-6 grid w-full place-items-center sm:mt-7 md:mt-9 lg:mt-0">
-            <p
-              className="pointer-events-none col-start-1 row-start-1 -translate-y-6 select-none whitespace-nowrap text-[clamp(3.45rem,14vw,9.25rem)] font-black uppercase leading-[0.82] tracking-[0.085em] text-[#454545] sm:-translate-y-7 sm:text-[clamp(3.75rem,13.5vw,10.25rem)] sm:leading-[0.8] sm:tracking-[0.1em] md:-translate-y-6 md:text-[clamp(4.1rem,14vw,11.5rem)] md:leading-[0.76] md:tracking-[0.12em] lg:-translate-y-3 lg:text-[200px] lg:leading-[0.75] lg:tracking-[2.5rem]"
-              aria-hidden
-            >
-              PRICING
-            </p>
             <h2
               id="pricing-tagline"
-              className="col-start-1 row-start-1 z-10 min-w-full translate-y-[1.1rem] px-2 text-center text-[1.3rem] font-bold uppercase leading-snug tracking-[0.05em] text-white [word-spacing:0.16em] sm:translate-y-[1.35rem] sm:px-3 sm:text-[1.4rem] sm:tracking-[0.055em] sm:[word-spacing:0.18em] md:translate-y-8 md:text-[1.55rem] md:tracking-[0.065em] md:[word-spacing:0.22em] lg:translate-y-14 lg:text-[2.2rem] lg:leading-snug lg:tracking-[0.09em] lg:[word-spacing:0.34em]"
+              className="col-start-1 row-start-1 z-10 min-w-full translate-y-[1.1rem] px-2 text-center text-[1.3rem] font-bold uppercase leading-snug tracking-[0.05em] text-white [word-spacing:0.16em] sm:translate-y-[1.35rem] sm:px-3 sm:text-[1.4rem] sm:tracking-[0.055em] sm:[word-spacing:0.18em] md:translate-y-8 md:text-[1.55rem] md:tracking-[0.065em] md:[word-spacing:0.22em] lg:translate-y-14 lg:text-[2.2rem] lg:leading-snug lg:tracking-[0.09em] lg:pb-[59px] lg:text-[47px] lg:[word-spacing:0.34em]"
             >
               The last dental plan you&apos;ll ever need.
             </h2>
           </div>
         </div>
 
-        <div className="mt-6 grid gap-6 md:mt-8 lg:mt-10 lg:grid-cols-2 lg:gap-8">
+        <div className="mt-6 grid gap-6 md:mt-8 lg:mt-10 lg:grid-cols-2 lg:gap-6">
           {/* Essential */}
           <article className="flex flex-col rounded-[38px] bg-[#3D3D3A] p-4 shadow-xl ring-1 ring-white/5 sm:p-6 md:p-8 lg:p-10">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
                 Essential
               </span>
-              <span className="flex w-full max-w-[150px] items-center justify-center rounded-[10px] bg-[#F5F5C9] px-3 py-1 text-[12px] font-bold  tracking-wide text-[#7C7C14] sm:w-[150px] sm:max-w-none lg:w-[150px]">
-                Most Popular
-              </span>
+              
             </div>
 
             <h3 className="mt-5 text-[1.25rem] font-bold tracking-[0.02em] text-white sm:mt-6 sm:text-[1.5rem] md:text-[1.625rem] lg:mt-6 lg:text-[28px]">
@@ -169,16 +160,14 @@ export function PricingSection() {
 
             <Link
               href="/#become-a-member"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold text-black transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
+              className="mt-8 inline-flex w-[17.375rem] items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold text-black transition-opacity hover:opacity-90  sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
             >
               Get Started <span aria-hidden>→</span>
             </Link>
 
             <div className="mt-6 mb-1 h-px w-full bg-white/10" />
 
-            <p className="text-[14px] font-bold italic leading-relaxed text-[#C2C0B6]">
-              &ldquo;{testimonial}&rdquo;
-            </p>
+            
 
             <ul className="mt-6 flex flex-col gap-3">
               {essentialFeatures.map((item) => (
@@ -212,23 +201,19 @@ export function PricingSection() {
                   /year
                 </span>
               </p>
-              <p className="mt-1 text-[15px] text-[#C2C0B6]">
-                $24.75/mo — 2 months free vs. 6-month plan
-              </p>
+              
             </div>
 
             <Link
               href="/#become-a-member"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
+              className="mt-8 inline-flex w-[17.375rem] items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
             >
               Get Started <span aria-hidden>→</span>
             </Link>
 
             <div className="mt-6 mb-1 h-px w-full bg-white/10" />
 
-            <p className="text-[14px] font-bold italic leading-relaxed text-[#C2C0B6]">
-              &ldquo;{testimonial}&rdquo;
-            </p>
+            
 
             <ul className="mt-6 flex flex-col gap-3">
               {annualFeatures.map((item) => (

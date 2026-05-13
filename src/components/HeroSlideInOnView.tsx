@@ -60,7 +60,7 @@ export function HeroSlideInOnView({
       <Tag
         {...innerProps}
         style={motionStyle}
-        className={`inline-block w-full will-change-transform motion-reduce:translate-x-0 motion-reduce:opacity-100 motion-reduce:transition-none transition-[transform,opacity] duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${className}`.trim()}
+        className={`inline-block w-full will-change-transform motion-reduce:translate-x-0 motion-reduce:opacity-100 motion-reduce:transition-none transition-[transform,opacity] duration-[2200ms] lg:pl-[31px] ease-[cubic-bezier(0.16,1,0.3,1)] ${className}`.trim()}
       >
         {children}
       </Tag>
