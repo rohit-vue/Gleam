@@ -7,10 +7,10 @@ export function ServicesMembershipBannerSection() {
     <section style={{ backgroundColor: BANNER_BG }}>
       <div className="relative mx-auto max-w-7xl overflow-hidden px-4 py-10 sm:px-6 sm:py-12 md:px-10 md:py-14">
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-[3.5rem] text-center sm:px-[5rem] md:px-[7rem] lg:px-0">
-          <h2 className=" font-britanica-black text-[clamp(1.25rem,4.5vw,4.4rem)] font-normal leading-[0.96] tracking-[-0.02em] ">
+          <h2 className=" font-britanica-black text-[clamp(1.25rem,4.5vw,4.4rem)] font-normal leading-[0.96] tracking-[-0.02em] lg:text-[56.23px]">
             Every service. One Plan.
           </h2>
-          <p className="mt-2 font-britanica-black text-[clamp(1.5rem,4.5vw,4.4rem)] font-normal leading-[0.95] text-black sm:mt-3 md:mt-4">
+          <p className="mt-2 font-britanica-black text-[clamp(1.5rem,4.5vw,4.4rem)] font-normal leading-[0.95] text-black sm:mt-3 md:mt-4 lg:text-[56.23px]">
             $297/year
           </p>
           <button
