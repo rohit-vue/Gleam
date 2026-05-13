@@ -3,21 +3,21 @@ import Link from "next/link";
 
 const cards = [
   {
-    label: "Early Detection",
+    label: ["Early", "Detection"] as const,
     title: "X-Rays",
     src: "/assets/eyedetection.png",
     alt: "Dental X-ray films held up to the light",
     spotlight: false,
   },
   {
-    label: "Preventive Care",
+    label: ["Preventive", "Care"] as const,
     title: "Cleanings",
     src: "/assets/preventivecare.png",
     alt: "Dental cleaning procedure close-up",
     spotlight: true,
   },
   {
-    label: "Stay Ahead",
+    label: ["Stay", "Ahead"] as const,
     title: "Exams",
     src: "/assets/stayahead.png",
     alt: "Dentist reviewing scans with a patient",
@@ -29,13 +29,13 @@ export function ServiceCardsSection() {
   return (
     <section
       id="our-services"
-      className="relative scroll-mt-24 overflow-hidden bg-[#F9F9F7] px-6 pt-14 font-helvetica-neue-regular md:scroll-mt-28 md:px-10 md:pt-20 lg:pt-24"
+      className="relative scroll-mt-24 overflow-hidden bg-[#F9F9F7] px-6 pt-14 font-helvetica-neue-regular md:scroll-mt-28 md:px-10 md:pt-20 lg:pt-[2rem]"
     >
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-12 flex justify-center md:mb-14">
           <Link
             href="/#become-a-member"
-            className="rounded-[44px] bg-[#FFF86B] px-12 py-3.5 text-[20px] font-bold tracking-[0.07em] text-black shadow-sm transition-opacity hover:opacity-90 md:py-4 md:text-lg"
+            className="rounded-[44px] bg-[#FFF86B] px-6 py-2.5 text-[13px] font-bold tracking-[0.05em] text-black shadow-sm transition-opacity hover:opacity-90 sm:px-8 sm:py-3 sm:text-[15px] sm:tracking-[0.06em] md:px-10 md:py-3.5 md:text-lg md:tracking-[0.07em] lg:px-12 lg:py-4"
           >
             Become a Member
           </Link>
@@ -47,7 +47,7 @@ export function ServiceCardsSection() {
               key={card.title}
               className={`group relative w-full max-w-[20rem] transition-all duration-500 ease-out motion-safe:hover:-translate-y-2 motion-safe:hover:scale-[1.02] ${
                 card.spotlight
-                  ? "z-20 lg:scale-[1.05] motion-safe:lg:hover:scale-[1.08] -top-[10px]"
+                  ? "z-20  motion-safe:lg:hover:scale-[1.08] "
                   : "z-10"
               }`}
             >
@@ -67,10 +67,12 @@ export function ServiceCardsSection() {
                   className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"
                   aria-hidden
                 />
-                <p className="absolute left-4 top-4 max-w-[85%] text-[20px] font-medium text-white md:left-5 md:top-5 ">
-                  {card.label}
+                <p className="absolute left-4 top-4 max-w-[85%] text-left text-[20px] font-medium leading-tight text-white md:left-5 md:top-5">
+                  <span className="block">{card.label[0]}</span>
+                  <span className="block">{card.label[1]}</span>
                 </p>
-                <p className="absolute bottom-4 left-4 text-[46px] font-bold uppercase tracking-[0.03em] text-white md:bottom-5 md:left-5">
+                <p className="absolute bottom-4 left-4 text-[46px] text-[#F9F36B] font-medium uppercase tracking-[0.03em]  md:bottom-5 md:left-5">
+                  <span className="block text-sm normal-case lg:text-[19px]   lowercase text-white">unlimited</span>
                   {card.title}
                 </p>
               </div>

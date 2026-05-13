@@ -50,10 +50,10 @@ export function CatchEarlyResultsSection() {
             priority
           />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"
+            className="absolute inset-0 bg-gradient-to-t  via-black/10 to-transparent"
             aria-hidden
           />
-          <p className="absolute bottom-3 left-3 right-3 text-center text-[clamp(1.5rem,7vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-[0.12em] [word-spacing:0.15em] text-white sm:tracking-[0.2em] sm:[word-spacing:0.22em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] lg:bottom-6 lg:text-[52px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
+          <p className="absolute bottom-3 left-3 right-3 text-center  text-[clamp(1.5rem,7vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-[0.12em] [word-spacing:0.15em] text-white sm:tracking-[0.2em] sm:[word-spacing:0.22em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] lg:bottom-[12.5rem] lg:text-[52px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
             Catch ɪt early
           </p>
         </div>
@@ -71,7 +71,7 @@ export function CatchEarlyResultsSection() {
             aria-hidden
           />
           <p
-            className="absolute bottom-3 left-3 right-3 text-center text-[clamp(1.5rem,7vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-[0.1em] [word-spacing:0.15em] text-[#FFF159] sm:tracking-[0.18em] sm:[word-spacing:0.2em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] lg:bottom-6 lg:text-[52px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
+            className="absolute bottom-3 left-3 right-3 text-center text-[clamp(1.5rem,7vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-[0.1em] [word-spacing:0.15em] text-[#FFF159] sm:tracking-[0.18em] sm:[word-spacing:0.2em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] lg:bottom-[12.5rem] lg:text-[52px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
             aria-label="Forget the drill"
           >
             F#ck the drɪll
@@ -79,7 +79,7 @@ export function CatchEarlyResultsSection() {
         </div>
       </div>
 
-      <div className="h-12 w-full bg-white" aria-hidden />
+      
 
       <section
         className="relative overflow-x-hidden bg-[#FFF159] px-4 pb-8 pt-6 sm:px-5 sm:pb-10 sm:pt-8 md:px-10 md:pb-12 md:pt-10 lg:px-10 lg:pb-12 lg:pt-8"

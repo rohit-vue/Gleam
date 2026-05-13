@@ -57,7 +57,11 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
       <div className="relative z-10 min-h-0 min-w-0 w-full lg:grow-0 lg:shrink-0 lg:basis-[calc((100%_-_3rem)*0.6)]">
         <div className="relative">
           <h3 style={{ fontWeight: '600' }} className="text-[clamp(1.2rem,5.4vw,1.8rem)] uppercase leading-tight tracking-[0.1em] text-neutral-900 sm:text-[clamp(1.3rem,4.3vw,1.95rem)] md:text-[clamp(1.5rem,3.4vw,2.1rem)]">
-            {entry.title}
+            {entry.title.trim().split(/\s+/).map((part, i) => (
+              <span key={`${part}-${i}`} className="block">
+                {part}
+              </span>
+            ))}
           </h3>
           <p className="mt-3 max-w-xl text-[0.95rem] font-semibold leading-relaxed tracking-[0.09em] text-neutral-800 sm:mt-4 sm:text-base md:text-[1.05rem]">
             {entry.description}
@@ -139,12 +143,12 @@ export function ServicesTabbedCardsSection() {
 
   return (
     <section
-      className="border-b border-neutral-200/80 py-10 font-helvetica-neue-regular sm:py-12 md:py-16 lg:py-24"
+      className="border-b border-neutral-200/80 lg:py-[1rem] font-helvetica-neue-regular sm:py-12 md:py-16 lg:py-24"
       style={{ backgroundColor: SECTION_BG }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10">
         <div
-          className="mb-6 flex flex-wrap gap-2.5 sm:mb-8 sm:gap-3 md:mb-10 md:gap-4"
+          className="mb-6 flex flex-wrap gap-2.5 lg:pl-[33px] sm:mb-8 sm:gap-3 md:mb-10 md:gap-4"
           role="group"
           aria-label="Service category"
         >
@@ -173,7 +177,7 @@ export function ServicesTabbedCardsSection() {
         </div>
 
         <div
-          className="relative mr-auto flex w-full max-w-[62rem] flex-col items-stretch pb-6 pt-2 sm:pb-10 sm:pt-4 md:pb-12 md:pt-6"
+          className="relative mr-auto flex w-full max-w-[62rem] flex-col items-stretch pb-6  sm:pb-10  md:pb-12 "
           role="region"
           aria-label="Dental services"
         >

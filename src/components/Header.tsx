@@ -6,11 +6,45 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
-const navLinks = [
-  { href: "/services", label: "Our Services" },
-  { href: "/#who-is-gleam", label: "Who is Gleam?" },
-  { href: "/#locations", label: "Locations" },
-] as const;
+/** Homepage header background on `/` — applied at `lg` breakpoint and above (desktop). */
+const homeHeaderBackground =
+  "linear-gradient(118.99deg, rgba(250, 243, 107, 0.8) 15.59%, rgba(252, 247, 159, 0.518) 26.8%, rgba(255, 255, 255, 0) 60.13%)";
+
+/** Homepage header background on `/` — applied at every breakpoint below `lg` (mobile / sm / md). */
+const homeHeaderBackgroundSm =
+  "linear-gradient(118.99deg, rgba(250, 243, 107, 0.8) 23.59%, rgba(252, 247, 159, 0.518) 35.8%, rgba(255, 255, 255, 0) 60.13%)";
+
+export type HeaderNavLink = {
+  href: string;
+  label: string;
+};
+
+export type HeaderProps = {
+  /** Override the primary nav links. Defaults to the homepage links. */
+  navLinks?: ReadonlyArray<HeaderNavLink>;
+  /** Brand text shown on the left. Defaults to "Gleam". */
+  brandLabel?: string;
+  /** Where the brand links to. Defaults to "/". */
+  brandHref?: string;
+  /** Show the "Become a Member" desktop / mobile CTA when signed out. Default: true */
+  showBecomeAMember?: boolean;
+  /** Show the "Sign In" CTA when signed out. Default: true */
+  showSignIn?: boolean;
+  /** Show the "Sign Out" button when signed in. Default: true */
+  showSignOut?: boolean;
+  /** Show the auth-related buttons block at all. Default: true */
+  showAuthControls?: boolean;
+  /** Force-hide the entire header. Default: auto (hidden on auth-shell pages). */
+  hidden?: boolean;
+  /** Optional homepage header `background` override. Matches the hero wash on `/` when omitted. */
+  bg?: string;
+};
+
+const defaultNavLinks: ReadonlyArray<HeaderNavLink> = [
+  { href: "/services", label: "our services" },
+  { href: "/#who-is-gleam", label: "about" },
+  { href: "/locations", label: "locations" },
+];
 
 function MenuIcon({ open }: { open: boolean }) {
   return (
@@ -31,7 +65,17 @@ function MenuIcon({ open }: { open: boolean }) {
   );
 }
 
-export function Header() {
+export function Header({
+  navLinks,
+  brandLabel = "gleam",
+  brandHref = "/",
+  showBecomeAMember = true,
+  showSignIn = true,
+  showSignOut = true,
+  showAuthControls = true,
+  hidden,
+  bg,
+}: HeaderProps = {}) {
   const pathname = usePathname();
   const router = useRouter();
   const isAuthShellPage =
@@ -44,7 +88,15 @@ export function Header() {
   const [user, setUser] = useState<User | null>(null);
   const [authReady, setAuthReady] = useState(false);
   const isServicesPage = pathname?.startsWith("/services");
-  const visibleNavLinks = isServicesPage ? navLinks.filter(({ label }) => label !== "Locations") : navLinks;
+  const resolvedNavLinks: ReadonlyArray<HeaderNavLink> =
+    navLinks ??
+    (isServicesPage
+      ? defaultNavLinks.filter(({ label }) => label !== "Locations")
+      : defaultNavLinks);
+  const isHidden = hidden ?? isAuthShellPage;
+  const isHome = pathname === "/";
+  const headerBackground = isHome ? (bg ?? homeHeaderBackground) : undefined;
+  const useResponsiveGradient = isHome && !bg;
 
   useEffect(() => {
     setMenuOpen(false);
@@ -98,10 +150,24 @@ export function Header() {
     }
   };
 
-  if (isAuthShellPage) return null;
+  if (isHidden) return null;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-200/80 bg-white">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-neutral-200/80 ${
+        headerBackground ? "" : "bg-white"
+      } ${useResponsiveGradient ? "[background:var(--header-bg-mobile)] lg:[background:var(--header-bg-desktop)]" : ""}`}
+      style={
+        useResponsiveGradient
+          ? ({
+              "--header-bg-mobile": homeHeaderBackgroundSm,
+              "--header-bg-desktop": homeHeaderBackground,
+            } as React.CSSProperties)
+          : headerBackground
+            ? { background: headerBackground }
+            : undefined
+      }
+    >
       {menuOpen ? (
         <button
           type="button"
@@ -111,52 +177,57 @@ export function Header() {
         />
       ) : null}
       <div className="relative z-40 flex h-16 w-full items-center justify-between gap-3 px-4 font-bold font-helvetica-neue-regular sm:gap-4 sm:px-6 md:h-[4.5rem] md:px-10">
-        <div className="flex min-w-0 flex-1 items-center gap-4 md:gap-10">
-          <Link
-            href="/"
-            className="shrink-0 text-[1.125rem] font-bold tracking-[0.08em] text-neutral-900 sm:text-[1.25rem] md:text-[24px]"
-            onClick={() => setMenuOpen(false)}
-          >
-            Gleam
-          </Link>
-          <nav className="hidden min-w-0 flex-1 items-center gap-6 lg:flex lg:gap-8" aria-label="Primary">
-            {visibleNavLinks.map(({ href, label }) => (
+        <Link
+          href={brandHref}
+          className="shrink-0 text-[1.125rem] font-britanica-black font-semibold text-[#3A3D38] tracking-[0.08em]  sm:text-[1.25rem] md:text-[35px] lg:pl-[11.4375rem]"
+          onClick={() => setMenuOpen(false)}
+        >
+          {brandLabel}
+        </Link>
+
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3 lg:gap-8">
+          <nav className="hidden items-center lg:gap-[3rem] lg:flex" aria-label="Primary">
+            {resolvedNavLinks.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className="whitespace-nowrap text-base font-bold text-neutral-800 transition-colors hover:text-neutral-950"
+                className="whitespace-nowrap text-base font-alliance-no-2 font-bold text-[21px] text-[#3A3D38]  transition-colors hover:text-neutral-950"
               >
                 {label}
               </Link>
             ))}
           </nav>
-        </div>
 
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {authReady ? (
+          {showAuthControls && authReady ? (
             user ? (
-              <button
-                type="button"
-                onClick={handleSignOut}
-                className="inline-flex rounded-[12px] bg-[#FFF86B] px-3 py-2 text-sm font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:px-5 sm:py-2.5 sm:text-base"
-              >
-                Sign Out
-              </button>
+              showSignOut ? (
+                <button
+                  type="button"
+                  onClick={handleSignOut}
+                  className="inline-flex rounded-[12px] bg-[#FFF86B] px-3 py-2 text-sm font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:px-5 sm:py-2.5 sm:text-base"
+                >
+                  Sign Out
+                </button>
+              ) : null
             ) : (
               <>
-                <Link
-                  href="/signup"
-                  className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
-                >
-                  Become a Member
-                </Link>
+                {showBecomeAMember ? (
+                  <Link
+                    href="/signup"
+                    className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base text-[21px] font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
+                  >
+                    Become a Member
+                  </Link>
+                ) : null}
 
-                <Link
-                  href="/login"
-                  className="inline-flex rounded-[10px] bg-[#FFF86B] px-4 py-2 text-sm font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:rounded-[12px] sm:px-5 sm:py-2.5 sm:text-base"
-                >
-                  Sign In
-                </Link>
+                {showSignIn ? (
+                  <Link
+                    href="/login"
+                    className="inline-flex rounded-[10px] bg-[#FFF86B] px-4 py-2 lg:text-[16px] text-sm font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:rounded-[12px] sm:px-5 sm:py-2.5 sm:text-base"
+                  >
+                    Sign In
+                  </Link>
+                ) : null}
               </>
             )
           ) : null}
@@ -185,7 +256,7 @@ export function Header() {
             className="flex max-h-[min(70vh,calc(100dvh-5rem))] flex-col gap-1 overflow-y-auto px-4 py-4 sm:px-6"
             aria-label="Primary mobile"
           >
-            {visibleNavLinks.map(({ href, label }) => (
+            {resolvedNavLinks.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
@@ -195,7 +266,7 @@ export function Header() {
                 {label}
               </Link>
             ))}
-            {authReady && !user && (
+            {showAuthControls && showBecomeAMember && authReady && !user && (
               <div className="flex flex-col gap-2">
                 <Link
                   href="/signup"

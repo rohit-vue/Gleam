@@ -12,6 +12,13 @@ const allianceFont = DM_Sans({
   style: ["normal", "italic"],
 });
 
+const dmSansFont = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
 const britanicaFont = Archivo_Black({
   subsets: ["latin"],
   weight: "400",
@@ -49,7 +56,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} ${baloo2.variable} ${allianceFont.variable} ${britanicaFont.variable} min-h-screen bg-white font-[family-name:var(--font-geist-sans)] antialiased text-neutral-900`}
+        className={`${geistSans.variable} ${geistMono.variable} ${baloo2.variable} ${allianceFont.variable} ${britanicaFont.variable} ${dmSansFont.variable} min-h-screen bg-white font-[family-name:var(--font-geist-sans)] antialiased text-neutral-900`}
       >
         <ToastProvider>
           <Header />

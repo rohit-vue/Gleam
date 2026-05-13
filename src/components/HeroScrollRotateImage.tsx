@@ -1,84 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-
-
-const SCROLL_ROTATE_MEDIA = "(min-width: 1024px)";
 
 export function HeroScrollRotateImage() {
-  const [rotation, setRotation] = useState(0);
-  const lastScrollYRef = useRef(0);
-  const currentRotationRef = useRef(0);
-  const targetRotationRef = useRef(0);
-  const rafIdRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const mq = window.matchMedia(SCROLL_ROTATE_MEDIA);
-
-    const animate = () => {
-      const diff = targetRotationRef.current - currentRotationRef.current;
-      currentRotationRef.current += diff * 0.14;
-
-      setRotation(((currentRotationRef.current % 360) + 360) % 360);
-
-      if (Math.abs(diff) > 0.05) {
-        rafIdRef.current = window.requestAnimationFrame(animate);
-      } else {
-        currentRotationRef.current = targetRotationRef.current;
-        rafIdRef.current = null;
-      }
-    };
-
-    const onScroll = () => {
-      const currentY = window.scrollY;
-      const deltaY = currentY - lastScrollYRef.current;
-      lastScrollYRef.current = currentY;
-
-      const step = Math.max(-32, Math.min(32, deltaY * 1.35));
-      targetRotationRef.current += step;
-
-      if (rafIdRef.current === null) {
-        rafIdRef.current = window.requestAnimationFrame(animate);
-      }
-    };
-
-    const syncInteraction = () => {
-      window.removeEventListener("scroll", onScroll);
-      if (rafIdRef.current !== null) {
-        window.cancelAnimationFrame(rafIdRef.current);
-        rafIdRef.current = null;
-      }
-      currentRotationRef.current = 0;
-      targetRotationRef.current = 0;
-      setRotation(0);
-
-      if (mq.matches) {
-        lastScrollYRef.current = window.scrollY;
-        window.addEventListener("scroll", onScroll, { passive: true });
-      }
-    };
-
-    syncInteraction();
-    mq.addEventListener("change", syncInteraction);
-
-    return () => {
-      mq.removeEventListener("change", syncInteraction);
-      window.removeEventListener("scroll", onScroll);
-      if (rafIdRef.current !== null) window.cancelAnimationFrame(rafIdRef.current);
-    };
-  }, []);
-
   return (
-    <div
-      className="h-full w-full lg:will-change-transform"
-      style={{ transform: `perspective(1200px) rotateY(${rotation}deg)` }}
-    >
+    <div className="relative h-full w-full">
       <Image
-        src="/assets/dentisttools.png"
-        alt="Dental mirror and explorer tools"
-        width={800}
-        height={800}
+        src="/assets/girl.svg"
+        alt="Woman holding a card"
+        width={900}
+        height={900}
+        className="block h-auto w-full object-contain object-center lg:h-[632px] lg:w-full lg:object-right"
         priority
       />
     </div>

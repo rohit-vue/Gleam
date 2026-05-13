@@ -1,55 +1,62 @@
 import Link from "next/link";
 
-import { HeroGleamText } from "@/components/HeroGleamText";
 import { HeroScrollRotateImage } from "@/components/HeroScrollRotateImage";
 import { HeroSlideInOnView } from "@/components/HeroSlideInOnView";
 
+/** Keep in sync with `homeHeaderBackground` in `Header.tsx` if you change this gradient. */
+const heroSectionBackground =
+  "linear-gradient(118.99deg, rgba(250, 243, 107, 0.8) 12.59%, rgba(252, 247, 159, 0.51829) 19.8%, rgba(255, 255, 255, 0) 42.13%)";
+
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#FAF9F6] pt-2 pb-1 sm:pt-3 sm:pb-0 md:pt-4 lg:pt-6">
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="relative z-10 grid items-stretch gap-3 sm:gap-4 md:gap-5 lg:grid-cols-2 lg:gap-10 xl:gap-12 font-helvetica-neue-regular">
-          <div className="relative z-10 flex min-h-0 w-full max-w-xl flex-col self-stretch lg:max-w-none lg:pt-1">
+    <section
+      className="relative overflow-hidden pt-5 pb-0 sm:pt-6 sm:pb-0 md:pt-5 lg:pt-6"
+      style={{ background: heroSectionBackground }}
+    >
+      <div className="relative mx-auto max-w-7xl px-3 sm:px-6">
+        {/* 2 columns at ALL breakpoints — text-left, image-right (matches desktop layout) */}
+        <div className="relative z-10 grid grid-cols-2 items-center gap-2 sm:gap-4 md:gap-6 lg:items-stretch lg:gap-10 xl:gap-12 font-helvetica-neue-regular">
+
+          {/* ── Left: text content ── */}
+          <div className="relative z-10 flex min-h-0 w-full flex-col self-center lg:self-stretch lg:max-w-none lg:pt-[112px]">
             <div className="shrink-0">
+              <p className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:160ms] mt-1 text-[0.65rem] font-bold text-black tracking-[0.03em] sm:mt-3 sm:text-[0.8125rem] sm:tracking-[0.045em] md:mt-5 md:text-base md:tracking-[0.06em] lg:text-lg">
+                One Annual Membership
+              </p>
               <HeroSlideInOnView
                 as="h1"
                 wrapperClassName="w-full"
-                className="text-[1.625rem] font-medium leading-[1.12] tracking-[0.045em] text-black sm:text-[2rem] sm:tracking-[0.06em] md:text-[2.35rem] md:leading-[1.1] md:tracking-[0.075em] lg:text-[2.75rem] lg:leading-[1.08] lg:tracking-[0.09em]"
+                className="mt-1 text-[1rem] font-semibold leading-[1.1] tracking-[0.02em] text-black sm:mt-2 sm:text-[1.4rem] sm:tracking-[0.04em] md:mt-4 md:text-[2.25rem] md:leading-[1.1] md:tracking-[0.06em] lg:mt-5 lg:mb-[1rem] lg:text-[2.75rem] lg:leading-[1.08] lg:tracking-[0.09em]"
               >
-                Unlimited Dental Care
+                Unlimited dental care
                 <br />
-                Across LA
+                across Los Angeles
               </HeroSlideInOnView>
-              <p className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:160ms] mt-3 text-[0.9375rem] font-bold text-black tracking-[0.045em] sm:mt-4 sm:text-base sm:tracking-[0.05em] md:mt-5 md:text-lg md:tracking-[0.06em]">
-                One Annual Membership
-              </p>
               <Link
                 href="/#become-a-member"
-                className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:320ms] mt-5 inline-flex rounded-xl bg-[#FFF86B] px-5 py-2.5 text-sm font-semibold text-black tracking-[0.05em] shadow-sm transition-opacity hover:opacity-90 sm:mt-6 sm:rounded-[14px] sm:px-7 sm:py-3 sm:text-[0.9375rem] sm:tracking-[0.06em] md:mt-7 md:px-8 md:text-base md:tracking-[0.07em] lg:mt-8"
+                className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:320ms] mt-2 inline-flex rounded-lg bg-[#FFF86B] px-2.5 py-1.5 text-[0.7rem] font-bold text-black tracking-[0.03em] shadow-sm transition-opacity hover:opacity-90 sm:mt-4 sm:rounded-[12px] sm:px-4 sm:py-2.5 sm:text-[0.8125rem] sm:tracking-[0.05em] md:mt-6 md:rounded-[14px] md:px-8 md:py-3 md:text-base md:tracking-[0.07em] lg:mt-8"
               >
                 Get Started – $297/year
               </Link>
-              <p className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:480ms] mt-5 grid gap-x-4 gap-y-1 text-[0.8125rem] font-bold leading-snug text-black sm:mt-6 sm:flex sm:flex-wrap sm:gap-x-5 sm:gap-y-1.5 sm:text-sm md:mt-7 md:text-[0.9375rem] lg:mt-8 lg:text-base">
+              <p className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:480ms] mt-2 flex flex-col items-start gap-y-0.5 text-[0.625rem] font-bold leading-snug text-black sm:mt-4 sm:gap-y-1 sm:text-[0.75rem] md:mt-6 md:gap-y-1.5 md:text-[0.9375rem] lg:mt-8 lg:ml-[27px] lg:text-base">
                 <span className="whitespace-nowrap">✓ Unlimited Cleanings</span>
                 <span className="whitespace-nowrap">✓ Unlimited X-Rays</span>
                 <span className="whitespace-nowrap">✓ Unlimited Exams</span>
               </p>
             </div>
-            <div className="mt-auto hidden w-full lg:block">
-              <HeroGleamText variant="column" />
-            </div>
           </div>
 
-          <div className="relative z-10 -mt-5 w-full min-h-[200px] sm:-mt-6 sm:min-h-[260px] md:min-h-[300px] lg:mt-0 lg:min-h-[380px]">
-            <HeroGleamText variant="imageBackdrop" />
+          {/* ── Right: rotating image ── */}
+          <div className="relative z-10 w-full lg:mt-0 lg:min-h-[380px]">
             <div
-              className="relative z-10 ml-auto aspect-square w-full max-w-[min(100%,280px)] translate-x-12 sm:max-w-[min(100%,360px)] sm:translate-x-14 md:max-w-[min(100%,420px)] md:translate-x-[4.5rem] lg:max-w-[min(100%,580px)] lg:translate-x-10 lg:translate-y-4 xl:max-w-[640px] xl:translate-x-12 xl:translate-y-10"
+              className="relative z-10 ml-auto w-full lg:aspect-square lg:max-w-[min(100%,580px)] lg:translate-x-10 lg:-translate-y-8 xl:max-w-[640px] xl:translate-x-12 xl:-translate-y-10"
               role="img"
               aria-label="Dental mirror and explorer tools"
             >
               <HeroScrollRotateImage />
             </div>
           </div>
+
         </div>
       </div>
     </section>
