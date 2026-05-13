@@ -98,11 +98,15 @@ export function ServicesFooterSection() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Image src="/assets/call.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
-                <span>(310) 555-0199</span>
+                <a href="tel:+13105550199" className="transition-colors hover:text-white">
+                  (310) 555-0199
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Image src="/assets/mail.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
-                <span>hello@gleam.co</span>
+                <a href="mailto:hello@gleam.co" className="transition-colors hover:text-white">
+                  hello@gleam.co
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Image src="/assets/time.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const CTA_YELLOW = "#FFE500";
+const CTA_YELLOW = "#fff86b";
 
 export function LocationsCtaSection() {
   return (
