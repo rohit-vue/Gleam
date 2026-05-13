@@ -9,7 +9,7 @@ type Location = {
   href: string;
 };
 
-const LOCATIONS: Location[] = [
+const LOCATIONS: Location[] = [   
   {
     number: "01",
     name: "West Hollywood",
