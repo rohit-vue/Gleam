@@ -1,10 +1,6 @@
 import Link from "next/link";
 
 const CARD_BG = "#F5F5F0";
-const CARD_BORDER_HOVER = "#000000";
-const BTN_BG = "#000000";
-const BTN_YELLOW = "#FFE500";
-
 type Location = {
   number: string;
   name: string;
