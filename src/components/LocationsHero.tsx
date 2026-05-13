@@ -1,4 +1,4 @@
-const HERO_YELLOW = "#FFE500";
+const HERO_YELLOW = "#fff86b";
 
 export function LocationsHero() {
   return (
