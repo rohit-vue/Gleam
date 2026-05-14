@@ -24,7 +24,7 @@ const companyLinks = [
 export function ServicesFooterSection() {
   return (
     <section style={{ backgroundColor: FOOTER_BG }}>
-      <div className="mx-auto max-w-7xl px-6 pb-6 pt-10 sm:px-8 sm:pb-7 sm:pt-12 md:px-10 lg:px-12 lg:pt-16">
+      <div className="mx-auto max-w-7xl px-4 pb-6 pt-10 sm:px-6 sm:pb-7 sm:pt-12 md:px-10 lg:px-12 lg:pt-16">
         <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-10 md:grid-cols-4 md:gap-10 lg:gap-12">
           {/* Brand — full width on mobile, 1 col on tablet/desktop */}
           <div className="col-span-2 md:col-span-1">

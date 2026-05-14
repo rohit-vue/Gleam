@@ -143,7 +143,7 @@ export function ServicesTabbedCardsSection() {
 
   return (
     <section
-      className="border-b border-neutral-200/80 lg:py-[1rem] font-helvetica-neue-regular sm:py-12 md:py-16 lg:py-24"
+      className="border-b border-neutral-200/80 lg:py-[1rem] font-helvetica-neue-regular sm:py-12 md:pb-[4rem] md:pt-[2rem] lg:py-24"
       style={{ backgroundColor: SECTION_BG }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10">
