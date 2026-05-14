@@ -1,6 +1,7 @@
-import Image from "next/image";
-
 import { HeroSlideInOnView } from "@/components/HeroSlideInOnView";
+
+const ENCINO_MAP_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.226764913547!2d-118.36430352414511!3d34.0893308157709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2becf64873b91%3A0x451301d158fc9cc6!2s1019%20N%20Fairfax%20Ave%2C%20West%20Hollywood%2C%20CA%2090046%2C%20USA!5e0!3m2!1sen!2sin!4v1778741398057!5m2!1sen!2sin";
 
 const locations = [
   {
@@ -83,12 +84,13 @@ export function LocationsSection() {
           </div>
 
           <div className="relative h-full min-h-[220px] w-full overflow-hidden rounded-[20px] shadow-xl ring-1 ring-black/10 sm:min-h-[240px] md:min-h-[260px] lg:min-h-[280px]">
-            <Image
-              src="/assets/maps.png"
-              alt="Map of Greater Los Angeles showing Gleam office locations"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 72vw"
+            <iframe
+              src={ENCINO_MAP_EMBED_SRC}
+              title="Google Map — Lasting Impressions Dental Spa, Encino"
+              className="absolute inset-0 h-full w-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>
