@@ -1,6 +1,6 @@
 import { ServicesFooterSection } from "@/components/ServicesFooterSection";
 import { ServicesHero } from "@/components/ServicesHero";
-import { ServicesMembershipBannerSection } from "@/components/ServicesMembershipBannerSection";
+import PricingBanner from "@/components/ServicesMembershipBannerSection";
 import { ServicesPreventionSection } from "@/components/ServicesPreventionSection";
 import { ServicesTabbedCardsSection } from "@/components/ServicesTabbedCardsSection";
 
@@ -10,7 +10,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServicesPreventionSection />
       <ServicesTabbedCardsSection />
-      <ServicesMembershipBannerSection />
+      <PricingBanner />
       <ServicesFooterSection />
     </>
   );
