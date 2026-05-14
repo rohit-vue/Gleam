@@ -57,7 +57,7 @@ export function LocationsSection() {
         </div>
 
         <div className="mt-8 grid gap-6 sm:mt-10 sm:gap-7 lg:mt-14 lg:grid-cols-[minmax(14rem,30%)_1fr] lg:items-stretch lg:gap-8 xl:grid-cols-[minmax(16rem,28%)_1fr] xl:gap-[1.5px]">
-          <div className="flex flex-col overflow-hidden rounded-[20px] bg-white shadow-xl ring-1 ring-black/5">
+          <div className="flex flex-col overflow-hidden rounded-l-[20px] bg-white shadow-xl ring-1 ring-black/5">
             {locations.map((loc, i) => (
               <div
                 key={loc.city}
@@ -83,7 +83,7 @@ export function LocationsSection() {
             ))}
           </div>
 
-          <div className="relative h-full min-h-[220px] w-full overflow-hidden rounded-[20px] shadow-xl ring-1 ring-black/10 sm:min-h-[240px] md:min-h-[260px] lg:min-h-[280px]">
+          <div className="relative h-full min-h-[220px] w-full overflow-hidden rounded-r-[20px] shadow-xl ring-1 ring-black/10 sm:min-h-[240px] md:min-h-[260px] lg:min-h-[280px]">
             <iframe
               src={ENCINO_MAP_EMBED_SRC}
               title="Google Map — Lasting Impressions Dental Spa, Encino"
