@@ -6,19 +6,23 @@ const FOOTER_TEXT = "#A3A3A3";
 const FOOTER_MUTED = "#6B7280";
 const BRAND_YELLOW = "#FFF86B";
 
+/** Google Maps place link — used by Company › Locations and Contact address. */
+const FOOTER_LOCATIONS_MAPS_URL =
+  "https://maps.google.com/?cid=4977324011827272902&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed";
+
 const servicesLinks = [
-  { href: "/services", label: "Invisalign" },
+  { href: "https://calabases.vercel.app/invisalign", label: "Invisalign" },
   { href: "/services", label: "Veneers" },
   { href: "/services", label: "Fillings & Crowns" },
-  { href: "/services", label: "Implants" },
+  { href: "https://calabases.vercel.app/implants", label: "Implants" },
   { href: "/services", label: "Root Canal" },
   { href: "/services", label: "Sedation Dentistry" },
 ];
 
 const companyLinks = [
-  { href: "/signup", label: "Membership" },
-  { href: "/services", label: "Pricing" },
-  { href: "/locations", label: "Locations" },
+  { href: "https://member.clerri.com/enrollment/accounts/create/?slug=TE3V", label: "Membership" },
+  { href: "https://member.clerri.com/enrollment/accounts/create/?slug=TE3V", label: "Pricing" },
+  { href: FOOTER_LOCATIONS_MAPS_URL, label: "Locations" },
 ];
 
 export function ServicesFooterSection() {
@@ -62,7 +66,14 @@ export function ServicesFooterSection() {
             <ul className="mt-4 space-y-2.5">
               {servicesLinks.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm transition-colors hover:text-white" style={{ color: FOOTER_TEXT }}>
+                  <Link
+                    href={item.href}
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: FOOTER_TEXT }}
+                    {...(item.href.startsWith("http")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -78,7 +89,14 @@ export function ServicesFooterSection() {
             <ul className="mt-4 space-y-2.5">
               {companyLinks.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm transition-colors hover:text-white" style={{ color: FOOTER_TEXT }}>
+                  <Link
+                    href={item.href}
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: FOOTER_TEXT }}
+                    {...(item.href.startsWith("http")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -94,7 +112,14 @@ export function ServicesFooterSection() {
             <ul className="mt-4 space-y-2.5 text-sm" style={{ color: FOOTER_TEXT }}>
               <li className="flex items-start gap-2.5">
                 <Image src="/assets/map.png" alt="" aria-hidden width={14} height={14} className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-                <span>123 Smile Ave, Los Angeles</span>
+                <a
+                  href={FOOTER_LOCATIONS_MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  1019 N Fairfax Ave, West Hollywood, CA 90046
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Image src="/assets/call.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
