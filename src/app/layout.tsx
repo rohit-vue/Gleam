@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Baloo_2, DM_Sans } from "next/font/google";
+import { Baloo_2, DM_Sans, Space_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { Header } from "@/components/Header";
 import { ToastProvider } from "@/components/toast/ToastProvider";
@@ -19,10 +19,10 @@ const dmSansFont = DM_Sans({
   style: ["normal", "italic"],
 });
 
-const britanicaFont = Archivo_Black({
+const spaceMono = Space_Mono({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-britanica-black",
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
 });
 
 const baloo2 = Baloo_2({
@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} ${baloo2.variable} ${allianceFont.variable} ${britanicaFont.variable} ${dmSansFont.variable} min-h-screen bg-white font-[family-name:var(--font-geist-sans)] antialiased text-neutral-900`}
+        className={`${geistSans.variable} ${geistMono.variable} ${baloo2.variable} ${allianceFont.variable} ${dmSansFont.variable} ${spaceMono.variable} min-h-screen bg-white font-[family-name:var(--font-geist-sans)] antialiased text-neutral-900`}
       >
         <ToastProvider>
           <Header />

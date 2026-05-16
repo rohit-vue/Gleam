@@ -21,16 +21,13 @@ const config: Config = {
           "sans-serif",
         ],
         alliance: ["var(--font-alliance)", "ui-sans-serif", "system-ui", "sans-serif"],
-        /** Local @font-face in `globals.css`; drop woff2 files under `public/fonts/`. */
+        /** Local @font-face in `globals.css` — `public/fonts/Alliance No.2 Regular.woff2`. */
         "alliance-no-2": ["var(--font-alliance-no-2)"],
-        "britanica-black": [
-          "var(--font-britanica-black)",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-        ],
+        /** Local @font-face in `globals.css` — `public/fonts/britanica-black.woff2`. */
+        "britanica-black": ["var(--font-britanica-black)"],
         "baloo-2": ["var(--font-baloo-2)", "ui-sans-serif", "system-ui", "sans-serif"],
         "dm-sans": ["var(--font-dm-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        "space-mono": ["var(--font-space-mono)", "ui-monospace", "monospace"],
       },
       keyframes: {
         /** One “loop” = 1/10 of total track width (10 identical segments). */
