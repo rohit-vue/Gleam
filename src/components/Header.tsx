@@ -1,10 +1,8 @@
 "use client";
 
-import type { User } from "@supabase/supabase-js";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
-import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 /** Homepage header background on `/` — applied at `lg` breakpoint and above (desktop). */
 const homeHeaderBackground =
@@ -26,14 +24,6 @@ export type HeaderProps = {
   brandLabel?: string;
   /** Where the brand links to. Defaults to "/". */
   brandHref?: string;
-  /** Show the "Become a Member" desktop / mobile CTA when signed out. Default: true */
-  showBecomeAMember?: boolean;
-  /** Show the "Sign In" CTA when signed out. Default: true */
-  showSignIn?: boolean;
-  /** Show the "Sign Out" button when signed in. Default: true */
-  showSignOut?: boolean;
-  /** Show the auth-related buttons block at all. Default: true */
-  showAuthControls?: boolean;
   /** Force-hide the entire header. Default: auto (hidden on auth-shell pages). */
   hidden?: boolean;
   /** Optional homepage header `background` override. Matches the hero wash on `/` when omitted. */
@@ -69,15 +59,10 @@ export function Header({
   navLinks,
   brandLabel = "gleam",
   brandHref = "/",
-  showBecomeAMember = true,
-  showSignIn = true,
-  showSignOut = true,
-  showAuthControls = true,
   hidden,
   bg,
 }: HeaderProps = {}) {
   const pathname = usePathname();
-  const router = useRouter();
   const isAuthShellPage =
     pathname === "/login" ||
     pathname === "/signup" ||
@@ -85,8 +70,6 @@ export function Header({
     pathname === "/reset-password";
   const menuId = useId();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
-  const [authReady, setAuthReady] = useState(false);
   const isServicesPage = pathname?.startsWith("/services");
   const resolvedNavLinks: ReadonlyArray<HeaderNavLink> =
     navLinks ??
@@ -97,30 +80,37 @@ export function Header({
   const isHome = pathname === "/";
   const headerBackground = isHome ? (bg ?? homeHeaderBackground) : undefined;
   const useResponsiveGradient = isHome && !bg;
+  const [pastHeroHalf, setPastHeroHalf] = useState(false);
+  const showHomeGradient = useResponsiveGradient && !pastHeroHalf;
+  const useWhiteBg = !showHomeGradient && (!headerBackground || pastHeroHalf);
+
+  useEffect(() => {
+    if (!useResponsiveGradient) {
+      setPastHeroHalf(false);
+      return;
+    }
+
+    const updatePastHeroHalf = () => {
+      const hero = document.getElementById("hero");
+      if (!hero) {
+        setPastHeroHalf(false);
+        return;
+      }
+      const heroTop = window.scrollY + hero.getBoundingClientRect().top;
+      setPastHeroHalf(window.scrollY >= heroTop + hero.offsetHeight / 4);
+    };
+
+    updatePastHeroHalf();
+    window.addEventListener("scroll", updatePastHeroHalf, { passive: true });
+    window.addEventListener("resize", updatePastHeroHalf);
+    return () => {
+      window.removeEventListener("scroll", updatePastHeroHalf);
+      window.removeEventListener("resize", updatePastHeroHalf);
+    };
+  }, [useResponsiveGradient, pathname]);
 
   useEffect(() => {
     setMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    const supabase = createSupabaseBrowserClient();
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-      setAuthReady(true);
-    });
-    return () => subscription.unsubscribe();
-  }, []);
-
-  // Re-read session when the route changes so we pick up cookies after a server-action
-  // login redirect (Header stays mounted across /login → /, so []-only sync stays stale).
-  useEffect(() => {
-    const supabase = createSupabaseBrowserClient();
-    void supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      setAuthReady(true);
-    });
   }, [pathname]);
 
   useEffect(() => {
@@ -137,33 +127,20 @@ export function Header({
     };
   }, [menuOpen]);
 
-  const handleSignOut = async () => {
-    try {
-      const supabase = createSupabaseBrowserClient();
-      await supabase.auth.signOut();
-    } catch (error) {
-      console.error("Error signing out:", error);
-    } finally {
-      setMenuOpen(false);
-      router.push("/");
-      router.refresh();
-    }
-  };
-
   if (isHidden) return null;
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-neutral-200/80 ${
-        headerBackground ? "" : "bg-white"
-      } ${useResponsiveGradient ? "[background:var(--header-bg-mobile)] lg:[background:var(--header-bg-desktop)]" : ""}`}
+        useWhiteBg ? "bg-white" : ""
+      } ${showHomeGradient ? "[background:var(--header-bg-mobile)] lg:[background:var(--header-bg-desktop)]" : ""}`}
       style={
-        useResponsiveGradient
+        showHomeGradient
           ? ({
               "--header-bg-mobile": homeHeaderBackgroundSm,
               "--header-bg-desktop": homeHeaderBackground,
             } as React.CSSProperties)
-          : headerBackground
+          : headerBackground && !pastHeroHalf
             ? { background: headerBackground }
             : undefined
       }
@@ -179,7 +156,7 @@ export function Header({
       <div className="relative z-40 flex h-16 w-full items-center justify-between gap-3 px-4 font-bold font-helvetica-neue-regular sm:gap-4 sm:px-6 md:h-[4.5rem] md:px-10">
         <Link
           href={brandHref}
-          className="shrink-0 text-[1.125rem] font-britanica-black font-semibold text-[#3A3D38] tracking-[0.08em]  sm:text-[1.25rem] md:text-[35px] lg:pl-[11.4375rem]"
+          className="shrink-0 font-britanica-black text-[2.125rem] font-normal text-[#3A3D38] tracking-[0.08em] sm:text-[1.25rem] md:text-[40px] lg:pl-[11.4375rem]"
           onClick={() => setMenuOpen(false)}
         >
           {brandLabel}
@@ -191,46 +168,21 @@ export function Header({
               <Link
                 key={href}
                 href={href}
-                className="whitespace-nowrap text-base font-alliance-no-2 font-bold text-[21px] text-[#3A3D38]  transition-colors hover:text-neutral-950"
+                className="whitespace-nowrap font-alliance-no-2 text-base font-bold text-[21px] text-[#3A3D38] transition-colors hover:text-neutral-950"
               >
                 {label}
               </Link>
             ))}
           </nav>
 
-          {showAuthControls && authReady ? (
-            user ? (
-              showSignOut ? (
-                <button
-                  type="button"
-                  onClick={handleSignOut}
-                  className="inline-flex rounded-[12px] bg-[#FFF86B] px-3 py-2 text-sm font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:px-5 sm:py-2.5 sm:text-base"
-                >
-                  Sign Out
-                </button>
-              ) : null
-            ) : (
-              <>
-                {showBecomeAMember ? (
-                  <Link
-                    href="/signup"
-                    className="hidden rounded-[12px] bg-[#FFF86B] px-5 py-2.5 text-base text-[21px] font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex"
-                  >
-                    Become a Member
-                  </Link>
-                ) : null}
-
-                {showSignIn ? (
-                  <Link
-                    href="/login"
-                    className="inline-flex rounded-[10px] bg-[#FFF86B] px-4 py-2 lg:text-[16px] text-sm font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:rounded-[12px] sm:px-5 sm:py-2.5 sm:text-base"
-                  >
-                    Sign In
-                  </Link>
-                ) : null}
-              </>
-            )
-          ) : null}
+          <Link
+            href="/locations"
+            className={`hidden rounded-[12px] px-5 py-2.5 text-base text-[21px] font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 lg:inline-flex ${
+              useWhiteBg ? "border-2 border-black bg-white" : "bg-[#FFF86B]"
+            }`}
+          >
+            Become a Member
+          </Link>
 
           <button
             type="button"
@@ -260,23 +212,21 @@ export function Header({
               <Link
                 key={href}
                 href={href}
-                className="rounded-lg px-3 py-3.5 text-lg font-bold text-neutral-800 transition-colors hover:bg-neutral-50 hover:text-neutral-950 active:bg-neutral-100 sm:py-3 sm:text-base"
+                className="rounded-lg px-3 py-3.5 font-alliance-no-2 text-lg font-normal text-neutral-800 transition-colors hover:bg-neutral-50 hover:text-neutral-950 active:bg-neutral-100 sm:py-3 sm:text-base"
                 onClick={() => setMenuOpen(false)}
               >
                 {label}
               </Link>
             ))}
-            {showAuthControls && showBecomeAMember && authReady && !user && (
-              <div className="flex flex-col gap-2">
-                <Link
-                  href="/signup"
-                  onClick={() => setMenuOpen(false)}
-                  className="mt-2 rounded-[12px] bg-[#FFF86B] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3"
-                >
-                  Become a Member
-                </Link>
-              </div>
-            )}
+            <Link
+              href="/locations"
+              onClick={() => setMenuOpen(false)}
+              className={`mt-2 rounded-[12px] px-4 py-3.5 text-center text-base font-bold text-neutral-900 shadow-sm transition-opacity hover:opacity-90 sm:mt-3 ${
+                useWhiteBg ? "border-2 border-black bg-white" : "bg-[#FFF86B]"
+              }`}
+            >
+              Become a Member
+            </Link>
           </nav>
         </div>
       </div>

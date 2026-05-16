@@ -10,6 +10,7 @@ const heroSectionBackground =
 export function Hero() {
   return (
     <section
+      id="hero"
       className="relative overflow-hidden pt-5 pb-0 sm:pt-6 sm:pb-0 md:pt-5 lg:pt-6"
       style={{ background: heroSectionBackground }}
     >
@@ -46,12 +47,16 @@ export function Hero() {
             </div>
           </div>
 
-          {/* ── Right: rotating image ── */}
-          <div className="relative z-10 w-full lg:mt-0 lg:min-h-[380px]">
+          {/* ── Right: image — viewport right edge, flush bottom, original size ── */}
+          <div className="relative z-10 w-full self-end lg:mt-0">
             <div
-              className="relative z-10 ml-auto w-full lg:aspect-square lg:max-w-[min(100%,580px)] lg:translate-x-10 lg:-translate-y-8 xl:max-w-[640px] xl:translate-x-12 xl:-translate-y-10"
+              aria-hidden
+              className="ml-auto w-full max-lg:aspect-square lg:h-[632px] lg:max-w-[min(100%,580px)] xl:max-w-[640px]"
+            />
+            <div
+              className="absolute bottom-0 right-0 z-10 ml-auto flex w-full items-end lg:max-w-[min(100%,580px)] xl:max-w-[640px] -mr-[calc((100vw-min(100vw,80rem))/2+0.75rem)] sm:-mr-[calc((100vw-min(100vw,80rem))/2+1.5rem)]"
               role="img"
-              aria-label="Dental mirror and explorer tools"
+              aria-label="Woman holding a card"
             >
               <HeroScrollRotateImage />
             </div>

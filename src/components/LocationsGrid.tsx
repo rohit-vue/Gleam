@@ -75,14 +75,14 @@ function LocationCard({ loc }: { loc: Location }) {
           <br />
           {loc.address[1]}
         </p>
-        <p className="mb-6 font-mono text-[11px] tracking-[0.5px] text-neutral-400">
+        <p className="mb-6 font-space-mono text-[11px] tracking-[0.5px] text-neutral-400">
           {loc.hours}
         </p>
       </div>
 
       <div className="flex items-center justify-between">
         <span
-          className="rounded-full bg-black px-7 py-3 text-[13px] font-bold tracking-[0.3px] text-[#FFF86B] transition-colors duration-150 group-hover:bg-[#FFF86B] group-hover:text-black"
+          className="rounded-full bg-black pl-[1.75rem] pr-[4.75rem] py-3 text-[13px] font-bold tracking-[0.3px] text-[#FFF86B] transition-colors duration-150 group-hover:bg-[#FFF86B] group-hover:text-black"
         >
           Become a Member
         </span>

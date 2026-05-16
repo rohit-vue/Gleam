@@ -80,7 +80,7 @@ export function ServiceCardsSection() {
           ))}
         </div>
         <div
-          className="pointer-events-none relative z-20 mx-auto w-full max-w-5xl"
+          className="pointer-events-none relative z-20 mx-auto w-full max-w-5xl lg:h-[339px] h-[112px] md:h-[240px] "
           aria-hidden
         >
           <Image
