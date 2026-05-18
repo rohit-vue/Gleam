@@ -87,13 +87,13 @@ export function CatchEarlyResultsSection() {
       >
         <h2
           id="results-heading"
-          className="pointer-events-none absolute left-1/2 top-2 z-0 w-full max-w-[100vw] -translate-x-1/2 select-none px-1 text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:top-1 sm:px-3 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.08em]"
+          className="pointer-events-none absolute left-[calc(50%+0.1em)] top-2 z-0 w-full max-w-[100vw] -translate-x-1/2 select-none  text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:top-1   sm:leading-[0.84] sm:tracking-[0.05em] md:top-0  md:tracking-[0.065em]  lg:leading-[0.85] lg:tracking-[0.2em]"
         >
           Results
         </h2>
         <h2
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-2 z-20 w-full max-w-[100vw] -translate-x-1/2 select-none px-1 text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:top-1 sm:px-3 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.08em]"
+          className="pointer-events-none absolute left-[calc(50%+0.1em)] top-2 z-20 w-full max-w-[100vw] -translate-x-1/2 select-none  text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:top-1   sm:leading-[0.84] sm:tracking-[0.05em] md:top-0  md:tracking-[0.065em]  lg:leading-[0.85] lg:tracking-[0.2em]"
         >
           <span className="text-transparent">R</span>
           <span>E</span>
