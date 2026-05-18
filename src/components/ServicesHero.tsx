@@ -58,15 +58,66 @@ export function ServicesHero() {
         </div>
       </div>
 
-      <div className="relative aspect-[1728/527] w-full overflow-hidden bg-white">
-        <Image
-          src="/assets/Price Match.png"
-          alt="We price match any practice within 15 miles"
-          fill
-          className="object-cover object-top"
-          sizes="100vw"
-          priority
-        />
+      <div
+        className="relative w-full overflow-hidden bg-white [--block-shift:1rem] [--line-size:0.8rem] [--line2-mt:0.1rem] [--phone-w:7.25rem] [--text-gap:0.25rem] min-h-[clamp(-6rem,34vw,57rem)] sm:[--block-shift:1.75rem] sm:[--line-size:1rem] sm:[--phone-w:9rem] sm:[--text-gap:0.35rem] md:[--block-shift:3.25rem] md:[--line-size:1.35rem] md:[--line2-mt:0.15rem] md:[--phone-w:11.5rem] md:[--text-gap:0.45rem] md:min-h-[clamp(1rem,22vw,57rem)] lg:min-h-[clamp(1rem,17vw,57rem)] lg:[--block-shift:clamp(-13rem,3.5vw,34.5rem)] lg:[--line-size:clamp(1.75rem,3.6vw,3.25rem)] lg:[--phone-w:15.5rem] lg:[--text-gap:0.35rem]"
+        aria-labelledby="price-match-heading"
+      >
+        <h2 id="price-match-heading" className="sr-only">
+          We price match any practice within 15 miles
+        </h2>
+
+        <div className="relative mx-auto min-h-[inherit] w-full max-w-6xl px-6 lg:px-10 xl:max-w-7xl xl:px-12">
+        <div className="absolute inset-0 -translate-x-[var(--block-shift)]">
+          {/* Layer 1: background glow */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[calc(var(--phone-w)*2.4)] w-[calc(var(--phone-w)*2)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,248,107,0.6)_0%,rgba(255,248,107,0.2)_42%,transparent_70%)]"
+          />
+
+        {/* Layer 2: left text (lower z) */}
+        <div
+          aria-hidden
+          className="absolute bottom-0 left-0 right-[calc(43%+var(--phone-w)/2+var(--text-gap))] top-0 z-[1] flex flex-col justify-center items-end gap-[var(--line2-mt)] px-2 sm:px-4 md:px-6 lg:px-8"
+        >
+          <div className="lg:translate-x-[75px] md:translate-x-[58px] translate-x-[39px] text-right">
+            <p className="whitespace-nowrap font-britanica-black text-[length:var(--line-size)]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+              WE PRICE
+            </p>
+          </div>
+          <div className="translate-x-[1.25em] text-right sm:translate-x-[2.75em] md:translate-x-[1.75em] lg:translate-x-[0.25em]">
+            <p className="whitespace-nowrap font-britanica-black text-[length:var(--line-size)]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+              PRACTICE
+            </p>
+          </div>
+        </div>
+
+        {/* Layer 3: right text (higher z than left, still behind phone) */}
+        <div
+          aria-hidden
+          className="absolute bottom-0 left-[calc(42%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(44%+var(--phone-w)/2+var(--text-gap))] right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:px-4 md:px-6 lg:px-8"
+        >
+          <p className="whitespace-nowrap font-britanica-black text-[length:var(--line-size)]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+            MATCH ANY
+          </p>
+          <p className="mt-[var(--line2-mt)] whitespace-nowrap font-britanica-black text-[length:var(--line-size)]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+            WITHIN 15 MILES
+          </p>
+        </div>
+
+        {/* Layer 4: phone image */}
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-center">
+          <Image
+            src="/assets/phone.png"
+            alt=""
+            width={600}
+            height={900}
+            className="h-auto w-[var(--phone-w)] max-h-full object-contain object-bottom"
+            sizes="(max-width: 640px) 40vw, (max-width: 1024px) 30vw, 320px"
+            priority
+          />
+        </div>
+        </div>
+        </div>
       </div>
     </section>
   );
