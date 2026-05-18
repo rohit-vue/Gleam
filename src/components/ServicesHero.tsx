@@ -79,12 +79,12 @@ export function ServicesHero() {
           aria-hidden
           className="absolute bottom-0 left-0 right-[calc(43%+var(--phone-w)/2+var(--text-gap))] top-0 z-[1] flex flex-col justify-center items-end gap-[var(--line2-mt)] px-2 sm:px-4 md:px-6 lg:px-8"
         >
-          <div className="2xl:translate-x-[-18px] lg:translate-x-[123px]  md:translate-x-[91px] translate-x-[39px] text-right">
+          <div className="2xl:translate-x-[116px] lg:translate-x-[123px]  md:translate-x-[91px] translate-x-[64px] text-right">
             <p className="whitespace-nowrap font-britanica-black text-[18px] lg:text-[40px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em]  sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
               WE PRICE
             </p>
           </div>
-          <div className="translate-x-[1.25em] text-right sm:translate-x-[2.75em] md:translate-x-[2.75em] lg:translate-x-[4.25em] 2xl:translate-x-[-4.75em]">
+          <div className="translate-x-[2.25em] text-right sm:translate-x-[2.75em] md:translate-x-[2.75em] lg:translate-x-[4.25em] 2xl:translate-x-[4.75em]">
             <p className="whitespace-nowrap font-britanica-black text-[18px] lg:text-[40px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em]  sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
               PRACTICE
             </p>
@@ -94,7 +94,7 @@ export function ServicesHero() {
         {/* Layer 3: right text (higher z than left, still behind phone) */}
         <div
           aria-hidden
-          className="absolute bottom-0 left-[calc(35%+var(--phone-w)/2+var(--text-gap))] max-md:pr-3 right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] sm:px-4 md:px-6 2xl:left-[calc(32%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(43%+var(--phone-w)/2+var(--text-gap))] lg:px-8"
+          className="absolute bottom-0 left-[calc(40%+var(--phone-w)/2+var(--text-gap))] max-md:pr-3 right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] sm:px-4 md:px-6 2xl:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(43%+var(--phone-w)/2+var(--text-gap))] lg:px-8"
         >
           <p className="whitespace-nowrap font-britanica-black text-[18px] lg:text-[40px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
             MATCH ANY
@@ -106,7 +106,7 @@ export function ServicesHero() {
 
         {/* Layer 4: phone image */}
         <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-center">
-          <div className="translate-x-[-25px] lg:translate-x-0 2xl:translate-x-[-139px] md:translate-x-[0px]">
+          <div className="md:translate-x-[0px]">
             <Image
               src="/assets/phone1.png"
               alt=""
