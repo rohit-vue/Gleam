@@ -59,7 +59,7 @@ export function ServicesHero() {
       </div>
 
       <div
-        className="relative w-full overflow-hidden bg-white [--block-shift:1rem] [--line-size:0.8rem] [--line2-mt:0.1rem] [--phone-w:7.25rem] [--text-gap:0.25rem] min-h-[clamp(-6rem,34vw,57rem)] sm:[--block-shift:1.75rem] sm:[--line-size:1rem] sm:[--phone-w:9rem] sm:[--text-gap:0.35rem] md:[--block-shift:3.25rem] md:[--line-size:1.35rem] md:[--line2-mt:0.15rem] md:[--phone-w:11.5rem] md:[--text-gap:0.45rem] md:min-h-[clamp(1rem,22vw,57rem)] lg:min-h-[clamp(1rem,17vw,57rem)] lg:[--block-shift:clamp(-13rem,3.5vw,34.5rem)] lg:[--line-size:clamp(1.75rem,3.6vw,3.25rem)] lg:[--phone-w:15.5rem] lg:[--text-gap:0.35rem]"
+        className="relative w-full overflow-hidden max-md:overflow-x-visible bg-white [--block-shift:1rem] [--line-size:0.8rem] [--line2-mt:0.1rem] [--phone-w:10rem] max-md:[--text-gap:0.15rem] [--text-gap:0.25rem] min-h-[clamp(-6rem,34vw,57rem)] sm:[--block-shift:1.75rem] sm:[--line-size:1rem] sm:[--phone-w:11rem] sm:[--text-gap:0.35rem] md:[--block-shift:3.25rem] md:[--line-size:1.35rem] md:[--line2-mt:0.15rem] md:[--phone-w:14rem] md:[--text-gap:0.45rem] md:min-h-[clamp(1rem,22vw,57rem)] lg:min-h-[clamp(-17rem,28vw,57rem)] xl:min-h-[clamp(1rem,21vw,57rem)] 2xl:min-h-[clamp(1rem,16vw,57rem)] lg:[--block-shift:clamp(-13rem,3.5vw,34.5rem)] lg:[--line-size:clamp(1.75rem,3.6vw,3.25rem)] lg:[--phone-w:20.5rem] lg:[--text-gap:0.35rem]"
         aria-labelledby="price-match-heading"
       >
         <h2 id="price-match-heading" className="sr-only">
@@ -79,13 +79,13 @@ export function ServicesHero() {
           aria-hidden
           className="absolute bottom-0 left-0 right-[calc(43%+var(--phone-w)/2+var(--text-gap))] top-0 z-[1] flex flex-col justify-center items-end gap-[var(--line2-mt)] px-2 sm:px-4 md:px-6 lg:px-8"
         >
-          <div className="lg:translate-x-[75px] md:translate-x-[58px] translate-x-[39px] text-right">
-            <p className="whitespace-nowrap font-britanica-black text-[length:var(--line-size)]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+          <div className="2xl:translate-x-[-18px] lg:translate-x-[123px]  md:translate-x-[91px] translate-x-[39px] text-right">
+            <p className="whitespace-nowrap font-britanica-black text-[18px] lg:text-[40px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em]  sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
               WE PRICE
             </p>
           </div>
-          <div className="translate-x-[1.25em] text-right sm:translate-x-[2.75em] md:translate-x-[1.75em] lg:translate-x-[0.25em]">
-            <p className="whitespace-nowrap font-britanica-black text-[length:var(--line-size)]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+          <div className="translate-x-[1.25em] text-right sm:translate-x-[2.75em] md:translate-x-[2.75em] lg:translate-x-[4.25em] 2xl:translate-x-[-4.75em]">
+            <p className="whitespace-nowrap font-britanica-black text-[18px] lg:text-[40px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em]  sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
               PRACTICE
             </p>
           </div>
@@ -94,27 +94,29 @@ export function ServicesHero() {
         {/* Layer 3: right text (higher z than left, still behind phone) */}
         <div
           aria-hidden
-          className="absolute bottom-0 left-[calc(42%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(44%+var(--phone-w)/2+var(--text-gap))] right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:px-4 md:px-6 lg:px-8"
+          className="absolute bottom-0 left-[calc(35%+var(--phone-w)/2+var(--text-gap))] max-md:pr-3 right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] sm:px-4 md:px-6 2xl:left-[calc(32%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(43%+var(--phone-w)/2+var(--text-gap))] lg:px-8"
         >
-          <p className="whitespace-nowrap font-britanica-black text-[length:var(--line-size)]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+          <p className="whitespace-nowrap font-britanica-black text-[18px] lg:text-[40px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
             MATCH ANY
           </p>
-          <p className="mt-[var(--line2-mt)] whitespace-nowrap font-britanica-black text-[length:var(--line-size)]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+          <p className="mt-[var(--line2-mt)] whitespace-nowrap font-britanica-black text-[15px] max-md:tracking-[0.03em] sm:text-[18px] lg:text-[40px] md:text-[28px] uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
             WITHIN 15 MILES
           </p>
         </div>
 
         {/* Layer 4: phone image */}
         <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-center">
-          <Image
-            src="/assets/phone.png"
-            alt=""
-            width={600}
-            height={900}
-            className="h-auto w-[var(--phone-w)] max-h-full object-contain object-bottom"
-            sizes="(max-width: 640px) 40vw, (max-width: 1024px) 30vw, 320px"
-            priority
-          />
+          <div className="translate-x-[-25px] lg:translate-x-0 2xl:translate-x-[-139px] md:translate-x-[0px]">
+            <Image
+              src="/assets/phone1.png"
+              alt=""
+              width={600}
+              height={900}
+              className="h-auto w-[var(--phone-w)] max-h-full object-contain object-bottom"
+              sizes="(max-width: 640px) 40vw, (max-width: 1024px) 30vw, 320px"
+              priority
+            />
+          </div>
         </div>
         </div>
         </div>
