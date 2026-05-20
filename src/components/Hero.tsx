@@ -34,7 +34,7 @@ export function Hero() {
                 across Los Angeles
               </HeroSlideInOnView>
               <Link
-                href="/#become-a-member"
+                href="/locations"
                 className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:320ms] mt-2 inline-flex rounded-lg bg-[#FFF86B] px-2.5 py-1.5 text-[0.7rem] font-bold text-black tracking-[0.03em] shadow-sm transition-opacity hover:opacity-90 sm:mt-4 sm:rounded-[12px] sm:px-4 sm:py-2.5 sm:text-[0.8125rem] sm:tracking-[0.05em] md:mt-6 md:rounded-[14px] md:px-8 md:py-3 md:text-base md:tracking-[0.07em] lg:mt-8"
               >
                 Get Started – $297/year
