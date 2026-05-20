@@ -11,12 +11,12 @@ const FOOTER_LOCATIONS_MAPS_URL =
   "https://maps.google.com/?cid=4977324011827272902&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed";
 
 const servicesLinks = [
-  { href: "https://calabases.vercel.app/invisalign", label: "Invisalign" },
-  { href: "/services", label: "Veneers" },
-  { href: "/services", label: "Fillings & Crowns" },
-  { href: "https://calabases.vercel.app/implants", label: "Implants" },
-  { href: "/services", label: "Root Canal" },
-  { href: "/services", label: "Sedation Dentistry" },
+  { href: "/services#service-tab-invisalign", label: "Invisalign" },
+  { href: "/services#service-tab-veneers", label: "Veneers" },
+  { href: "/services#service-tab-fillings-crowns", label: "Fillings & Crowns" },
+  { href: "/services#service-tab-implants", label: "Implants" },
+  { href: "/services#service-tab-root-canal", label: "Root Canal" },
+  { href: "/services#service-tab-sedation", label: "Sedation Dentistry" },
 ];
 
 const companyLinks = [
@@ -25,6 +25,8 @@ const companyLinks = [
   { href: FOOTER_LOCATIONS_MAPS_URL, label: "Locations" },
 ];
 
+const FOOTER_HREF_CLASS = "transition-colors hover:text-white";
+
 export function ServicesFooterSection() {
   return (
     <section style={{ backgroundColor: FOOTER_BG }}>
@@ -32,7 +34,7 @@ export function ServicesFooterSection() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-10 md:grid-cols-4 md:gap-10 lg:gap-12">
           {/* Brand — full width on mobile, 1 col on tablet/desktop */}
           <div className="col-span-2 md:col-span-1">
-            <p className="font-dm-sans text-[2rem] font-semibold leading-none" style={{ color: BRAND_YELLOW }}>
+            <p className="font-britanica-black text-[2rem] font-semibold leading-none" style={{ color: BRAND_YELLOW }}>
               gleam
             </p>
             <p className="mt-4 max-w-[15rem] text-sm leading-relaxed" style={{ color: FOOTER_TEXT }}>
@@ -68,8 +70,7 @@ export function ServicesFooterSection() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-sm transition-colors hover:text-white"
-                    style={{ color: FOOTER_TEXT }}
+                    className={`text-sm text-[#A3A3A3] ${FOOTER_HREF_CLASS}`}
                     {...(item.href.startsWith("http")
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
@@ -91,8 +92,7 @@ export function ServicesFooterSection() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-sm transition-colors hover:text-white"
-                    style={{ color: FOOTER_TEXT }}
+                    className={`text-sm text-[#A3A3A3] ${FOOTER_HREF_CLASS}`}
                     {...(item.href.startsWith("http")
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
@@ -116,20 +116,20 @@ export function ServicesFooterSection() {
                   href={FOOTER_LOCATIONS_MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
+                  className={FOOTER_HREF_CLASS}
                 >
                   1019 N Fairfax Ave, West Hollywood, CA 90046
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Image src="/assets/call.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
-                <a href="tel:+13105550199" className="transition-colors hover:text-white">
+                <a href="tel:+13105550199" className={FOOTER_HREF_CLASS}>
                   (310) 555-0199
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Image src="/assets/mail.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
-                <a href="mailto:hello@gleam.co" className="transition-colors hover:text-white">
+                <a href="mailto:hello@gleam.co" className={FOOTER_HREF_CLASS}>
                   hello@gleam.co
                 </a>
               </li>
@@ -144,7 +144,7 @@ export function ServicesFooterSection() {
         <div className="mt-10 border-t border-neutral-800 pt-5 sm:mt-12 sm:pt-6">
           <div className="flex flex-row items-center justify-between gap-3 text-xs">
             <p style={{ color: FOOTER_MUTED }}>© 2026 Gleam Dental. All rights reserved</p>
-            <Link href="/privacy" className="transition-colors hover:text-white" style={{ color: FOOTER_MUTED }}>
+            <Link href="/privacy" className={`text-[#6B7280] ${FOOTER_HREF_CLASS}`}>
               Privacy
             </Link>
           </div>

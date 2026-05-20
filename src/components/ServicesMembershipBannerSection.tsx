@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -80,9 +81,9 @@ const PricingBanner = () => {
 
 
 
-          <button
+          <Link
 
-            type="button"
+            href="/locations"
 
             className="mt-[clamp(1rem,5.5vw,14.75rem)] md:mt-[clamp(1rem,4.5vw,14.75rem)] inline-flex w-fit items-center justify-center whitespace-nowrap rounded-full border-2 border-black bg-white px-[clamp(0.625rem,3.25vw,1.125rem)] py-[clamp(0.38rem,1.2vw,0.55rem)] text-center text-[clamp(-6.1875rem,2.6vw,1.125rem)] font-britanica-black text-black transition-colors hover:bg-neutral-100 md:border-[3px] md:px-[clamp(1rem,5vw,2rem)] md:text-[clamp(-13.0625rem,1.8vw,18.25rem)] lg:mt-[clamp(1.5rem,4vw,15rem)] lg:px-[clamp(1.25rem,4.5vw,2.25rem)] lg:py-[clamp(0.4rem,1.1vw,0.55rem)] lg:text-[1.8rem]"
 
@@ -90,7 +91,7 @@ const PricingBanner = () => {
 
             Become a Member
 
-          </button>
+          </Link>
 
         </div>
 

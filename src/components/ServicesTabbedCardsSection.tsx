@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { SERVICE_TABS, SERVICE_TABS_PREVENT, type ServiceTabEntry } from "@/data/serviceTabs";
@@ -13,6 +14,25 @@ const SECTION_BG = "#F7F5F0";
 
 type ServiceTrack = "restore" | "prevent";
 const TAB_BORDER = "border-neutral-200";
+const PANEL_OPEN_MS = 520;
+
+function resolveServiceFromHash(): { track: ServiceTrack; index: number; elementId: string } | null {
+  if (typeof window === "undefined") return null;
+
+  const raw = window.location.hash.slice(1);
+  if (!raw) return null;
+
+  const serviceId = raw.startsWith("service-tab-") ? raw.slice("service-tab-".length) : raw;
+  const elementId = raw.startsWith("service-tab-") ? raw : `service-tab-${raw}`;
+
+  const restoreIndex = SERVICE_TABS.findIndex((t) => t.id === serviceId);
+  if (restoreIndex >= 0) return { track: "restore", index: restoreIndex, elementId };
+
+  const preventIndex = SERVICE_TABS_PREVENT.findIndex((t) => t.id === serviceId);
+  if (preventIndex >= 0) return { track: "prevent", index: preventIndex, elementId };
+
+  return null;
+}
 
 /** Blurred price rows stacked behind the CTA (reference: dense bokeh behind pill). */
 const PRICE_BLUR_STACK_COUNT = 2;
@@ -120,13 +140,13 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
                 </div>
               ) : null}
               <div className="relative z-10 flex justify-center px-2 py-1">
-                <button
-                  type="button"
+                <Link
+                  href="/locations"
                   className="rounded-full px-6 py-3 text-[14px] font-bold leading-none text-neutral-900 shadow-[0_28px_90px_-8px_rgba(0,0,0,0.38),0_12px_36px_-12px_rgba(0,0,0,0.22)] transition-[transform,opacity] hover:opacity-95 active:scale-[0.99] sm:px-8 sm:py-3.5  md:px-10 md:py-4 tracking-[0.09em]"
                   style={{ backgroundColor: CTA_PILL_YELLOW }}
                 >
                   Unlock Member Pricing
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -144,8 +164,42 @@ export function ServicesTabbedCardsSection() {
   const tabs = track === "restore" ? SERVICE_TABS : SERVICE_TABS_PREVENT;
 
   useEffect(() => {
-    setExpandedIndex(track === "restore" ? 0 : tabs.length > 0 ? tabs.length - 1 : 0);
-  }, [track, tabs.length]);
+    function openFromHash() {
+      const match = resolveServiceFromHash();
+      if (!match) return;
+
+      setTrack(match.track);
+      setExpandedIndex(match.index);
+
+      const scrollTarget = match.elementId;
+      window.setTimeout(() => {
+        document.getElementById(scrollTarget)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, PANEL_OPEN_MS);
+    }
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    window.addEventListener("popstate", openFromHash);
+
+    const { pushState, replaceState } = window.history;
+    const onHistoryChange: History["pushState"] = (...args) => {
+      pushState(...args);
+      openFromHash();
+    };
+    const onHistoryReplace: History["replaceState"] = (...args) => {
+      replaceState(...args);
+      openFromHash();
+    };
+    window.history.pushState = onHistoryChange;
+    window.history.replaceState = onHistoryReplace;
+
+    return () => {
+      window.removeEventListener("hashchange", openFromHash);
+      window.removeEventListener("popstate", openFromHash);
+      window.history.pushState = pushState;
+      window.history.replaceState = replaceState;
+    };
+  }, []);
 
   return (
     <section
@@ -161,7 +215,10 @@ export function ServicesTabbedCardsSection() {
           <button
             type="button"
             aria-pressed={track === "restore"}
-            onClick={() => setTrack("restore")}
+            onClick={() => {
+              setTrack("restore");
+              setExpandedIndex(0);
+            }}
             className="rounded-[77px] border-[2px] border-black px-7 py-2 text-[13px] font-bold text-neutral-900 transition-colors sm:px-8 sm:py-2.5 sm:text-[14px] md:px-6 md:py-1.5"
             style={{
               backgroundColor: track === "restore" ? TOGGLE_ACTIVE_BG : SECTION_BG,
@@ -172,7 +229,10 @@ export function ServicesTabbedCardsSection() {
           <button
             type="button"
             aria-pressed={track === "prevent"}
-            onClick={() => setTrack("prevent")}
+            onClick={() => {
+              setTrack("prevent");
+              setExpandedIndex(0);
+            }}
             className="rounded-[77px] border-[2px] border-black px-7 py-2 text-[13px] font-bold text-neutral-900 transition-colors sm:px-8 sm:py-2.5 sm:text-[14px] md:px-6 md:py-1.5 "
             style={{
               backgroundColor: track === "prevent" ? TOGGLE_ACTIVE_BG : SECTION_BG,
