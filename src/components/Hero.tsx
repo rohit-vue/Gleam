@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pt-5 pb-0 sm:pt-6 sm:pb-0 md:pt-5 lg:pt-6"
+      className="relative overflow-hidden pt-0 pb-0 sm:pt-6 sm:pb-0 md:pt-0 lg:pt-0 2xl:pt-0 xl:pt-0"
       style={{ background: heroSectionBackground }}
     >
       <div className="relative mx-auto max-w-7xl px-3 sm:px-6">
@@ -51,10 +51,10 @@ export function Hero() {
           <div className="relative z-10 w-full self-end lg:mt-0">
             <div
               aria-hidden
-              className="ml-auto w-full max-lg:aspect-square lg:h-[632px] lg:max-w-[min(100%,580px)] xl:max-w-[640px]"
+              className="ml-auto w-full h-[227px] md:h-[399px] lg:h-[632px] xl:h-[520px] 2xl:h-[498px] lg:max-w-[min(100%,580px)] xl:max-w-[640px]"
             />
             <div
-              className="absolute bottom-0 right-0 z-10 ml-auto flex w-full items-end lg:max-w-[min(100%,580px)] xl:max-w-[640px]"
+              className="absolute bottom-0 right-0 2xl:right-[-255px] xl:right-[-62px] z-10 ml-auto flex w-full items-end lg:max-w-[min(100%,580px)] xl:max-w-[640px]"
               role="img"
               aria-label="Woman holding a card"
             >
