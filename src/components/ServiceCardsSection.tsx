@@ -47,7 +47,7 @@ export function ServiceCardsSection() {
               key={card.title}
               className={`group relative w-full max-w-[20rem] transition-all duration-500 ease-out motion-safe:hover:-translate-y-2 motion-safe:hover:scale-[1.02] ${
                 card.spotlight
-                  ? "z-20  motion-safe:lg:hover:scale-[1.08] "
+                  ? "z-50  motion-safe:lg:hover:scale-[1.08] "
                   : "z-10"
               }`}
             >
