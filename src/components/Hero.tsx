@@ -19,7 +19,7 @@ export function Hero() {
         <div className="relative z-10 grid grid-cols-2 items-center gap-2 sm:gap-4 md:gap-6 lg:items-stretch lg:gap-10 xl:gap-12 font-helvetica-neue-regular">
 
           {/* ── Left: text content ── */}
-          <div className="relative z-10 flex min-h-0 w-full flex-col self-center lg:self-stretch lg:max-w-none lg:pt-[112px]">
+          <div className="relative z-10 flex min-h-0 w-full flex-col self-center lg:self-stretch lg:max-w-none justify-center">
             <div className="shrink-0">
               <p className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:160ms] mt-1 text-[0.65rem] font-bold text-black tracking-[0.03em] sm:mt-3 sm:text-[0.8125rem] sm:tracking-[0.045em] md:mt-5 md:text-base md:tracking-[0.06em] lg:text-lg">
                 One Annual Membership
