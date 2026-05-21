@@ -54,7 +54,7 @@ export function Hero() {
               className="ml-auto w-full h-[227px] md:h-[399px] lg:h-[632px] xl:h-[520px] 2xl:h-[498px] lg:max-w-[min(100%,580px)] xl:max-w-[640px]"
             />
             <div
-              className="absolute bottom-0 right-0 2xl:right-[-255px] xl:right-[-62px] z-10 ml-auto flex w-full items-end lg:max-w-[min(100%,580px)] xl:max-w-[640px]"
+              className="absolute bottom-0 right-0 2xl:right-[-223px] xl:right-[-62px] z-10 ml-auto flex w-full items-end lg:max-w-[min(100%,580px)] xl:max-w-[640px]"
               role="img"
               aria-label="Woman holding a card"
             >
