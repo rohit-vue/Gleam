@@ -32,7 +32,7 @@ export type HeaderProps = {
 
 const defaultNavLinks: ReadonlyArray<HeaderNavLink> = [
   { href: "/services", label: "our services" },
-  { href: "/#who-is-gleam", label: "about" },
+  { href: "/#become-a-member", label: "pricing" },
   { href: "/locations", label: "locations" },
 ];
 
