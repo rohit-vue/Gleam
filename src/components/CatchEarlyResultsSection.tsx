@@ -71,10 +71,10 @@ export function CatchEarlyResultsSection() {
             aria-hidden
           />
           <p
-            className="absolute bottom-3 left-3 right-3 text-center text-[clamp(1.5rem,7vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-[0.1em] [word-spacing:0.15em] text-[#FFF159] sm:tracking-[0.18em] sm:[word-spacing:0.2em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] lg:bottom-[12.5rem] lg:text-[52px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
+            className="absolute bottom-3 left-3 right-3 text-center text-[clamp(1.5rem,7vw,3.25rem)] font-britanica-black uppercase leading-[0.95] tracking-[0.1em] [word-spacing:0.15em] text-[#FFF159] sm:tracking-[0.18em] sm:[word-spacing:0.2em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] lg:bottom-[12.5rem] lg:text-[52px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
             aria-label="Forget the drill"
           >
-            F#ck the drɪll
+            F#ck the drill
           </p>
         </div>
       </div>
