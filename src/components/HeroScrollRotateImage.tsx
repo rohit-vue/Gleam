@@ -10,7 +10,7 @@ export function HeroScrollRotateImage() {
         alt="Woman holding a card"
         width={900}
         height={900}
-        className="block w-full h-[227px] object-contain object-bottom max-lg:object-fill max-lg:object-right-bottom md:h-[399px] lg:h-[632px] lg:w-full lg:object-fill xl:h-[520px] xl:object-contain 2xl:h-[498px] 2xl:object-contain lg:object-right-bottom"
+        className="block w-full h-[190px] object-contain object-bottom max-lg:object-fill max-lg:object-right-bottom md:h-[399px] lg:h-[632px] lg:w-full lg:object-fill xl:h-[520px] xl:object-contain 2xl:h-[498px] 2xl:object-contain lg:object-right-bottom"
         priority
       />
       {/* Left-edge fade: fixed band width so the gradient looks consistent across breakpoints */}

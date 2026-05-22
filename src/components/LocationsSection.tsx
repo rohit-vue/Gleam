@@ -13,15 +13,15 @@ const locations = [
     address: "26787 Agoura Rd, Calabasas, CA 91302",
   },
   {
-    city: "Encɪno",
+    city: "Encino",
     address: "16055 Ventura Blvd #400, Encino, CA 91436",
   },
   {
-    city: "Valencɪa",
+    city: "Valencia",
     address: "24587 Copperhill Dr Santa Clarita, CA 91354",
   },
   {
-    city: "Northrɪdge",
+    city: "Northridge",
     address: "8954 Reseda Blvd #100, Northridge, CA 91324",
   },
   {
@@ -42,9 +42,9 @@ export function LocationsSection() {
           <HeroSlideInOnView
             as="p"
             wrapperClassName="lg:w-auto"
-            className="text-xl font-semibold uppercase tracking-[0.12em] text-black sm:text-2xl sm:tracking-[0.15em] md:text-[26px] md:tracking-[0.17em] lg:text-[28px] lg:tracking-[0.18em] xl:text-[32px] xl:tracking-[0.2em]"
+            className="text-xl font-britanica-black uppercase tracking-[0.12em]  sm:text-2xl sm:tracking-[0.15em] md:text-[26px] md:tracking-[0.17em] lg:text-[28px] lg:tracking-[0.18em] xl:text-[32px] xl:tracking-[0.2em]"
           >
-            Locatɪon
+            Location
           </HeroSlideInOnView>
           <HeroSlideInOnView
             as="h2"
@@ -65,7 +65,7 @@ export function LocationsSection() {
                   i === 0 ? "pt-5 md:pt-6" : ""
                 }`}
               >
-                <p className="text-lg font-semibold uppercase tracking-[0.03em] text-black sm:text-xl md:text-[22px] xl:text-[24px]">
+                <p className="text-lg font-britanica-black uppercase tracking-[0.03em]  sm:text-xl md:text-[22px] xl:text-[24px]">
                   {loc.city}
                 </p>
                 <p className="mt-1.5 w-full max-w-[min(100%,22rem)] text-[11px] font-semibold leading-relaxed text-black sm:text-xs xl:w-[180px] xl:max-w-none xl:text-[12px]">

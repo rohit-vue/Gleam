@@ -160,7 +160,7 @@ export function PricingSection() {
 
             <Link
               href="/locations"
-              className="mt-8 inline-flex w-[17.375rem] items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold text-black transition-opacity hover:opacity-90  sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
+              className="mt-8 inline-flex w-[17.375rem] items-center justify-start gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold text-black transition-opacity hover:opacity-90 px-2  sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
             >
               Get Started <span aria-hidden>→</span>
             </Link>
@@ -206,7 +206,7 @@ export function PricingSection() {
 
             <Link
               href="/locations"
-              className="mt-8 inline-flex w-[17.375rem] items-center justify-center gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
+              className="mt-8 inline-flex w-[17.375rem] items-center justify-start gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base px-2 font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
             >
               Get Started <span aria-hidden>→</span>
             </Link>

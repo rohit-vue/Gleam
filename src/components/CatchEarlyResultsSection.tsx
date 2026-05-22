@@ -53,8 +53,8 @@ export function CatchEarlyResultsSection() {
             className="absolute inset-0 bg-gradient-to-t  via-black/10 to-transparent"
             aria-hidden
           />
-          <p className="absolute bottom-3 left-3 right-3 text-center  text-[clamp(1.5rem,7vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-[0.12em] [word-spacing:0.15em] text-white sm:tracking-[0.2em] sm:[word-spacing:0.22em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] lg:bottom-[12.5rem] lg:text-[52px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
-            Catch ɪt early
+          <p className="absolute bottom-3 left-3 right-3 text-center  text-[clamp(1.5rem,7vw,3.25rem)] font-britanica-black uppercase leading-[0.95] tracking-[0.12em] [word-spacing:0.15em] text-white sm:tracking-[0.2em] sm:[word-spacing:0.22em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] lg:bottom-[12.5rem] lg:text-[52px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
+            Catch It early
           </p>
         </div>
 

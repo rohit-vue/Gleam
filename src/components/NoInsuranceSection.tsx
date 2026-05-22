@@ -20,9 +20,9 @@ export function NoInsuranceSection() {
             </p>
             <h2
               id="no-insurance-heading"
-              className="w-full max-w-4xl text-center text-[clamp(1.65rem,6.5vw,4.625rem)] font-semibold uppercase leading-[1.08] tracking-tight text-white sm:leading-[1.1] md:leading-[1.1]"
+              className="w-full max-w-4xl text-center text-[clamp(1.65rem,6.5vw,4.625rem)] font-britanica-black uppercase leading-[1.08]  text-white sm:leading-[1.1] md:leading-[1.1]"
             >
-              <span className="block">No ɪnsurance.</span>
+              <span className="block">No Insurance.</span>
               <span className="block">No problem.</span>
             </h2>
           </div>
