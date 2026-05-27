@@ -41,11 +41,11 @@ export function ServiceCardsSection() {
           </Link>
         </div>
 
-        <div className="mx-auto grid max-w-md justify-items-center gap-8 md:max-w-lg md:gap-6 lg:max-w-5xl lg:grid-cols-3 lg:items-end lg:gap-6 xl:max-w-6xl">
+        <div className="flex overflow-x-auto gap-6 pb-2 snap-x snap-mandatory scrollbar-hide lg:grid lg:mx-auto lg:max-w-5xl lg:grid-cols-3 lg:items-end lg:gap-6 lg:overflow-visible xl:max-w-6xl">
           {cards.map((card) => (
             <article
               key={card.title}
-              className={`group relative w-full max-w-[20rem] transition-all duration-500 ease-out motion-safe:hover:-translate-y-2 motion-safe:hover:scale-[1.02] ${
+              className={`group relative w-[80vw] max-w-[20rem] shrink-0 snap-center lg:w-full lg:shrink transition-all duration-500 ease-out motion-safe:hover:-translate-y-2 motion-safe:hover:scale-[1.02] ${
                 card.spotlight
                   ? "z-50  motion-safe:lg:hover:scale-[1.08] "
                   : "z-10"
@@ -68,7 +68,7 @@ export function ServiceCardsSection() {
                   aria-hidden
                 />
                 <p className="absolute left-4 top-4 max-w-[85%] text-left text-[20px] font-medium leading-tight text-white md:left-5 md:top-5">
-                  <span className="block">{card.label[0]}</span>
+                  <span className="mb-2">{card.label[0]}</span>
                   <span className="block">{card.label[1]}</span>
                 </p>
                 <p className="absolute bottom-4 left-4 text-[46px] text-[#F9F36B] font-medium uppercase tracking-[0.03em]  md:bottom-5 md:left-5">

@@ -35,7 +35,7 @@ type CompareCell = string | "check";
 function GreenCheck() {
   return (
     <div
-      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#22C55E] shadow-sm ring-2 ring-white/20 lg:h-7 lg:w-7"
+      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#22C55E] lg:h-7 lg:w-7"
       aria-label="Included"
       role="img"
     >
@@ -116,12 +116,12 @@ export function PricingSection() {
   return (
     <section
       id="become-a-member"
-      className="relative scroll-mt-24 overflow-x-hidden bg-[#1A1A1A] px-4 py-8 font-helvetica-neue-regular md:scroll-mt-28 md:px-8 md:py-9 lg:py-8"
+      className="relative scroll-mt-24 overflow-x-hidden bg-[#2A2A2A] px-4 py-10 font-helvetica-neue-regular md:scroll-mt-28 md:px-8 md:py-10 lg:py-10"
       aria-labelledby="pricing-tagline"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="relative isolate mx-auto w-full max-w-6xl px-2 md:px-4">
-          <div className="relative mt-6 grid w-full place-items-center sm:mt-7 md:mt-9 lg:mt-0">
+          <div className="relative mb-[1.5rem] grid w-full place-items-center sm:mt-7  lg:mt-0">
             <h2
               id="pricing-tagline"
               className="col-start-1 row-start-1 z-10 min-w-full translate-y-[1.1rem] px-2 text-center text-[1.3rem] font-bold uppercase leading-snug tracking-[0.05em] text-white [word-spacing:0.16em] sm:translate-y-[1.35rem] sm:px-3 sm:text-[1.4rem] sm:tracking-[0.055em] sm:[word-spacing:0.18em] md:translate-y-8 md:text-[1.55rem] md:tracking-[0.065em] md:[word-spacing:0.22em] lg:translate-y-14 lg:text-[2.2rem] lg:leading-snug lg:tracking-[0.09em] lg:pb-[59px] lg:text-[47px] lg:[word-spacing:0.34em]"
@@ -133,7 +133,7 @@ export function PricingSection() {
 
         <div className="mt-6 grid gap-6 md:mt-8 lg:mt-10 lg:grid-cols-2 lg:gap-6">
           {/* Essential */}
-          <article className="flex flex-col rounded-[38px] bg-[#3D3D3A] p-4 shadow-xl ring-1 ring-white/5 sm:p-6 md:p-8 lg:p-10">
+          <article className="flex flex-col rounded-[38px] border-2 border-transparent bg-[#3D3D3A] p-4 shadow-xl transition-colors hover:border-[#FDFD66] sm:p-6 md:p-8 lg:p-10">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
                 Essential
@@ -148,7 +148,7 @@ export function PricingSection() {
               Never think about your teeth again.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-4">
               <p className="text-[1.375rem] font-bold tracking-[0.02em] text-white md:text-[1.5rem] lg:text-[28px]">
                 $160{" "}
                 <span className="text-[15px] font-semibold text-[#C2C0B6] sm:text-[16px] lg:text-[18px]">
@@ -160,7 +160,7 @@ export function PricingSection() {
 
             <Link
               href="/locations"
-              className="mt-8 inline-flex w-[17.375rem] items-center justify-start gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold text-black transition-opacity hover:opacity-90 px-2  sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
+              className="mt-4 inline-flex w-[9.375rem] lg:w-[17.375rem] md:w-[17.375rem] items-center justify-start gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold text-black transition-opacity hover:opacity-90 pl-[1.2rem] pr-[0.5rem] lg:px-3 md:px-2  sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
             >
               Get Started <span aria-hidden>→</span>
             </Link>
@@ -177,7 +177,7 @@ export function PricingSection() {
           </article>
 
           {/* Annual */}
-          <article className="flex flex-col rounded-[38px] border-2 border-[#FDFD66] bg-[#1A1A1A] p-4 shadow-xl sm:p-6 md:p-8 lg:p-10">
+          <article className="flex flex-col rounded-[38px] border-2 border-transparent bg-[#1A1A1A] p-4 shadow-xl transition-colors hover:border-[#FDFD66] sm:p-6 md:p-8 lg:p-10">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
                 Annual
@@ -194,7 +194,7 @@ export function PricingSection() {
               Full access from day one — brighter smile included.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-4">
               <p className="text-[1.625rem] font-bold tracking-[0.02em] text-white sm:text-[1.75rem] md:text-4xl lg:text-4xl">
                 $297{" "}
                 <span className="text-[15px] font-semibold text-[#C2C0B6] sm:text-[16px] lg:text-[18px]">
@@ -206,7 +206,7 @@ export function PricingSection() {
 
             <Link
               href="/locations"
-              className="mt-8 inline-flex w-[17.375rem] items-center justify-start gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base px-2 font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
+              className="mt-4 inline-flex w-[9.375rem] lg:w-[17.375rem] md:w-[17.375rem] items-center justify-start gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base pl-[1.2rem] pr-[0.5rem] lg:px-3 md:px-2 font-bold tracking-[0.02em] text-[#000000] transition-opacity hover:opacity-90 sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
             >
               Get Started <span aria-hidden>→</span>
             </Link>
@@ -223,7 +223,7 @@ export function PricingSection() {
           </article>
         </div>
 
-        <div className="mt-20 lg:mt-28">
+        <div className="mt-10 lg:mt-14">
           <p className="sr-only">Compare traditional insurance, other subscriptions, and Gleam</p>
           <div className="-mx-4 overflow-x-auto px-4 pb-2 md:mx-0 md:overflow-visible md:px-0">
             
