@@ -31,9 +31,9 @@ export function ServicesFooterSection() {
   return (
     <section style={{ backgroundColor: FOOTER_BG }}>
       <div className="mx-auto max-w-7xl px-4 pb-6 pt-10 sm:px-6 sm:pb-7 sm:pt-12 md:px-10 lg:px-12 lg:pt-16">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-10 md:grid-cols-4 md:gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 gap-y-8 md:grid-cols-4 md:gap-10 lg:gap-12">
           {/* Brand — full width on mobile, 1 col on tablet/desktop */}
-          <div className="col-span-2 md:col-span-1">
+          <div>
             <p className="font-britanica-black text-[2rem] font-semibold leading-none" style={{ color: BRAND_YELLOW }}>
               gleam
             </p>
@@ -60,8 +60,8 @@ export function ServicesFooterSection() {
             </div>
           </div>
 
-          {/* Services — col 1 on mobile/tablet */}
-          <div className="col-span-1">
+          {/* Services */}
+          <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em]" style={{ color: FOOTER_MUTED }}>
               Services
             </p>
@@ -82,8 +82,8 @@ export function ServicesFooterSection() {
             </ul>
           </div>
 
-          {/* Company — col 2 on mobile/tablet */}
-          <div className="col-span-1">
+          {/* Company */}
+          <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em]" style={{ color: FOOTER_MUTED }}>
               Company
             </p>
@@ -105,7 +105,7 @@ export function ServicesFooterSection() {
           </div>
 
           {/* Contact — full width on mobile, 1 col on tablet/desktop */}
-          <div className="col-span-2 md:col-span-1">
+          <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em]" style={{ color: FOOTER_MUTED }}>
               Contact
             </p>

@@ -49,11 +49,11 @@ function SpecsTable({ specs }: { specs: ServiceTabEntry["specs"] }) {
             key={row.label}
             className="grid grid-cols-1 gap-1 border-b border-neutral-300 py-3 text-[11px] uppercase leading-snug tracking-wide  sm:grid-cols-3 sm:items-center sm:gap-4 sm:text-xs"
           >
-            <span className="font-bold " >
+            <span className=" font-bold lg:font-bold " >
               {row.label}
             </span>
-            <span className=" text-black sm:text-center font-bold">{row.mid}</span>
-            <span className=" text-black sm:text-right font-bold">{row.right}</span>
+            <span className=" text-black sm:text-center font-normal lg:font-bold ">{row.mid}</span>
+            <span className=" text-black sm:text-right font-normal lg:font-bold ">{row.right}</span>
           </div>
         ))}
       </div>

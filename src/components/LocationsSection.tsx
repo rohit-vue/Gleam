@@ -7,26 +7,32 @@ const locations = [
   {
     city: "West Hollywood",
     address: "1019 N Fairfax Ave, West Hollywood, CA 90046",
+    href: "https://maps.app.goo.gl/hh6n8hLbP3rQuZsy6",
   },
   {
     city: "Calabasas",
     address: "26787 Agoura Rd, Calabasas, CA 91302",
+    href: "https://maps.app.goo.gl/2rLSbYoPqviSrvfC6",
   },
   {
     city: "Encino",
     address: "16055 Ventura Blvd #400, Encino, CA 91436",
+    href: "https://maps.app.goo.gl/biLbSiaG9yNpyE2X6",
   },
   {
     city: "Valencia",
     address: "24587 Copperhill Dr Santa Clarita, CA 91354",
+    href: "https://maps.app.goo.gl/V3qFfx2DpYiLionQ9",
   },
   {
     city: "Northridge",
     address: "8954 Reseda Blvd #100, Northridge, CA 91324",
+    href: "https://maps.app.goo.gl/pN1bHqUPp4oYK9WQ8",
   },
   {
     city: "La Puente",
     address: "864 N Hacienda Blvd La Puente, CA 91744",
+    href: "https://maps.app.goo.gl/MgfLCDtZqEizpf8a6",
   },
 ] as const;
 
@@ -59,16 +65,19 @@ export function LocationsSection() {
         <div className="mt-8 grid gap-6 sm:mt-10 sm:gap-7 lg:mt-14 lg:grid-cols-[minmax(14rem,30%)_1fr] lg:items-stretch lg:gap-8 xl:grid-cols-[minmax(16rem,28%)_1fr] xl:gap-[1.5px]">
           <div className="flex flex-col overflow-hidden rounded-l-[20px] bg-white shadow-xl ring-1 ring-black/5">
             {locations.map((loc, i) => (
-              <div
+              <a
                 key={loc.city}
-                className={`px-5 pb-3 md:px-7 md:pb-4 ${
+                href={loc.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group block px-5 pb-3 transition-opacity hover:opacity-80 md:px-7 md:pb-4 ${
                   i === 0 ? "pt-5 md:pt-6" : ""
                 }`}
               >
                 <p className="text-lg font-britanica-black uppercase tracking-[0.03em]  sm:text-xl md:text-[22px] xl:text-[24px]">
                   {loc.city}
                 </p>
-                <p className="mt-1.5 w-full max-w-[min(100%,22rem)] text-[11px] font-semibold leading-relaxed text-black sm:text-xs xl:w-[180px] xl:max-w-none xl:text-[12px]">
+                <p className="mt-1.5 w-full max-w-[min(100%,22rem)] text-[11px] font-semibold leading-relaxed text-black group-hover:text-blue-600 sm:text-xs xl:w-[180px] xl:max-w-none xl:text-[12px]">
                   {loc.address}
                 </p>
                 {i < locations.length - 1 ? (
@@ -79,7 +88,7 @@ export function LocationsSection() {
                     <div className="h-px w-[100%] bg-black sm:w-[100%]" />
                   </div>
                 ) : null}
-              </div>
+              </a>
             ))}
           </div>
 

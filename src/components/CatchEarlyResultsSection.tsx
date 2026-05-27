@@ -38,9 +38,9 @@ function BeforeAfterFigure({
 
 export function CatchEarlyResultsSection() {
   return (
-    <div className="w-full font-helvetica-neue-regular">
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="relative min-h-[280px] w-full bg-[#FFF159] md:min-h-[320px] lg:min-h-[360px]">
+    <div className="w-full overflow-x-hidden font-helvetica-neue-regular">
+      <div className="flex w-full max-w-full snap-x snap-mandatory gap-3 overflow-x-auto min-[425px]:gap-4 md:grid md:grid-cols-2 md:gap-0 md:overflow-visible">
+        <div className="relative min-h-[250px] w-[calc(100%-1.25rem)] shrink-0 snap-center bg-[#FFF159] min-[425px]:min-h-[280px] min-[425px]:w-[85%] md:w-full md:min-w-0 md:shrink md:min-h-[320px] lg:min-h-[360px]">
           <Image
             src="/assets/teethhurt.png"
             alt="Person holding jaw in discomfort"
@@ -51,14 +51,15 @@ export function CatchEarlyResultsSection() {
           />
           <div
             className="absolute inset-0 bg-gradient-to-t  via-black/10 to-transparent"
+
             aria-hidden
           />
-          <p className="absolute bottom-3 left-3 right-3 text-center  text-[clamp(1.5rem,7vw,3.25rem)] font-britanica-black uppercase leading-[0.95] tracking-[0.12em] [word-spacing:0.15em] text-white sm:tracking-[0.2em] sm:[word-spacing:0.22em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] lg:bottom-[12.5rem] lg:text-[52px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
+          <p className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-white max-md:top-[66px] max-md:bottom-auto max-md:left-0 max-md:right-0 max-md:px-3 max-md:text-center max-md:text-[clamp(-4.875rem,8vw,7.5rem)] max-md:tracking-[0.1em] md:top-[80px] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] md:bottom-auto md:left-5 2xl:left-[10.25rem] lg:left-[2.25rem]  xl:left-[10.25rem]  md:right-auto md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
             Catch It early
           </p>
         </div>
 
-        <div className="relative min-h-[280px] w-full bg-[#CCCCCC] md:min-h-[320px] lg:min-h-[360px]">
+        <div className="relative min-h-[250px] w-[calc(100%-1.25rem)] shrink-0 snap-center bg-[#CCCCCC] min-[425px]:min-h-[280px] min-[425px]:w-[85%] md:w-full md:min-w-0 md:shrink md:min-h-[320px] lg:min-h-[360px]">
           <Image
             src="/assets/dentaldrill.png"
             alt="Dental handpiece close-up"
@@ -71,7 +72,7 @@ export function CatchEarlyResultsSection() {
             aria-hidden
           />
           <p
-            className="absolute bottom-3 left-3 right-3 text-center text-[clamp(1.5rem,7vw,3.25rem)] font-britanica-black uppercase leading-[0.95] tracking-[0.1em] [word-spacing:0.15em] text-[#FFF159] sm:tracking-[0.18em] sm:[word-spacing:0.2em] md:bottom-5 md:left-5 md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] lg:bottom-[12.5rem] lg:text-[52px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
+            className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-[#FFF159] max-md:top-[66px] max-md:bottom-auto max-md:left-0 max-md:right-0 max-md:px-3 max-md:text-center max-md:text-[clamp(-4.875rem,8vw,7.5rem)] max-md:tracking-[0.1em] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] 2xl:left-[10.25rem] lg:left-[2.25rem]  xl:left-[10.25rem] md:top-[80px] md:bottom-auto md:left-5 md:right-auto md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
             aria-label="Forget the drill"
           >
             F#ck the drill
@@ -87,13 +88,13 @@ export function CatchEarlyResultsSection() {
       >
         <h2
           id="results-heading"
-          className="pointer-events-none absolute left-[calc(50%+0.1em)] top-2 z-0 w-full max-w-[100vw] -translate-x-1/2 select-none  text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:top-1   sm:leading-[0.84] sm:tracking-[0.05em] md:top-0  md:tracking-[0.065em]  lg:leading-[0.85] lg:tracking-[0.2em]"
+          className="pointer-events-none absolute left-1/2 top-2 z-0 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
         >
           Results
         </h2>
         <h2
           aria-hidden
-          className="pointer-events-none absolute left-[calc(50%+0.1em)] top-2 z-20 w-full max-w-[100vw] -translate-x-1/2 select-none  text-center text-[clamp(3rem,16vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black sm:top-1   sm:leading-[0.84] sm:tracking-[0.05em] md:top-0  md:tracking-[0.065em]  lg:leading-[0.85] lg:tracking-[0.2em]"
+          className="pointer-events-none absolute left-1/2 top-2 z-20 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
         >
           <span className="text-transparent">R</span>
           <span>E</span>
@@ -104,11 +105,11 @@ export function CatchEarlyResultsSection() {
         </h2>
 
         <div className="relative z-10 mx-auto mt-12 flex max-w-5xl justify-center sm:mt-14 md:mt-16 md:max-w-6xl lg:mt-[5.5rem] lg:max-w-[64rem]">
-          <div className="flex w-full max-w-full flex-col items-center gap-8 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10 lg:gap-14 xl:gap-24 2xl:gap-32">
+        <div className="flex w-full max-w-full snap-x snap-mandatory gap-4 overflow-x-auto px-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8 sm:overflow-visible sm:px-0 md:gap-5 lg:gap-14 xl:gap-24 2xl:gap-32">
             {beforeAfterColumns.map((pair, i) => (
               <div
                 key={pair.before}
-                className="flex w-full max-w-[min(100%,18.5rem)] flex-col gap-0 overflow-hidden rounded-none shadow-none ring-0 sm:max-w-[13rem] md:max-w-[13.5rem] lg:max-w-[14.5rem]"
+                className="flex w-full min-w-[78vw] max-w-[18.5rem] shrink-0 snap-center flex-col gap-0 overflow-hidden rounded-none shadow-none ring-0 sm:min-w-0 sm:max-w-[13rem] sm:shrink md:max-w-[13.5rem] lg:max-w-[14.5rem]"
               >
                 <BeforeAfterFigure
                   src={pair.before}

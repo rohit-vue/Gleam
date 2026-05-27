@@ -82,7 +82,7 @@ function LocationCard({ loc }: { loc: Location }) {
 
       <div className="flex items-center justify-between">
         <span
-          className="rounded-full bg-black pl-[1.75rem] pr-[4.75rem] py-3 text-[13px] font-bold tracking-[0.3px] text-[#FFF86B] transition-colors duration-150 group-hover:bg-[#FFF86B] group-hover:text-black"
+          className="rounded-full bg-black px-[1.75rem] py-3 text-center text-[13px] font-bold tracking-[0.3px] text-[#FFF86B] transition-colors duration-150 group-hover:bg-[#FFF86B] group-hover:text-black"
         >
           Become a Member
         </span>
