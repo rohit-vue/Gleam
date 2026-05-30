@@ -4,13 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 
-/** Homepage header background on `/` — applied at `lg` breakpoint and above (desktop). */
+/** Homepage header background on `/` — applied at `md` breakpoint and above (tablet / desktop). */
 const homeHeaderBackground =
   "linear-gradient(118.99deg, rgba(250, 243, 107, 0.8) 15.59%, rgba(252, 247, 159, 0.518) 26.8%, rgba(255, 255, 255, 0) 60.13%)";
 
-/** Homepage header background on `/` — applied at every breakpoint below `lg` (mobile / sm / md). */
-const homeHeaderBackgroundSm =
-  "linear-gradient(118.99deg, rgba(250, 243, 107, 0.8) 23.59%, rgba(252, 247, 159, 0.518) 35.8%, rgba(255, 255, 255, 0) 60.13%)";
+/** 50/50 yellow/white header on `/services` — applied below `md` (phone only). */
+const mobileHeaderSplitBg =
+  "linear-gradient(to right, #FFF86B 50%, #FFFFFF 50%)";
+
+/** Homepage header background on `/` — applied below `md` (phone only). */
+const homeHeaderBackgroundSm = "#FFF86B";
 
 export type HeaderNavLink = {
   href: string;
@@ -80,18 +83,34 @@ export function Header({
   const isHome = pathname === "/";
   const headerBackground = isHome ? (bg ?? homeHeaderBackground) : undefined;
   const useResponsiveGradient = isHome && !bg;
+  const useHeroScrollBg = useResponsiveGradient || isServicesPage;
   const [pastHeroHalf, setPastHeroHalf] = useState(false);
   const showHomeGradient = useResponsiveGradient && !pastHeroHalf;
+  const showServicesMobileSplit = isServicesPage && !pastHeroHalf;
   const useWhiteBg = !showHomeGradient && (!headerBackground || pastHeroHalf);
 
   useEffect(() => {
-    if (!useResponsiveGradient) {
+    if (!useHeroScrollBg) {
       setPastHeroHalf(false);
       return;
     }
 
     const updatePastHeroHalf = () => {
-      const hero = document.getElementById("hero");
+      let hero: HTMLElement | null = null;
+
+      if (isHome) {
+        const mobileHero = document.getElementById("hero");
+        const desktopHero = document.getElementById("hero-desktop");
+        hero =
+          mobileHero && mobileHero.offsetHeight > 0
+            ? mobileHero
+            : desktopHero && desktopHero.offsetHeight > 0
+              ? desktopHero
+              : mobileHero ?? desktopHero;
+      } else if (isServicesPage) {
+        hero = document.getElementById("services-hero");
+      }
+
       if (!hero) {
         setPastHeroHalf(false);
         return;
@@ -107,7 +126,7 @@ export function Header({
       window.removeEventListener("scroll", updatePastHeroHalf);
       window.removeEventListener("resize", updatePastHeroHalf);
     };
-  }, [useResponsiveGradient, pathname]);
+  }, [useHeroScrollBg, isHome, isServicesPage, pathname]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -132,17 +151,27 @@ export function Header({
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-neutral-200/80 ${
-        useWhiteBg ? "bg-white" : ""
-      } ${showHomeGradient ? "[background:var(--header-bg-mobile)] lg:[background:var(--header-bg-desktop)]" : ""}`}
+        showHomeGradient
+          ? "[background:var(--header-bg-mobile)] md:[background:var(--header-bg-desktop)]"
+          : showServicesMobileSplit
+            ? "max-md:[background:var(--header-bg-mobile-split)] md:bg-white"
+            : useWhiteBg
+              ? "bg-white"
+              : ""
+      }`}
       style={
         showHomeGradient
           ? ({
               "--header-bg-mobile": homeHeaderBackgroundSm,
               "--header-bg-desktop": homeHeaderBackground,
             } as React.CSSProperties)
-          : headerBackground && !pastHeroHalf
-            ? { background: headerBackground }
-            : undefined
+          : showServicesMobileSplit
+            ? ({
+                "--header-bg-mobile-split": mobileHeaderSplitBg,
+              } as React.CSSProperties)
+            : headerBackground && !pastHeroHalf
+              ? { background: headerBackground }
+              : undefined
       }
     >
       {menuOpen ? (

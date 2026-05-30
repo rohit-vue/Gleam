@@ -9,30 +9,38 @@ export function ServicesHero() {
 
   return (
     <section className="flex flex-col">
-      <div className="relative grid min-h-0 flex-1 grid-cols-1 md:grid-cols-2">
+      <div
+        id="services-hero"
+        className="relative grid min-h-0 flex-1 grid-cols-2 md:grid-cols-2"
+      >
         <div
-          className="col-span-1 flex min-h-[28vh] flex-col justify-start px-6 pb-10 pt-10 md:min-h-0 md:px-10 md:pb-12 md:pt-12"
+          className="col-span-1 flex flex-col justify-start max-md:overflow-hidden max-md:px-2 max-md:pb-8 max-md:pt-8 md:min-h-0 md:px-10 md:pb-12 md:pt-12"
           style={{ backgroundColor: HERO_YELLOW }}
         >
-          <p className="motion-safe:animate-slide-in-ltr text-[50px] font-semibold uppercase tracking-[0.22em] text-white lg:flex lg:flex-col lg:items-start lg:gap-3 lg:leading-[0.92] lg:text-[56px] lg:tracking-[0.22em]">
-            <span className="lg:hidden">OUR SERVICES</span>
+          <p className="motion-safe:animate-slide-in-ltr font-britanica-black font-bold uppercase text-white max-md:flex max-md:flex-col max-md:text-[clamp(1.375rem,8vw,5.875rem)] max-md:leading-[1] max-md:tracking-[0.08em] md:text-[50px] md:font-semibold md:tracking-[0.22em] lg:flex lg:flex-col lg:items-start lg:gap-3 lg:leading-[0.92] lg:text-[56px] lg:tracking-[0.22em]">
+            <span className="flex flex-col md:hidden">
+              <span>ALL</span>
+              <span>OUR</span>
+              <span>SERVICES</span>
+            </span>
+            <span className="hidden md:inline lg:hidden">OUR SERVICES</span>
             <span className="hidden lg:block">OUR</span>
             <span className="hidden lg:block">SERVICES</span>
           </p>
         </div>
 
-        <div className="col-span-1 flex min-h-[18rem] items-center justify-center bg-white px-6  md:min-h-0 md:px-10 ">
+        <div className="col-span-1 flex min-h-0 items-end justify-center bg-white px-0 py-0 md:px-10 lg:px-2">
           <Image
             src="/assets/jaw.png"
             alt="Dental model held in hand"
             width={640}
             height={800}
-            className="h-auto max-h-[min(60vh,34rem)] w-full max-w-md object-contain"
+            className="h-auto w-full max-h-[140px] object-contain object-bottom max-md:max-w-full md:max-h-[min(60vh,34rem)] md:max-w-md"
             priority
           />
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 z-10 grid w-full grid-cols-1 md:grid-cols-2">
+        <div className="absolute inset-x-0 bottom-0 z-10 hidden w-full md:grid md:grid-cols-2">
           <div
             className="relative min-h-[5.25rem] overflow-hidden sm:min-h-[6.25rem] md:min-h-[7rem] lg:min-h-[clamp(4.75rem,12vw,8rem)]"
             style={{ backgroundColor: HERO_YELLOW }}

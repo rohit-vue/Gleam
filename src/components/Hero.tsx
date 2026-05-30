@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { HeroScrollRotateImage } from "@/components/HeroScrollRotateImage";
-import { HeroSlideInOnView } from "@/components/HeroSlideInOnView";
 
 /** Keep in sync with `homeHeaderBackground` in `Header.tsx` if you change this gradient. */
 const heroSectionBackground =
@@ -10,7 +9,7 @@ const heroSectionBackground =
 export function Hero() {
   return (
     <section
-      id="hero"
+      id="hero-desktop"
       className="relative overflow-hidden pt-0 pb-0 sm:pt-6 sm:pb-0 md:pt-0 lg:pt-0 2xl:pt-0 xl:pt-0"
       style={{ background: heroSectionBackground }}
     >
@@ -24,15 +23,11 @@ export function Hero() {
               <p className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:160ms] mt-1 text-[0.65rem] font-bold text-black tracking-[0.03em] sm:mt-3 sm:text-[0.8125rem] sm:tracking-[0.045em] md:mt-5 md:text-base md:tracking-[0.06em] lg:text-lg">
                 One Annual Membership
               </p>
-              <HeroSlideInOnView
-                as="h1"
-                wrapperClassName="w-full"
-                className="mt-1 text-[1rem] font-semibold leading-[1.1] tracking-[0.02em] text-black sm:mt-2 sm:text-[1.4rem] sm:tracking-[0.04em] md:mt-4 md:text-[2.25rem] md:leading-[1.1] md:tracking-[0.06em] lg:mt-5 lg:mb-[1rem] lg:text-[2.75rem] lg:leading-[1.08] lg:tracking-[0.09em]"
-              >
+              <h1 className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:160ms] mt-1 text-[1rem] font-semibold leading-[1.1] tracking-[0.02em] text-black sm:mt-2 sm:text-[1.4rem] sm:tracking-[0.04em] md:mt-4 md:text-[2.25rem] md:leading-[1.1] md:tracking-[0.06em] lg:mt-5 lg:mb-[1rem] lg:text-[2.75rem] lg:leading-[1.08] lg:tracking-[0.09em]">
                 Unlimited dental care
                 <br />
                 across Los Angeles
-              </HeroSlideInOnView>
+              </h1>
               <Link
                 href="/locations"
                 className="motion-safe:animate-slide-in-ltr motion-safe:[animation-delay:320ms] mt-2 inline-flex rounded-lg bg-[#FFF86B] px-2.5 py-1.5 text-[0.7rem] font-bold text-black tracking-[0.03em] shadow-sm transition-opacity hover:opacity-90 sm:mt-4 sm:rounded-[12px] sm:px-4 sm:py-2.5 sm:text-[0.8125rem] sm:tracking-[0.05em] md:mt-6 md:rounded-[14px] md:px-8 md:py-3 md:text-base md:tracking-[0.07em] lg:mt-8"
