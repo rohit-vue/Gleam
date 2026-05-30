@@ -52,8 +52,8 @@ function SpecsTable({ specs }: { specs: ServiceTabEntry["specs"] }) {
             <span className=" font-bold lg:font-bold " >
               {row.label}
             </span>
-            <span className=" text-black sm:text-center font-normal lg:font-bold ">{row.mid}</span>
-            <span className=" text-black sm:text-right font-normal lg:font-bold ">{row.right}</span>
+            <span className=" text-black sm:text-center font-normal md:font-bold lg:font-bold ">{row.mid}</span>
+            <span className=" text-black sm:text-right font-normal md:font-bold lg:font-bold ">{row.right}</span>
           </div>
         ))}
       </div>
