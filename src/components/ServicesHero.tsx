@@ -102,7 +102,7 @@ export function ServicesHero() {
         {/* Layer 3: right text (higher z than left, still behind phone) */}
         <div
           aria-hidden
-          className="absolute bottom-0 left-[calc(25%+var(--phone-w)/2+var(--text-gap))] max-md:pr-3 right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] sm:px-4 md:px-6 2xl:left-[calc(36%+var(--phone-w)/2+var(--text-gap))] xl:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(40%+var(--phone-w)/2+var(--text-gap))] lg:px-8"
+          className="absolute bottom-0 left-[calc(28%+var(--phone-w)/2+var(--text-gap))] max-md:pr-3 right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] sm:px-4 md:px-6 2xl:left-[calc(36%+var(--phone-w)/2+var(--text-gap))] xl:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(40%+var(--phone-w)/2+var(--text-gap))] lg:px-8"
         >
           <p className="whitespace-nowrap font-britanica-black text-[20px] uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:text-[28px] md:tracking-[0.09em] lg:text-[35px] lg:tracking-[0.11em] 2xl:text-[55px]">
             MATCH ANY

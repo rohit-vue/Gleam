@@ -63,7 +63,7 @@ const PricingBanner = () => {
 
         <div className="relative z-20 flex w-full max-w-[min(100%,34rem)] flex-col items-center px-[clamp(1rem,11vw,4rem)] text-center md:max-w-[min(100%,40rem)] lg:max-w-none lg:px-[clamp(0.5rem,8vw,5rem)]">
 
-          <h1 className="max-w-[22ch] font-britanica-black  leading-[1.05] tracking-tight text-[#050505] text-[clamp(1.125rem,5.8vw,2.25rem)] text-balance sm:max-w-none md:text-[clamp(1.25rem,4.2vw,3rem)] lg:text-[clamp(1.125rem,5.05vw,14.25rem)]">
+          <h1 className="max-w-[22ch] font-britanica-black  leading-[1.05] tracking-tight text-[#050505] text-[clamp(1.125rem,6.8vw,2.25rem)] text-balance sm:max-w-none md:text-[clamp(1.25rem,4.2vw,3rem)] lg:text-[clamp(1.125rem,5.05vw,14.25rem)]">
 
             Every service. One Plan.
 
@@ -71,7 +71,7 @@ const PricingBanner = () => {
 
 
 
-          <p className="mt-[clamp(0.75rem,3vw,2rem)] font-britanica-black leading-none tracking-tight text-[#050505] text-[clamp(1.28rem,6.2vw,2.65rem)] md:text-[clamp(1.35rem,5vw,3.75rem)] lg:mt-[clamp(1.25rem,2.5vw,2.75rem)] lg:text-[clamp(1.35rem,5.05vw,11rem)]">
+          <p className="mt-[clamp(0.75rem,3vw,2rem)] font-britanica-black leading-none tracking-tight text-[#050505] text-[clamp(1.28rem,7.2vw,2.65rem)] md:text-[clamp(1.35rem,5vw,3.75rem)] lg:mt-[clamp(1.25rem,2.5vw,2.75rem)] lg:text-[clamp(1.35rem,5.05vw,11rem)]">
 
             <span>$297</span>
 
@@ -85,7 +85,7 @@ const PricingBanner = () => {
 
             href="/locations"
 
-            className="mt-[clamp(1rem,5.5vw,14.75rem)] md:mt-[clamp(1rem,4.5vw,14.75rem)] inline-flex w-fit items-center justify-center whitespace-nowrap rounded-full border-2 border-black bg-white px-[clamp(0.625rem,3.25vw,1.125rem)] py-[clamp(0.38rem,1.2vw,0.55rem)] text-center text-[clamp(-6.1875rem,2.6vw,1.125rem)] font-britanica-black text-black transition-colors hover:bg-neutral-100 md:border-[3px] md:px-[clamp(1rem,5vw,2rem)] md:text-[clamp(-13.0625rem,1.8vw,18.25rem)] lg:mt-[clamp(1.5rem,4vw,15rem)] lg:px-[clamp(1.25rem,4.5vw,2.25rem)] lg:py-[clamp(0.4rem,1.1vw,0.55rem)] lg:text-[1.8rem]"
+            className="mt-[clamp(1rem,5.5vw,14.75rem)] md:mt-[clamp(1rem,4.5vw,14.75rem)] inline-flex w-fit items-center justify-center whitespace-nowrap rounded-full border-2 border-black bg-white px-[clamp(0.625rem,3.25vw,1.125rem)] py-[clamp(0.38rem,1.2vw,0.55rem)] text-center text-[clamp(-6.1875rem,3.6vw,1.125rem)] font-britanica-black text-black transition-colors hover:bg-neutral-100 md:border-[3px] md:px-[clamp(1rem,5vw,2rem)] md:text-[clamp(-13.0625rem,1.8vw,18.25rem)] lg:mt-[clamp(1.5rem,4vw,15rem)] lg:px-[clamp(1.25rem,4.5vw,2.25rem)] lg:py-[clamp(0.4rem,1.1vw,0.55rem)] lg:text-[1.8rem]"
 
           >
 
