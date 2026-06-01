@@ -25,6 +25,12 @@ const cards = [
   },
 ] as const;
 
+const mobileSlideOrderClass: Record<(typeof cards)[number]["title"], string> = {
+  Cleanings: "max-lg:order-1",
+  "X-Rays": "max-lg:order-2",
+  Exams: "max-lg:order-3",
+};
+
 export function ServiceCardsSection() {
   return (
     <section
@@ -41,11 +47,11 @@ export function ServiceCardsSection() {
           </Link>
         </div>
 
-        <div className="flex overflow-x-auto gap-6 pb-2 snap-x snap-mandatory scrollbar-hide lg:grid lg:mx-auto lg:max-w-5xl lg:grid-cols-3 lg:items-end lg:gap-6 lg:overflow-visible xl:max-w-6xl">
+        <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide max-lg:pl-0 lg:grid lg:mx-auto lg:max-w-5xl lg:grid-cols-3 lg:items-end lg:gap-6 lg:overflow-visible xl:max-w-6xl">
           {cards.map((card) => (
             <article
               key={card.title}
-              className={`group relative w-[80vw] max-w-[20rem] shrink-0 snap-center lg:w-full lg:shrink transition-all duration-500 ease-out motion-safe:hover:-translate-y-2 motion-safe:hover:scale-[1.02] ${
+              className={`group relative w-[68vw] max-w-[14.5rem] shrink-0 snap-center md:max-w-[15.5rem] md:w-[30vw] lg:order-none lg:w-full lg:max-w-none lg:shrink transition-all duration-500 ease-out motion-safe:hover:-translate-y-2 motion-safe:hover:scale-[1.02] ${mobileSlideOrderClass[card.title]} ${
                 card.spotlight
                   ? "z-50  motion-safe:lg:hover:scale-[1.08] "
                   : "z-10"
@@ -61,18 +67,18 @@ export function ServiceCardsSection() {
                   alt={card.alt}
                   fill
                   className="object-cover object-center transition-transform duration-700 ease-out motion-safe:group-hover:scale-105"
-                  sizes="(max-width: 1023px) min(100vw, 17rem), 16rem"
+                  sizes="(max-width: 1023px) min(68vw, 14.5rem), 16rem"
                 />
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"
                   aria-hidden
                 />
-                <p className="absolute left-4 top-4 max-w-[85%] text-left text-[20px] font-medium leading-tight text-white md:left-5 md:top-5">
-                  <span className="mb-2">{card.label[0]}</span>
+                <p className="absolute inset-x-3 top-3 max-w-[calc(100%-1.5rem)] text-left text-[15px] font-medium leading-tight text-white md:inset-x-4 md:top-4 md:text-base lg:inset-x-auto lg:left-5 lg:top-5 lg:max-w-[85%] lg:text-[20px]">
+                  <span className="mb-0.5 lg:mb-2">{card.label[0]}</span>
                   <span className="block">{card.label[1]}</span>
                 </p>
-                <p className="absolute bottom-4 left-4 text-[46px] text-[#F9F36B] font-medium uppercase tracking-[0.03em]  md:bottom-5 md:left-5">
-                  <span className="block text-sm normal-case lg:text-[19px]   lowercase text-white">unlimited</span>
+                <p className="absolute inset-x-3 bottom-3 max-w-[calc(100%-1.5rem)] text-[1.75rem] font-medium uppercase leading-[0.95] tracking-[0.02em] text-[#F9F36B] md:inset-x-4 md:bottom-4 md:text-[1.875rem] lg:inset-x-auto lg:bottom-5 lg:left-5 lg:max-w-none lg:text-[46px] lg:leading-normal lg:tracking-[0.03em]">
+                  <span className="block text-[11px] normal-case lowercase text-white lg:text-[19px]">unlimited</span>
                   {card.title}
                 </p>
               </div>
@@ -80,7 +86,7 @@ export function ServiceCardsSection() {
           ))}
         </div>
         <div
-          className="pointer-events-none relative z-20 mx-auto w-full max-w-5xl lg:h-[339px] h-[112px] md:h-[240px] "
+          className="pointer-events-none relative z-20 mx-auto h-[clamp(14dvh,14dvh,22dvh)] w-full max-w-5xl md:h-[240px] lg:h-[339px]"
           aria-hidden
         >
           <Image
@@ -88,7 +94,7 @@ export function ServiceCardsSection() {
             alt=""
             width={1280}
             height={420}
-            className="w-full max-h-[600px] object-contain drop-shadow-xl"
+            className="h-full w-full max-h-[600px] object-contain object-center drop-shadow-xl"
           />
         </div>
       </div>

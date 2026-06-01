@@ -20,7 +20,7 @@ function BeforeAfterFigure({
   const radius = stack === "top" ? "rounded-t-none rounded-b-none" : "rounded-b-none rounded-t-none";
   return (
     <figure
-      className={`relative aspect-[4/3] w-full overflow-hidden bg-black/5 ${radius}`}
+      className={`relative aspect-[4/3] max-md:aspect-[16/10] w-full overflow-hidden bg-black/5 ${radius}`}
     >
       <Image
         src={src}
@@ -39,27 +39,27 @@ function BeforeAfterFigure({
 export function CatchEarlyResultsSection() {
   return (
     <div className="w-full overflow-x-hidden font-helvetica-neue-regular">
-      <div className="flex w-full max-w-full snap-x snap-mandatory gap-3 overflow-x-auto min-[425px]:gap-4 md:grid md:grid-cols-2 md:gap-0 md:overflow-visible">
-        <div className="relative min-h-[250px] w-[calc(100%-1.25rem)] shrink-0 snap-center bg-[#FFF159] min-[425px]:min-h-[280px] min-[425px]:w-[85%] md:w-full md:min-w-0 md:shrink md:min-h-[320px] lg:min-h-[360px]">
+      <div className="grid w-full max-w-full grid-cols-2 gap-2 min-[425px]:gap-3 md:gap-0">
+        <div className="relative min-h-[clamp(8.5rem,42vw,12rem)] w-full min-w-0 bg-[#FFF159] md:min-h-[320px] lg:min-h-[360px]">
           <Image
             src="/assets/teethhurt.png"
             alt="Person holding jaw in discomfort"
             fill
-            className="object-contain object-center"
+            className="object-contain object-bottom md:object-center"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
           <div
-            className="absolute inset-0 bg-gradient-to-t  via-black/10 to-transparent"
+            className="absolute inset-0 bg-gradient-to-t via-black/10 to-transparent"
 
             aria-hidden
           />
-          <p className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-white max-md:top-[66px] max-md:bottom-auto max-md:left-0 max-md:right-0 max-md:px-3 max-md:text-center max-md:text-[clamp(-4.875rem,8vw,7.5rem)] max-md:tracking-[0.1em] md:top-[80px] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] md:bottom-auto md:left-5 2xl:left-[10.25rem] lg:left-[2.25rem]  xl:left-[10.25rem]  md:right-auto md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
+          <p className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-white max-md:inset-x-1 max-md:top-1/3 max-md:-translate-y-1/2 max-md:px-1 max-md:text-center max-md:text-[clamp(0.5rem,2.75vw,0.875rem)] max-md:tracking-[0.06em] md:top-[80px] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] md:bottom-auto md:left-5 2xl:left-[10.25rem] lg:left-[2.25rem] xl:left-[10.25rem] md:right-auto md:translate-y-0 md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
             Catch It early
           </p>
         </div>
 
-        <div className="relative min-h-[250px] w-[calc(100%-1.25rem)] shrink-0 snap-center bg-[#CCCCCC] min-[425px]:min-h-[280px] min-[425px]:w-[85%] md:w-full md:min-w-0 md:shrink md:min-h-[320px] lg:min-h-[360px]">
+        <div className="relative min-h-[clamp(8.5rem,42vw,12rem)] w-full min-w-0 bg-[#CCCCCC] md:min-h-[320px] lg:min-h-[360px]">
           <Image
             src="/assets/dentaldrill.png"
             alt="Dental handpiece close-up"
@@ -72,7 +72,7 @@ export function CatchEarlyResultsSection() {
             aria-hidden
           />
           <p
-            className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-[#FFF159] max-md:top-[66px] max-md:bottom-auto max-md:left-0 max-md:right-0 max-md:px-3 max-md:text-center max-md:text-[clamp(-4.875rem,8vw,7.5rem)] max-md:tracking-[0.1em] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] 2xl:left-[10.25rem] lg:left-[2.25rem]  xl:left-[10.25rem] md:top-[80px] md:bottom-auto md:left-5 md:right-auto md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
+            className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-[#FFF159] max-md:inset-x-1 max-md:top-1/3 max-md:-translate-y-1/2 max-md:px-1 max-md:text-center max-md:text-[clamp(0.5rem,2.75vw,0.875rem)] max-md:tracking-[0.06em] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] 2xl:left-[10.25rem] lg:left-[2.25rem] xl:left-[10.25rem] md:top-[80px] md:bottom-auto md:left-5 md:right-auto md:translate-y-0 md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
             aria-label="Forget the drill"
           >
             F#ck the drill
@@ -104,12 +104,12 @@ export function CatchEarlyResultsSection() {
           <span className="text-transparent">S</span>
         </h2>
 
-        <div className="relative z-10 mx-auto mt-12 flex max-w-5xl justify-center sm:mt-14 md:mt-16 md:max-w-6xl lg:mt-[5.5rem] lg:max-w-[64rem]">
+        <div className="relative z-10 mx-auto mt-9 flex max-w-5xl justify-center sm:mt-14 md:mt-16 md:max-w-6xl lg:mt-[5.5rem] lg:max-w-[64rem]">
         <div className="flex w-full max-w-full snap-x snap-mandatory gap-4 overflow-x-auto px-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8 sm:overflow-visible sm:px-0 md:gap-5 lg:gap-14 xl:gap-24 2xl:gap-32">
             {beforeAfterColumns.map((pair, i) => (
               <div
                 key={pair.before}
-                className="flex w-full min-w-[78vw] max-w-[18.5rem] shrink-0 snap-center flex-col gap-0 overflow-hidden rounded-none shadow-none ring-0 sm:min-w-0 sm:max-w-[13rem] sm:shrink md:max-w-[13.5rem] lg:max-w-[14.5rem]"
+                className="flex w-full min-w-[78vw] max-w-[18.5rem] shrink-0 snap-center flex-col gap-0 overflow-hidden rounded-none shadow-none ring-0 max-md:min-w-[70vw] max-md:max-w-[15rem] sm:min-w-0 sm:max-w-[13rem] sm:shrink md:max-w-[13.5rem] lg:max-w-[14.5rem]"
               >
                 <BeforeAfterFigure
                   src={pair.before}

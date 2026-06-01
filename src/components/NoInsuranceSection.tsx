@@ -8,10 +8,12 @@ const locations = ["weho", "encino", "calabasas", "northridge", "la puente"] as 
 export function NoInsuranceSection() {
   return (
     <div className="w-full font-helvetica-neue-regular">
-      <LocationMarqueeBar locations={locations} />
+      <div className="hidden md:block">
+        <LocationMarqueeBar locations={locations} />
+      </div>
 
       <section className="relative w-full overflow-hidden" aria-labelledby="no-insurance-heading">
-        <div className="relative min-h-[200px] w-full sm:min-h-[240px] md:min-h-[320px] lg:min-h-[400px] xl:min-h-[420px]">
+        <div className="relative w-full max-md:h-[clamp(11.25rem,22dvh,15rem)] max-md:min-h-0 md:min-h-[320px] lg:min-h-[400px] xl:min-h-[420px]">
           <Image src="/assets/noinsurance.png" alt="" fill className="object-cover object-center" sizes="100vw" />
           <div className="absolute inset-0 bg-black/40 md:bg-black/35" aria-hidden />
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-10 md:py-16 lg:py-20">

@@ -8,17 +8,17 @@ export function ServicesHero() {
     "block whitespace-nowrap pb-4 font-alliance text-[58px] font-bold leading-[0.92] tracking-[0.08em] [word-spacing:0.1em] sm:pb-5 sm:text-[78px] sm:tracking-[0.12em] sm:[word-spacing:0.14em] lg:pb-5 lg:pl-10 lg:text-[130px] lg:tracking-[0.3em] lg:[word-spacing:0.3em]";
 
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col max-md:-mt-16 max-md:overflow-x-hidden">
       <div
         id="services-hero"
-        className="relative grid min-h-0 flex-1 grid-cols-2 md:grid-cols-2"
+        className="relative grid min-h-0 flex-1 grid-cols-2 max-md:min-h-[40dvh] max-md:overflow-hidden md:grid-cols-2"
       >
         <div
-          className="col-span-1 flex flex-col justify-start max-md:overflow-hidden max-md:px-2 max-md:pb-8 max-md:pt-8 md:min-h-0 md:px-10 md:pb-12 md:pt-12"
+          className="col-span-1 flex flex-col justify-start max-md:flex-1 max-md:items-start max-md:justify-center max-md:overflow-hidden max-md:px-3 max-md:pb-[clamp(5.25rem,10dvh,8.25rem)] max-md:pt-[calc(4rem+clamp(1.25rem,5dvh,2.75rem))] md:min-h-0 md:px-10 md:pb-12 md:pt-12"
           style={{ backgroundColor: HERO_YELLOW }}
         >
-          <p className="motion-safe:animate-slide-in-ltr font-britanica-black font-bold uppercase text-white max-md:flex max-md:flex-col max-md:text-[clamp(1.375rem,8vw,5.875rem)] max-md:leading-[1] max-md:tracking-[0.08em] md:text-[50px] md:font-semibold md:tracking-[0.22em] lg:flex lg:flex-col lg:items-start lg:gap-3 lg:leading-[0.92] lg:text-[56px] lg:tracking-[0.22em]">
-            <span className="flex flex-col md:hidden">
+          <p className="motion-safe:animate-slide-in-ltr w-full font-britanica-black font-bold uppercase text-white max-md:flex max-md:max-w-full max-md:flex-col max-md:items-start max-md:text-left max-md:gap-[clamp(0.2rem,1.2dvh,0.5rem)] max-md:text-[clamp(0.875rem,8.25vw,9.5rem)] max-md:leading-[1] max-md:tracking-[0.04em] md:text-[50px] md:font-semibold md:tracking-[0.22em] lg:flex lg:flex-col lg:items-start lg:gap-3 lg:leading-[0.92] lg:text-[56px] lg:tracking-[0.22em]">
+            <span className="flex w-full max-w-full flex-col items-start gap-[clamp(0.125rem,1dvh,0.375rem)] overflow-hidden md:hidden">
               <span>ALL</span>
               <span>OUR</span>
               <span>SERVICES</span>
@@ -29,13 +29,13 @@ export function ServicesHero() {
           </p>
         </div>
 
-        <div className="col-span-1 flex min-h-0 items-end justify-center bg-white px-0 py-0 md:px-10 lg:px-2">
+        <div className="col-span-1 flex min-h-0 items-end justify-center overflow-hidden bg-white px-0 py-0 max-md:flex-1 max-md:min-h-0 md:px-10 lg:px-2">
           <Image
             src="/assets/jaw.png"
             alt="Dental model held in hand"
             width={640}
             height={800}
-            className="h-auto w-full max-h-[140px] object-contain object-bottom max-md:max-w-full md:max-h-[min(60vh,34rem)] md:max-w-md"
+            className="h-auto w-full max-w-full object-contain object-bottom max-md:max-h-[min(48dvh,22rem)] max-md:min-h-0 md:max-h-[min(60vh,34rem)] md:max-w-md"
             priority
           />
         </div>
@@ -74,7 +74,7 @@ export function ServicesHero() {
           We price match any practice within 15 miles
         </h2>
 
-        <div className="relative mx-auto min-h-[inherit] w-full max-w-6xl px-6 lg:px-10 xl:max-w-7xl xl:px-12">
+        <div className="relative mx-auto min-h-[inherit] w-full max-w-6xl px-6 lg:px-10 mt-[1.5vh] md:mt-[0px] lg:mt-[0px] xl:max-w-7xl xl:px-12">
         <div className="absolute inset-0 -translate-x-[var(--block-shift)]">
           {/* Layer 1: background glow */}
           <div
@@ -87,13 +87,13 @@ export function ServicesHero() {
           aria-hidden
           className="absolute bottom-0 left-0 2xl:right-[calc(47%+var(--phone-w)/2+var(--text-gap))] xl:right-[calc(43%+var(--phone-w)/2+var(--text-gap))] lg:right-[calc(41%+var(--phone-w)/2+var(--text-gap))] right-[calc(43%+var(--phone-w)/2+var(--text-gap))] top-0 z-[1] flex flex-col justify-center items-end gap-[var(--line2-mt)] px-2 sm:px-4 md:px-6 lg:px-8"
         >
-          <div className="2xl:translate-x-[145px] lg:translate-x-[123px]  md:translate-x-[91px] translate-x-[64px] text-right">
-            <p className="whitespace-nowrap font-britanica-black text-[18px] 2xl:text-[55px] lg:text-[35px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em]  sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+          <div className="2xl:translate-x-[145px] lg:translate-x-[123px] md:translate-x-[91px] translate-x-[64px] text-right">
+            <p className="whitespace-nowrap font-britanica-black text-[16px] uppercase leading-[0.92] tracking-[0.05em] sm:tracking-[0.07em] md:text-[28px] md:tracking-[0.09em] lg:text-[35px] lg:tracking-[0.11em] 2xl:text-[55px]">
               WE PRICE
             </p>
           </div>
           <div className="translate-x-[2.25em] text-right sm:translate-x-[2.75em] md:translate-x-[2.75em] lg:translate-x-[4.25em] 2xl:translate-x-[5.75em]">
-            <p className="whitespace-nowrap font-britanica-black text-[18px] 2xl:text-[55px] lg:text-[35px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em]  sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+            <p className="whitespace-nowrap font-britanica-black text-[16px] uppercase leading-[0.92] tracking-[0.05em] sm:tracking-[0.07em] md:text-[28px] md:tracking-[0.09em] lg:text-[35px] lg:tracking-[0.11em] 2xl:text-[55px]">
               PRACTICE
             </p>
           </div>
@@ -102,12 +102,12 @@ export function ServicesHero() {
         {/* Layer 3: right text (higher z than left, still behind phone) */}
         <div
           aria-hidden
-          className="absolute bottom-0 left-[calc(40%+var(--phone-w)/2+var(--text-gap))] max-md:pr-3 right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] sm:px-4 md:px-6 2xl:left-[calc(36%+var(--phone-w)/2+var(--text-gap))] 2xl:left-[calc(36%+var(--phone-w)/2+var(--text-gap))] xl:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(40%+var(--phone-w)/2+var(--text-gap))] lg:px-8"
+          className="absolute bottom-0 left-[calc(36%+var(--phone-w)/2+var(--text-gap))] max-md:pr-3 right-0 top-0 z-[20] flex flex-col justify-center items-start px-2 text-left sm:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] sm:px-4 md:px-6 2xl:left-[calc(36%+var(--phone-w)/2+var(--text-gap))] xl:left-[calc(42%+var(--phone-w)/2+var(--text-gap))] lg:left-[calc(40%+var(--phone-w)/2+var(--text-gap))] lg:px-8"
         >
-          <p className="whitespace-nowrap font-britanica-black text-[18px] 2xl:text-[55px] lg:text-[35px] md:text-[28px]  uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+          <p className="whitespace-nowrap font-britanica-black text-[16px] uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:text-[28px] md:tracking-[0.09em] lg:text-[35px] lg:tracking-[0.11em] 2xl:text-[55px]">
             MATCH ANY
           </p>
-          <p className="mt-[var(--line2-mt)] whitespace-nowrap font-britanica-black text-[15px] max-md:tracking-[0.03em] sm:text-[18px] 2xl:text-[55px] lg:text-[35px] md:text-[28px] uppercase leading-[0.92] tracking-[0.05em] text-black sm:tracking-[0.07em] md:tracking-[0.09em] lg:tracking-[0.11em]">
+          <p className="mt-[var(--line2-mt)] whitespace-nowrap font-britanica-black text-[16px] uppercase leading-[0.92] tracking-[0.05em] text-black max-md:tracking-[0.03em] sm:text-[18px] sm:tracking-[0.07em] md:text-[28px] md:tracking-[0.09em] lg:text-[35px] lg:tracking-[0.11em] 2xl:text-[55px]">
             WITHIN 15 MILES
           </p>
         </div>
