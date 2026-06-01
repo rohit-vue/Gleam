@@ -41,7 +41,7 @@ export function ServiceCardsSection() {
         <div className="mb-12 flex justify-center md:mb-14">
           <Link
             href="/locations"
-            className="rounded-[44px] bg-[#FFF86B] px-6 py-2.5 text-[13px] font-bold tracking-[0.05em] text-black shadow-sm transition-opacity hover:opacity-90 sm:px-8 sm:py-3 sm:text-[15px] sm:tracking-[0.06em] md:px-10 md:py-3.5 md:text-lg md:tracking-[0.07em] lg:px-12 lg:py-4"
+            className="rounded-[44px] bg-[#FFF86B] px-6 py-2.5 text-[16px] font-bold tracking-[0.05em] text-black shadow-sm transition-opacity hover:opacity-90 sm:px-8 sm:py-3 sm:text-[15px] sm:tracking-[0.06em] md:px-10 md:py-3.5 md:text-lg md:tracking-[0.07em] lg:px-12 lg:py-4"
           >
             Become a Member
           </Link>
@@ -86,7 +86,7 @@ export function ServiceCardsSection() {
           ))}
         </div>
         <div
-          className="pointer-events-none relative z-20 mx-auto h-[clamp(14dvh,14dvh,22dvh)] w-full max-w-5xl md:h-[240px] lg:h-[339px]"
+          className="pointer-events-none relative z-20 mx-auto h-[clamp(14dvh,19dvh,22dvh)] w-full max-w-5xl md:h-[240px] lg:h-[339px]"
           aria-hidden
         >
           <Image

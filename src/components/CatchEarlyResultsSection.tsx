@@ -109,7 +109,7 @@ export function CatchEarlyResultsSection() {
             {beforeAfterColumns.map((pair, i) => (
               <div
                 key={pair.before}
-                className="flex w-full min-w-[78vw] max-w-[18.5rem] shrink-0 snap-center flex-col gap-0 overflow-hidden rounded-none shadow-none ring-0 max-md:min-w-[70vw] max-md:max-w-[15rem] sm:min-w-0 sm:max-w-[13rem] sm:shrink md:max-w-[13.5rem] lg:max-w-[14.5rem]"
+                className="flex w-full min-w-[78vw] max-w-[18.5rem] shrink-0 snap-center flex-col gap-0 overflow-hidden rounded-none shadow-none ring-0 max-md:min-w-[65vw] max-md:max-w-[15rem] sm:min-w-0 sm:max-w-[13rem] sm:shrink md:max-w-[13.5rem] lg:max-w-[14.5rem]"
               >
                 <BeforeAfterFigure
                   src={pair.before}

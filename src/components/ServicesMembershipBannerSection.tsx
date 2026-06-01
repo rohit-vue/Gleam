@@ -9,7 +9,7 @@ const PricingBanner = () => {
 
     <section className="relative w-full overflow-hidden border-b-[6px] border-black bg-[#FFF566] md:border-b-[10px]">
 
-      <div className="relative mx-auto flex w-full max-w-[1400px] items-start justify-center px-[clamp(0.875rem,5vw,2rem)] pb-[clamp(1rem,4vw,2.25rem)] pt-[clamp(0.375rem,1.5vw,0.75rem)]  md:pb-[clamp(1.5rem,5.5vw,3rem)] lg:min-h-[clamp(16rem,38vw,30rem)] lg:px-[clamp(1rem,5vw,3.5rem)] lg:pb-[clamp(2rem,5vw,4.5rem)] lg:pt-[clamp(0.25rem,3.75vw,10.5rem)]">
+      <div className="relative mx-auto flex w-full max-w-[1400px] items-start justify-center px-[clamp(0.875rem,5vw,2rem)] pb-[clamp(1rem,4vw,2.25rem)] pt-[clamp(-5.375rem,8.5vw,11.75rem)]  md:pb-[clamp(1.5rem,5.5vw,3rem)] lg:min-h-[clamp(16rem,38vw,30rem)] lg:px-[clamp(1rem,5vw,3.5rem)] lg:pb-[clamp(2rem,5vw,4.5rem)] lg:pt-[clamp(0.25rem,3.75vw,10.5rem)]">
 
         {/* Left — corners on small screens; desktop inset at lg */}
 
