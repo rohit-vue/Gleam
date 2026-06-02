@@ -116,15 +116,15 @@ export function PricingSection() {
   return (
     <section
       id="become-a-member"
-      className="relative scroll-mt-24 overflow-x-hidden bg-[#2A2A2A] px-4 py-10 font-helvetica-neue-regular md:scroll-mt-28 md:px-8 md:py-10 lg:py-10"
+      className="relative scroll-mt-24 overflow-x-hidden bg-[#2A2A2A] px-4 py-6 font-helvetica-neue-regular md:scroll-mt-28 md:px-8 md:py-10 lg:py-4"
       aria-labelledby="pricing-tagline"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="relative isolate mx-auto w-full max-w-6xl px-2 md:px-4">
-          <div className="relative mb-[1.5rem] grid w-full place-items-center sm:mt-7  lg:mt-0">
+          <div className="relative mb-12 grid w-full place-items-center sm:mt-7  lg:mt-0">
             <h2
               id="pricing-tagline"
-              className="col-start-1 row-start-1 z-10 min-w-full translate-y-[1.1rem] px-2 text-center text-[1.3rem] font-bold uppercase leading-snug tracking-[0.05em] text-white [word-spacing:0.16em] sm:translate-y-[1.35rem] sm:px-3 sm:text-[1.4rem] sm:tracking-[0.055em] sm:[word-spacing:0.18em] md:translate-y-8 md:text-[1.55rem] md:tracking-[0.065em] md:[word-spacing:0.22em] lg:translate-y-14 lg:text-[2.2rem] lg:leading-snug lg:tracking-[0.09em] lg:pb-[59px] lg:text-[47px] lg:[word-spacing:0.34em]"
+              className="col-start-1 row-start-1 z-10 min-w-full translate-y-[1.1rem] px-2 text-center text-[1.3rem] font-bold uppercase leading-snug tracking-[0.05em] text-white [word-spacing:0.16em] sm:translate-y-[1.35rem] sm:px-3 sm:text-[1.4rem] sm:tracking-[0.055em] sm:[word-spacing:0.18em] md:translate-y-8 md:text-[1.55rem] md:tracking-[0.065em] md:[word-spacing:0.22em] lg:translate-y-14 lg:text-[2.2rem] lg:leading-snug lg:tracking-[0.09em] lg:pb-[73px] lg:text-[47px] lg:[word-spacing:0.34em]"
             >
               The last dental plan you&apos;ll ever need.
             </h2>
