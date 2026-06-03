@@ -86,7 +86,7 @@ export function ServiceCardsSection() {
           ))}
         </div>
         <div
-          className="pointer-events-none relative z-20 mx-auto h-[clamp(14dvh,19dvh,22dvh)] w-full max-w-5xl md:h-[240px] lg:h-[339px]"
+          className="pointer-events-none relative z-20 mx-auto h-[clamp(14dvh,19dvh,22dvh)] w-full max-w-5xl md:h-[240px] lg:h-[361px]"
           aria-hidden
         >
           <Image
@@ -94,7 +94,7 @@ export function ServiceCardsSection() {
             alt=""
             width={1280}
             height={420}
-            className="h-full w-full max-h-[600px] object-contain object-center drop-shadow-xl"
+            className="max-lg:h-full w-full max-h-[600px] object-contain object-center drop-shadow-xl"
           />
         </div>
       </div>

@@ -54,7 +54,7 @@ export function CatchEarlyResultsSection() {
 
             aria-hidden
           />
-          <p className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-white max-md:inset-x-1 max-md:top-1/3 max-md:-translate-y-1/2 max-md:px-1 max-md:text-center max-md:text-[clamp(0.5rem,4.75vw,8.875rem)] max-md:tracking-[0.06em] md:top-[80px] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] md:bottom-auto md:left-5 2xl:left-[10.25rem] lg:left-[2.25rem] xl:left-[10.25rem] md:right-auto md:translate-y-0 md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
+          <p className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-white max-md:inset-x-1 max-md:top-1/3 max-md:-translate-y-1/2 max-md:px-1 max-md:text-center max-md:text-[clamp(0.5rem,4.75vw,8.875rem)] max-md:tracking-[0.06em] md:top-[80px] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] md:bottom-auto md:left-5 2xl:left-[10.25rem] lg:left-[2.25rem] xl:left-[3.25rem] md:right-auto md:translate-y-0 md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.3rem] md:[word-spacing:0.28em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.4rem] lg:[word-spacing:0.3em]">
             Catch It early
           </p>
         </div>
@@ -72,7 +72,7 @@ export function CatchEarlyResultsSection() {
             aria-hidden
           />
           <p
-            className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-[#FFF159] max-md:inset-x-1 max-md:top-1/3 max-md:-translate-y-1/2 max-md:px-1 max-md:text-center max-md:text-[clamp(0.5rem,4.75vw,8.875rem)] max-md:tracking-[0.06em] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] 2xl:left-[10.25rem] lg:left-[2.25rem] xl:left-[10.25rem] md:top-[80px] md:bottom-auto md:left-5 md:right-auto md:translate-y-0 md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
+            className="absolute font-britanica-black uppercase leading-[0.95] [word-spacing:0.15em] text-[#FFF159] max-md:inset-x-1 max-md:top-1/3 max-md:-translate-y-1/2 max-md:px-1 max-md:text-center max-md:text-[clamp(0.5rem,4.75vw,8.875rem)] max-md:tracking-[0.06em] 2xl:top-[80px] lg:top-[80px] xl:top-[80px] 2xl:left-[3.25rem] lg:left-[2.25rem] xl:left-[10.25rem] md:top-[80px] md:bottom-auto md:left-5 md:right-auto md:translate-y-0 md:px-0 md:text-left md:text-[clamp(2rem,4.5vw,3.25rem)] md:tracking-[0.26rem] md:[word-spacing:0.26em] 2xl:text-[52px] xl:text-[52px] lg:text-[44px] lg:tracking-[0.3rem] lg:[word-spacing:0.3em]"
             aria-label="Forget the drill"
           >
             F#ck the drill
@@ -88,13 +88,13 @@ export function CatchEarlyResultsSection() {
       >
         <h2
           id="results-heading"
-          className="pointer-events-none absolute left-1/2 top-4 z-0 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
+          className="pointer-events-none absolute left-1/2 top-4  z-0 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
         >
           Results
         </h2>
         <h2
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-4 z-20 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
+          className="pointer-events-none absolute left-1/2 top-4  z-20 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
         >
           <span className="text-transparent">R</span>
           <span>E</span>
