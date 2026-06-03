@@ -14,10 +14,10 @@ export function ServicesHero() {
         className="relative grid min-h-0 flex-1 grid-cols-2 max-md:min-h-[40dvh] max-md:overflow-hidden md:grid-cols-2"
       >
         <div
-          className="col-span-1 flex flex-col justify-start max-md:flex-1 max-md:items-start max-md:justify-center max-md:overflow-hidden max-md:px-3 max-md:pb-[clamp(5.25rem,10dvh,8.25rem)] max-md:pt-[calc(4rem+clamp(1.25rem,5dvh,2.75rem))] md:min-h-0 md:px-10 lg:pl-[16vh] lg:pr-10 md:pb-12 md:pt-12"
+          className="col-span-1 flex flex-col justify-start max-md:flex-1 max-md:items-start max-md:justify-center max-md:overflow-hidden max-md:px-3 max-md:pb-[clamp(5.25rem,10dvh,8.25rem)] max-md:pt-[calc(4rem+clamp(1.25rem,5dvh,2.75rem))] md:min-h-0 md:px-10 lg:pl-[5vh]  lg:pr-10 md:pb-12 md:pt-12"
           style={{ backgroundColor: HERO_YELLOW }}
         >
-          <p className="motion-safe:animate-slide-in-ltr w-full font-britanica-black font-bold uppercase text-white max-md:flex max-md:max-w-full max-md:flex-col max-md:items-start max-md:text-left max-md:gap-[clamp(0.2rem,1.2dvh,0.5rem)] max-md:text-[clamp(0.875rem,8.25vw,9.5rem)] max-md:leading-[1] max-md:tracking-[0.04em] md:text-[15vh] md:font-semibold md:tracking-[0.22em] lg:flex lg:flex-col lg:items-start lg:gap-3 lg:leading-[0.92] lg:text-[56px] lg:tracking-[0.22em]">
+          <p className="motion-safe:animate-slide-in-ltr w-full font-britanica-black font-bold uppercase text-white max-md:flex max-md:max-w-full max-md:flex-col max-md:items-start max-md:text-left max-md:gap-[clamp(0.2rem,1.2dvh,0.5rem)] max-md:text-[clamp(0.875rem,8.25vw,9.5rem)] max-md:leading-[1] max-md:tracking-[0.04em] md:text-[50px] md:font-semibold md:tracking-[0.22em] lg:flex lg:flex-col lg:items-start lg:gap-3 lg:leading-[0.92] lg:text-[56px] lg:tracking-[0.22em]">
             <span className="flex w-full max-w-full flex-col items-start gap-[clamp(0.125rem,1dvh,0.375rem)] overflow-hidden md:hidden">
               <span>ALL</span>
               <span>OUR</span>
