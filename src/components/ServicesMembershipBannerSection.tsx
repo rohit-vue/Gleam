@@ -13,7 +13,7 @@ const PricingBanner = () => {
 
         {/* Left — corners on small screens; desktop inset at lg */}
 
-        <div className="pointer-events-none absolute bottom-0 left-[34px] z-10 w-[clamp(3.5rem,26vw,8.5rem)] max-w-[200px] shrink-0 select-none md:left-[9rem] md:w-[clamp(4rem,21vw,30rem)] md:max-w-[260px] lg:left-[clamp(5rem,17.35%,17rem)] lg:w-[clamp(11rem,21%,24rem)] lg:max-w-[28%]">
+        <div className="pointer-events-none    absolute bottom-0 left-[34px] z-10 w-[clamp(3.5rem,26vw,8.5rem)] max-w-[200px] shrink-0 select-none md:left-[9rem] md:w-[clamp(4rem,21vw,30rem)] md:max-w-[260px] lg:left-[clamp(5rem,17.35%,17rem)] lg:w-[clamp(11rem,21%,24rem)] lg:max-w-[28%]">
 
           <Image
 
