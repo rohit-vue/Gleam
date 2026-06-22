@@ -3,16 +3,7 @@ import Link from "next/link";
 
 
 
-const essentialFeatures = [
-  "Everything in Essential",
-  "Free professional whitening - use anytime",
-  "Priority booking at all 6 locations",
-  "Free consultation on any service",
-  "Cancel anytime",
-] as const;
-
 const annualFeatures = [
-  "Everything in Essential",
   "Free professional whitening - use anytime",
   "Priority booking at all 6 locations",
   "Free consultation on any service",
@@ -131,53 +122,9 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-6 md:mt-8 lg:mt-10 lg:grid-cols-2 lg:gap-6">
-          {/* Essential */}
-          <article className="flex flex-col rounded-[38px] border-2 border-transparent bg-[#3D3D3A] p-4 shadow-xl transition-colors hover:border-[#FDFD66] sm:p-6 md:p-8 lg:p-10">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
-                Essential
-              </span>
-              
-            </div>
-
-            <h3 className="mt-5 text-[1.25rem] font-bold tracking-[0.02em] text-white sm:mt-6 sm:text-[1.5rem] md:text-[1.625rem] lg:mt-6 lg:text-[28px]">
-              Unlimited preventive care.
-            </h3>
-            <p className="text-[15px] font-semibold tracking-[0.02em] text-[#C2C0B6]">
-              Never think about your teeth again.
-            </p>
-
-            <div className="mt-4">
-              <p className="text-[1.375rem] font-bold tracking-[0.02em] text-white md:text-[1.5rem] lg:text-[28px]">
-                $160{" "}
-                <span className="text-[15px] font-semibold text-[#C2C0B6] sm:text-[16px] lg:text-[18px]">
-                  /6 months
-                </span>
-              </p>
-              <p className="mt-1 text-[15px] text-[#C2C0B6]">$30/mo</p>
-            </div>
-
-            <Link
-              href="/locations"
-              className="mt-4 inline-flex w-[9.375rem] lg:w-[17.375rem] md:w-[17.375rem] items-center justify-start gap-2 rounded-xl bg-[#FFF86B] py-3 text-center text-base font-bold text-black transition-opacity hover:opacity-90 pl-[1.2rem] pr-[0.5rem] lg:px-3 md:px-2  sm:py-3.5 sm:text-[17px] lg:py-3.5 lg:text-[18px]"
-            >
-              Get Started <span aria-hidden>→</span>
-            </Link>
-
-            <div className="mt-6 mb-1 h-px w-full bg-white/10" />
-
-            
-
-            <ul className="mt-6 flex flex-col gap-3">
-              {essentialFeatures.map((item) => (
-                <CheckItem key={item}>{item}</CheckItem>
-              ))}
-            </ul>
-          </article>
-
+        <div className="mt-6 flex justify-center md:mt-8 lg:mt-10">
           {/* Annual */}
-          <article className="flex flex-col rounded-[38px] border-2 border-transparent bg-[#1A1A1A] p-4 shadow-xl transition-colors hover:border-[#FDFD66] sm:p-6 md:p-8 lg:p-10">
+          <article className="flex w-full max-w-[34rem] flex-col rounded-[38px] border-2 border-transparent bg-[#1A1A1A] p-4 shadow-xl transition-colors hover:border-[#FDFD66] sm:p-6 md:p-8 lg:p-10">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="text-[17px] font-bold uppercase tracking-[0.09em] text-[#999999] sm:text-[18px] lg:text-[20px]">
                 Annual
