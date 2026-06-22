@@ -16,8 +16,8 @@ export function HeroScrollRotateImage() {
       {/* Left-edge fade: fixed band width so the gradient looks consistent across breakpoints */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[clamp(-21.5rem,65%,36.5rem)] bg-[linear-gradient(90deg,#FFFFFF_8%,rgba(255,255,255,0)_18%)] md:w-[clamp(-22.5rem,55%,42rem)] lg:w-[clamp(-29rem,53%,48rem)] xl:w-[clamp(-32rem,58%,51rem)] 2xl:w-[clamp(-62rem,100%,93rem)]"
+        className="pointer-events-none    absolute inset-y-0 left-0 z-10 w-[clamp(-21.5rem,65%,36.5rem)] bg-[linear-gradient(90deg,#FFFFFF_8%,rgba(255,255,255,0)_18%)] md:w-[clamp(-22.5rem,55%,42rem)] lg:w-[clamp(-29rem,53%,48rem)] xl:w-[clamp(-32rem,58%,51rem)] 2xl:w-[clamp(-62rem,100%,93rem)]"
       />
-    </div>
+    </div>    
   );
 }
