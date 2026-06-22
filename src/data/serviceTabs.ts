@@ -207,7 +207,7 @@ export const SERVICE_TABS_PREVENT: ServiceTabEntry[] = [
     tabLabel: "Periodontal therapy",
     title: "Periodontal therapy",
     description:
-      "Gum disease is silent. We're not. Half of adults have gum disease and don't know it. If we find it, we treat it same visit — no referral, no runaround, no separate bill.",
+      "50% of adults have gum disease and feel nothing until their gums recede and teeth loosen. And gums don't grow back. So yes, it's the appointment people dread which is exactly why we numb you fully. The only thing that should hurt is waiting.",
     specs: [
       { label: "Screening", mid: "Every visit", right: "Included" },
       { label: "Treatment", mid: "Same visit", right: "If needed" },

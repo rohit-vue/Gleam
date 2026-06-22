@@ -39,7 +39,7 @@ function BeforeAfterFigure({
 export function CatchEarlyResultsSection() {
   return (
     <div className="w-full overflow-x-hidden font-helvetica-neue-regular">
-      <div className="grid w-full max-w-full grid-cols-2  min-[425px]:gap-3 md:gap-0">
+      <div className="grid w-full max-w-full grid-cols-2   md:gap-0">
         <div className="relative min-h-[clamp(8.5rem,42vw,12rem)] w-full min-w-0 bg-[#FFF159] md:min-h-[320px] lg:min-h-[360px]">
           <Image
             src="/assets/teethhurt.png"
@@ -83,26 +83,28 @@ export function CatchEarlyResultsSection() {
       
 
       <section
-        className="relative overflow-x-hidden bg-[#FFF159] px-4 pb-8 pt-10 sm:px-5 sm:pb-10 sm:pt-8 md:px-10 md:pb-12 md:pt-10 lg:px-10 lg:pb-12 lg:pt-8"
+        className="relative overflow-x-hidden bg-[#FFF159] px-4 pb-8 pt-10 sm:px-5 sm:pb-10 sm:pt-8 md:px-10 md:pb-12 md:pt-[4.5rem] lg:px-10 lg:pb-12 2xl:pt-[9rem] lg:pt-[8rem]"
         aria-labelledby="results-heading"
       >
-        <h2
-          id="results-heading"
-          className="pointer-events-none absolute left-1/2 top-4  z-0 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
-        >
-          Results
-        </h2>
-        <h2
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-4  z-20 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
-        >
-          <span className="text-transparent">R</span>
-          <span>E</span>
-          <span className="text-transparent">SU</span>
-          <span>L</span>
-          <span>T</span>
-          <span className="text-transparent">S</span>
-        </h2>
+        <div className="relative max-[425px]:min-h-[clamp(-10.5rem,0vw,17.5rem)]">
+          <h2
+            id="results-heading"
+            className="pointer-events-none absolute left-1/2 z-0 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black max-[425px]:top-1/2 max-[425px]:-translate-y-1/2 min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] min-[426px]:top-4 sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-[-52px] lg:top-[-28px] md:translate-y-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
+          >
+            Results
+          </h2>
+          <h2
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 z-20 w-full max-w-full -translate-x-1/2 select-none px-2 text-center text-[clamp(2.75rem,13.5vw,12.5rem)] font-bold uppercase leading-[0.82] tracking-[0.03em] text-black max-[425px]:top-1/2 max-[425px]:-translate-y-1/2 min-[425px]:px-0 min-[425px]:text-[clamp(3rem,16vw,12.5rem)] min-[426px]:top-4 sm:top-1 sm:leading-[0.84] sm:tracking-[0.05em] md:top-[-52px] lg:top-[-28px] md:translate-y-0 md:tracking-[0.065em] lg:leading-[0.85] lg:tracking-[0.2em]"
+          >
+            <span className="text-transparent">R</span>
+            <span>E</span>
+            <span className="text-transparent">SU</span>
+            <span>L</span>
+            <span>T</span>
+            <span className="text-transparent">S</span>
+          </h2>
+        </div>
 
         <div className="relative z-10 mx-auto mt-9 flex max-w-5xl justify-center sm:mt-14 md:mt-16 md:max-w-6xl lg:mt-[5.5rem] lg:max-w-[64rem]">
         <div className="flex w-full max-w-full snap-x snap-mandatory gap-4 overflow-x-auto px-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8 sm:overflow-visible sm:px-0 md:gap-5 lg:gap-14 xl:gap-24 2xl:gap-32">

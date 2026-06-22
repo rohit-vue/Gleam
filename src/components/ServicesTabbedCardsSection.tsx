@@ -79,7 +79,10 @@ function ServiceCardPanel({ entry }: { entry: ServiceTabEntry }) {
           <h3 style={{ fontWeight: '600' }} className="text-[clamp(1.2rem,5.4vw,1.8rem)] uppercase leading-tight tracking-[0.1em] text-neutral-900 sm:text-[clamp(1.3rem,4.3vw,1.95rem)] md:text-[clamp(1.5rem,3.4vw,2.1rem)]">
             {entry.id === "fillings-crowns" ||
             entry.id === "root-canal" ||
-            entry.id === "sedation" ? (
+            entry.id === "sedation" ||
+            entry.id === "prevent-exams" ||
+            entry.id === "prevent-night-guards" ||
+              entry.id === "prevent-perio" ? (
               entry.title
             ) : (
               entry.title.trim().split(/\s+/).map((part, i) => (
