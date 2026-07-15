@@ -52,6 +52,13 @@ const LOCATIONS: Location[] = [
     hours: "Mon – Sat, 8am – 6pm",
     href: "https://member.clerri.com/enrollment/accounts/create/?slug=PX5G",
   },
+  {
+    number: "07",
+    name: "Corona",
+    address: ["800 Magnolia Ave #103", "Corona, CA 92879"],
+    hours: "Mon – Sat, 9am – 6pm",
+    href: "https://member.clerri.com/enrollment/accounts/create?slug=CV6K",
+  },
 ];
 
 function LocationCard({ loc }: { loc: Location }) {
@@ -71,9 +78,12 @@ function LocationCard({ loc }: { loc: Location }) {
           {loc.name}
         </h2>
         <p className="mb-1 text-[14px] leading-relaxed text-neutral-500">
-          {loc.address[0]}
-          <br />
-          {loc.address[1]}
+          {loc.address.map((line, i) => (
+            <span key={line}>
+              {i > 0 ? <br /> : null}
+              {line}
+            </span>
+          ))}
         </p>
         <p className="mb-6 font-space-mono text-[11px] tracking-[0.5px] text-neutral-400">
           {loc.hours}
