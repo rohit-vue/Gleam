@@ -44,7 +44,23 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Gleam Health",
-  description: "Gleam Health — care and membership",
+  description: "Gleam Health — Unlimited dental care across Los Angeles",
+  openGraph: {
+    title: "Gleam Health",
+    description: "Gleam Health — Unlimited dental care across Los Angeles",
+    images: [
+      {
+        url: "/assets/Gleam-Logo.png",
+        alt: "Gleam",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gleam Health",
+    description: "Gleam Health — Unlimited dental care across Los Angeles",
+    images: ["/assets/Gleam-Logo.png"],
+  },
 };
 
 export default function RootLayout({
