@@ -5,50 +5,57 @@ type Location = {
   number: string;
   name: string;
   address: string[];
+  phone: string;
   hours: string;
   href: string;
 };
 
-const LOCATIONS: Location[] = [   
+const LOCATIONS: Location[] = [
   {
     number: "01",
     name: "West Hollywood",
-    address: ["8861 Santa Monica Blvd", "West Hollywood, CA 90069"],
+    address: ["1019 N Fairfax Ave", "West Hollywood, CA 90046"],
+    phone: "(424) 566-7100",
     hours: "Mon – Sat, 8am – 6pm",
     href: "https://member.clerri.com/enrollment/accounts/create/?slug=VN7R",
   },
   {
     number: "02",
     name: "Calabasas",
-    address: ["23501 Park Sorrento", "Calabasas, CA 91302"],
+    address: ["26787 Agoura Rd", "Calabasas, CA 91302"],
+    phone: "(818) 878-7300",
     hours: "Mon – Sat, 8am – 6pm",
     href: "https://member.clerri.com/enrollment/accounts/create/?slug=QN5D",
   },
   {
     number: "03",
     name: "Encino",
-    address: ["16101 Ventura Blvd", "Encino, CA 91436"],
+    address: ["16055 Ventura Blvd #510", "Encino, CA 91436"],
+    phone: "(818) 751-5100",
     hours: "Mon – Sat, 8am – 6pm",
     href: "https://member.clerri.com/enrollment/accounts/create/?slug=TE3V",
   },
   {
     number: "04",
     name: "Valencia",
-    address: ["24201 Valencia Blvd", "Valencia, CA 91355"],
+    address: ["24587 Copper Hill Dr", "Santa Clarita, CA 91354"],
+    phone: "(661) 775-7717",
     hours: "Mon – Sat, 8am – 6pm",
     href: "https://member.clerri.com/enrollment/accounts/create/?slug=QX3X",
   },
   {
     number: "05",
     name: "Northridge",
-    address: ["9420 Reseda Blvd", "Northridge, CA 91324"],
+    address: ["8954 Reseda Blvd #100", "Northridge, CA 91324"],
+    phone: "(818) 701-3010",
     hours: "Mon – Sat, 8am – 6pm",
     href: "https://member.clerri.com/enrollment/accounts/create/?slug=DU9M",
   },
   {
     number: "06",
     name: "La Puente",
-    address: ["1431 N Hacienda Blvd", "La Puente, CA 91744"],
+    address: ["864 N Hacienda Blvd", "La Puente, CA 91744"],
+    phone: "(626) 626-7075",
     hours: "Mon – Sat, 8am – 6pm",
     href: "https://member.clerri.com/enrollment/accounts/create/?slug=PX5G",
   },
@@ -56,6 +63,7 @@ const LOCATIONS: Location[] = [
     number: "07",
     name: "Corona",
     address: ["800 Magnolia Ave #103", "Corona, CA 92879"],
+    phone: "(951) 736-1822",
     hours: "Mon – Sat, 9am – 6pm",
     href: "https://member.clerri.com/enrollment/accounts/create?slug=CV6K",
   },
@@ -85,6 +93,7 @@ function LocationCard({ loc }: { loc: Location }) {
             </span>
           ))}
         </p>
+        <p className="mb-1 text-[14px] leading-relaxed text-neutral-500">{loc.phone}</p>
         <p className="mb-6 font-space-mono text-[11px] tracking-[0.5px] text-neutral-400">
           {loc.hours}
         </p>

@@ -5,7 +5,7 @@ import { LocationMarqueeBar } from "@/components/LocationMarqueeBar";
 const heroMobileBackground =
   "radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #FFF86B 100%)";
 
-const locations = ["weho", "encino", "calabasas", "northridge", "la puente"] as const;
+const locations = ["weho", "encino", "calabasas", "northridge", "la puente", "corona"] as const;
 
 const tickIconClass =
   "h-[clamp(0.5rem,1.35vh,0.75rem)] w-[clamp(0.625rem,1.65vh,0.875rem)] shrink-0 object-contain";

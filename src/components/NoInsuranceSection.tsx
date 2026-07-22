@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { LocationMarqueeBar } from "@/components/LocationMarqueeBar";
 
-const locations = ["weho", "encino", "calabasas", "northridge", "la puente"] as const;
+const locations = ["weho", "encino", "calabasas", "northridge", "la puente", "corona"] as const;
 
 export function NoInsuranceSection() {
   return (

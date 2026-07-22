@@ -123,14 +123,20 @@ export function ServicesFooterSection() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Image src="/assets/call.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
-                <a href="tel:+13105550199" className={FOOTER_HREF_CLASS}>
-                  (310) 555-0199
+                <a href="tel:+18007910200" className={FOOTER_HREF_CLASS}>
+                  (800) 791-0200
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Image src="/assets/mail.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
-                <a href="mailto:hello@gleam.co" className={FOOTER_HREF_CLASS}>
-                  hello@gleam.co
+                <a href="mailto:info@gleam-health.com" className={FOOTER_HREF_CLASS}>
+                  Info@gleam-health.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Image src="/assets/mail.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
+                <a href="mailto:mmelara@gleam-health.com" className={FOOTER_HREF_CLASS}>
+                  mmelara@gleam-health.com
                 </a>
               </li>
               <li className="flex items-center gap-2.5">

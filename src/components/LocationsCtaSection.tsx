@@ -21,11 +21,11 @@ export function LocationsCtaSection() {
           </p>
         </div>
         <Link
-          href="tel:+13105550199"
+          href="tel:+18007910200"
           className="w-full flex-shrink-0 rounded-full px-7 py-3.5 text-center text-[13px] font-bold tracking-[0.3px] text-black transition-opacity hover:opacity-90 sm:w-auto sm:px-8 sm:py-3.5 sm:text-[13.5px] lg:px-9 lg:py-4 lg:text-[14px]"
           style={{ backgroundColor: CTA_YELLOW }}
         >
-          Call (310) 555-0199
+          Call (800) 791-0200
         </Link>
       </div>
     </div>
