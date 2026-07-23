@@ -1,40 +1,69 @@
 import { HeroSlideInOnView } from "@/components/HeroSlideInOnView";
 
-const ENCINO_MAP_EMBED_SRC =
+/** Default map pin — West Hollywood (first location). */
+const DEFAULT_MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.226764913547!2d-118.36430352414511!3d34.0893308157709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2becf64873b91%3A0x451301d158fc9cc6!2s1019%20N%20Fairfax%20Ave%2C%20West%20Hollywood%2C%20CA%2090046%2C%20USA!5e0!3m2!1sen!2sin!4v1778741398057!5m2!1sen!2sin";
 
-const locations = [
+type LocationItem = {
+  city: string;
+  address: string;
+  phone: string;
+  phoneHref: string;
+  mapsHref: string;
+};
+
+const locations: LocationItem[] = [
   {
     city: "West Hollywood",
     address: "1019 N Fairfax Ave, West Hollywood, CA 90046",
-    href: "https://maps.app.goo.gl/hh6n8hLbP3rQuZsy6",
+    phone: "(424) 566-7100",
+    phoneHref: "tel:+14245667100",
+    mapsHref: "https://maps.app.goo.gl/hh6n8hLbP3rQuZsy6",
   },
   {
     city: "Calabasas",
     address: "26787 Agoura Rd, Calabasas, CA 91302",
-    href: "https://maps.app.goo.gl/2rLSbYoPqviSrvfC6",
+    phone: "(818) 878-7300",
+    phoneHref: "tel:+18188787300",
+    mapsHref: "https://maps.app.goo.gl/2rLSbYoPqviSrvfC6",
   },
   {
     city: "Encino",
-    address: "16055 Ventura Blvd #400, Encino, CA 91436",
-    href: "https://maps.app.goo.gl/biLbSiaG9yNpyE2X6",
+    address: "16055 Ventura Blvd #510, Encino, CA 91436",
+    phone: "(818) 751-5100",
+    phoneHref: "tel:+18187515100",
+    mapsHref: "https://maps.app.goo.gl/biLbSiaG9yNpyE2X6",
   },
   {
     city: "Valencia",
-    address: "24587 Copperhill Dr Santa Clarita, CA 91354",
-    href: "https://maps.app.goo.gl/V3qFfx2DpYiLionQ9",
+    address: "24587 Copper Hill Dr, Santa Clarita, CA 91354",
+    phone: "(661) 775-7717",
+    phoneHref: "tel:+16617757717",
+    mapsHref: "https://maps.app.goo.gl/V3qFfx2DpYiLionQ9",
   },
   {
     city: "Northridge",
     address: "8954 Reseda Blvd #100, Northridge, CA 91324",
-    href: "https://maps.app.goo.gl/pN1bHqUPp4oYK9WQ8",
+    phone: "(818) 701-3010",
+    phoneHref: "tel:+18187013010",
+    mapsHref: "https://maps.app.goo.gl/pN1bHqUPp4oYK9WQ8",
   },
   {
     city: "La Puente",
-    address: "864 N Hacienda Blvd La Puente, CA 91744",
-    href: "https://maps.app.goo.gl/MgfLCDtZqEizpf8a6",
+    address: "864 N Hacienda Blvd, La Puente, CA 91744",
+    phone: "(626) 626-7075",
+    phoneHref: "tel:+16266267075",
+    mapsHref: "https://maps.app.goo.gl/MgfLCDtZqEizpf8a6",
   },
-] as const;
+  {
+    city: "Corona",
+    address: "800 Magnolia Ave #103, Corona, CA 92879",
+    phone: "(951) 736-1822",
+    phoneHref: "tel:+19517361822",
+    mapsHref:
+      "https://www.google.com/maps/search/?api=1&query=800+Magnolia+Ave+%23103%2C+Corona%2C+CA+92879",
+  },
+];
 
 export function LocationsSection() {
   return (
@@ -63,39 +92,52 @@ export function LocationsSection() {
         </div>
 
         <div className="mt-8 grid gap-6 sm:mt-10 sm:gap-7 lg:mt-14 lg:grid-cols-[minmax(14rem,30%)_1fr] lg:items-stretch lg:gap-8 xl:grid-cols-[minmax(16rem,28%)_1fr] xl:gap-[1.5px]">
-          <div className="flex flex-col overflow-hidden rounded-l-[20px] bg-white shadow-xl ring-1 ring-black/5">
-            {locations.map((loc, i) => (
-              <a
-                key={loc.city}
-                href={loc.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group block px-5 pb-3 transition-opacity hover:opacity-80 md:px-7 md:pb-4 ${
-                  i === 0 ? "pt-5 md:pt-6" : ""
-                }`}
-              >
-                <p className="text-lg font-britanica-black uppercase tracking-[0.03em]  sm:text-xl md:text-[22px] xl:text-[24px]">
-                  {loc.city}
-                </p>
-                <p className="mt-1.5 w-full max-w-[min(100%,22rem)] text-[11px] font-semibold leading-relaxed text-black group-hover:text-blue-600 sm:text-xs xl:w-[180px] xl:max-w-none xl:text-[12px]">
-                  {loc.address}
-                </p>
-                {i < locations.length - 1 ? (
-                  <div
-                    className="mt-5 flex justify-center md:mt-6"
-                    aria-hidden
+          <div className="flex flex-col overflow-hidden rounded-[20px] bg-white shadow-xl ring-1 ring-black/5 lg:rounded-l-[20px] lg:rounded-r-none">
+            {locations.map((loc, i) => {
+              const isLast = i === locations.length - 1;
+              return (
+                <div
+                  key={loc.city}
+                  className={`px-5 md:px-7 ${i === 0 ? "pt-5 md:pt-6" : ""} ${
+                    isLast ? "pb-5 md:pb-6" : "pb-3 md:pb-4"
+                  }`}
+                >
+                  <a
+                    href={loc.mapsHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block transition-opacity hover:opacity-80"
                   >
-                    <div className="h-px w-[100%] bg-black sm:w-[100%]" />
-                  </div>
-                ) : null}
-              </a>
-            ))}
+                    <p className="text-lg font-britanica-black uppercase tracking-[0.03em] sm:text-xl md:text-[22px] xl:text-[24px]">
+                      {loc.city}
+                    </p>
+                    <p className="mt-1.5 w-full max-w-[min(100%,22rem)] text-[11px] font-semibold leading-relaxed text-black group-hover:text-blue-600 sm:text-xs xl:w-[180px] xl:max-w-none xl:text-[12px]">
+                      {loc.address}
+                    </p>
+                  </a>
+                  <a
+                    href={loc.phoneHref}
+                    className="mt-1 inline-block text-[11px] font-semibold leading-relaxed text-black/80 transition-colors hover:text-blue-600 sm:text-xs xl:text-[12px]"
+                  >
+                    {loc.phone}
+                  </a>
+                  {!isLast ? (
+                    <div
+                      className="mt-5 flex justify-center md:mt-6"
+                      aria-hidden
+                    >
+                      <div className="h-px w-full bg-black" />
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
           </div>
 
-          <div className="relative h-full min-h-[220px] w-full overflow-hidden rounded-r-[20px] shadow-xl ring-1 ring-black/10 sm:min-h-[240px] md:min-h-[260px] lg:min-h-[280px]">
+          <div className="relative h-full min-h-[220px] w-full overflow-hidden rounded-[20px] shadow-xl ring-1 ring-black/10 sm:min-h-[240px] md:min-h-[260px] lg:min-h-[280px] lg:rounded-l-none lg:rounded-r-[20px]">
             <iframe
-              src={ENCINO_MAP_EMBED_SRC}
-              title="Google Map — Lasting Impressions Dental Spa, Encino"
+              src={DEFAULT_MAP_EMBED_SRC}
+              title="Google Map — Gleam Dental, West Hollywood"
               className="absolute inset-0 h-full w-full border-0"
               allowFullScreen
               loading="lazy"

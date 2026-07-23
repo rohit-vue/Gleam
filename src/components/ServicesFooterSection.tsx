@@ -139,10 +139,6 @@ export function ServicesFooterSection() {
                   mmelara@gleam-health.com
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Image src="/assets/time.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
-                <span>Mon - Sat, 8am - 6pm</span>
-              </li>
             </ul>
           </div>
         </div>
