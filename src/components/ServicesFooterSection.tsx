@@ -133,12 +133,6 @@ export function ServicesFooterSection() {
                   Info@gleam-health.com
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Image src="/assets/mail.png" alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
-                <a href="mailto:mmelara@gleam-health.com" className={FOOTER_HREF_CLASS}>
-                  mmelara@gleam-health.com
-                </a>
-              </li>
             </ul>
           </div>
         </div>
